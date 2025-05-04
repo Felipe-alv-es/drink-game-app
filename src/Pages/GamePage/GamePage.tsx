@@ -2,49 +2,23 @@ import { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import CardComponent from "./Components/CardComponent/CardComponent";
 import NavigationButtons from "./Components/NavigationButtons/NavigationButtons";
-import { RiMedalFill } from "react-icons/ri";
+import { GiFinishLine } from "react-icons/gi";
+import { FaMapPin } from "react-icons/fa";
 import {
   getContainerStyle,
+  getContentContainerStyle,
   getFooterStyle,
   getPointCounterStyle,
 } from "./GamePage.styles";
+import ProgressComponent from "./Components/ProgressComponent/ProgressComponent";
 
 const GamePage = () => {
   const [challengeOrShot, setChallengeOrShot] = useState(false);
 
   return (
     <Box sx={getContainerStyle}>
-      <Box
-        sx={{
-          height: "100%",
-          width: "100%",
-          gap: 2,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <Box
-          sx={{
-            background: "LightGreen",
-            padding: "8px",
-            width: "100%",
-            textAlign: "center",
-            display: "flex",
-          }}
-        >
-          <Box sx={{ display: "flex" }}>
-            <Typography sx={{ fontSize: "16px" }}>Felipe</Typography>
-            <RiMedalFill size={32} />
-          </Box>
-          <Box sx={{ display: "flex" }}>
-            <Typography>Jessica</Typography>
-            <RiMedalFill size={32} />
-          </Box>
-          <Box sx={{ display: "flex" }}>
-            <Typography>Shubrigurath</Typography>
-            <RiMedalFill size={32} />
-          </Box>
-        </Box>
+      <Box sx={getContentContainerStyle}>
+        <ProgressComponent color="red" total={1000} current={500} />
         <CardComponent
           title="Deixe alguem desenhar uma piroca na sua testa"
           description="E fique até o final do jogo"

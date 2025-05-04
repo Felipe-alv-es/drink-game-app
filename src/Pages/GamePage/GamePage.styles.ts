@@ -9,6 +9,14 @@ export const getContainerStyle = () => ({
   padding: "16px",
 });
 
+export const getContentContainerStyle = () => ({
+  height: "100%",
+  width: "100%",
+  gap: 2,
+  display: "flex",
+  flexDirection: "column",
+});
+
 export const getPointCounterStyle = () => ({
   fontSize: "20px",
   fontWeight: "700",
