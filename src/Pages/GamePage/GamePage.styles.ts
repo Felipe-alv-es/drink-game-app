@@ -26,8 +26,12 @@ export const getPointCounterStyle = () => ({
 });
 
 export const getFooterStyle = () => ({
-  display: "flex",
   justifyContent: "space-between",
   width: "100%",
-  alignItems: "center",
+  "> div": {
+    display: "flex",
+    justifyContent: "space-between",
+    paddingTop: "16px",
+    alignItems: "center",
+  },
 });

@@ -3,7 +3,7 @@ import { Player } from "./PlayerSelector";
 export const getContainerStyle = () => ({
   padding: "16px",
   minHeight: "100vh",
-  background: "linear-gradient(135deg, #b7aecd, #8caedb, #2580b3)",
+  background: "#e6ecf3",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
@@ -12,9 +12,9 @@ export const getContainerStyle = () => ({
 export const getTitleStyle = () => ({
   fontFamily: "kanit",
   fontSize: "32px",
-  fontWeight: "500",
+  fontWeight: "600",
   paddingBottom: "4px",
-  color: "#fff7ff",
+  color: "#383838",
 });
 
 export const getAddItemStyle = () => ({
@@ -29,21 +29,21 @@ export const getAddItemStyle = () => ({
 
 export const getTextFieldStyle = () => ({
   "& .MuiFormLabel-root": {
-    color: "#fff7ff",
+    color: "#383838",
     fontFamily: "kanit",
     fontSize: "20px",
   },
   "& .MuiInputBase-root": {
     borderRadius: "16px",
-    color: "#fff7ff",
+    color: "#383838",
   },
   "& .MuiOutlinedInput-notchedOutline": {
-    borderColor: "#fff7ff",
+    borderColor: "#383838",
   },
 });
 
 export const getAddButtonStyle = () => ({
-  backgroundColor: "#fff7ff",
+  backgroundColor: "#383838",
   color: "#2580b3",
   fontWeight: "bold",
 });
@@ -62,13 +62,13 @@ export const getPlayersItemStyle = (player: Player) => ({
 export const getPlayerNameStyle = () => ({
   fontSize: "20px",
   fontFamily: "kanit",
-  color: "#fff7ff",
+  color: "#383838",
 });
 
 export const getButtonStyle = () => ({
   textTransform: "none",
-  background: "#fff7ff",
-  color: "#2580b3",
+  background: "#383838",
+  color: "#e6ecf3",
   fontFamily: "kanit",
   fontSize: "20px",
   borderRadius: "16px",

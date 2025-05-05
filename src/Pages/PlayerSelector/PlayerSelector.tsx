@@ -72,7 +72,7 @@ const PlayerSelector = () => {
             onClick={addPlayer}
             sx={getAddButtonStyle}
           >
-            <MdOutlinePersonAddAlt size={30} color=" #2580b3" />
+            <MdOutlinePersonAddAlt size={30} color=" #e6ecf3" />
           </IconButton>
         </Box>
 

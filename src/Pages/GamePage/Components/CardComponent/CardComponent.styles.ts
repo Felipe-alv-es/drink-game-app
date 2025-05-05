@@ -1,7 +1,19 @@
-export const getContainerStyle = (challengeOrShot: boolean) => ({
-  position: "relative",
+export const getPreContainerStyle = () => ({
+  perspective: "1000px",
   width: "100%",
   height: "85%",
+});
+
+export const getRotateStyle = (isFlipped: boolean) => ({
+  position: "relative",
+  width: "100%",
+  height: "100%",
+  transition: "transform 0.6s",
+  transformStyle: "preserve-3d",
+  transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+});
+
+export const getContainerStyle = (challengeOrShot: boolean) => ({
   borderRadius: "24px",
   overflow: "hidden",
   boxShadow: "0 6px 12px rgba(0, 0, 0, 0.1)",
@@ -9,6 +21,10 @@ export const getContainerStyle = (challengeOrShot: boolean) => ({
   flexDirection: "column",
   justifyContent: "space-between",
   border: "1px solid rgba(255, 255, 255, 0.2)",
+  position: "absolute",
+  width: "100%",
+  height: "100%",
+  backfaceVisibility: "hidden",
 
   "&::before": {
     content: "''",

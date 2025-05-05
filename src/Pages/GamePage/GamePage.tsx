@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Divider, Typography } from "@mui/material";
 import CardComponent from "./Components/CardComponent/CardComponent";
 import NavigationButtons from "./Components/NavigationButtons/NavigationButtons";
 import {
@@ -26,8 +26,11 @@ const GamePage = () => {
         />
       </Box>
       <Box sx={getFooterStyle}>
-        <Typography sx={getPointCounterStyle}>{"+ 4 pontos"}</Typography>
-        <NavigationButtons />
+        <Divider />
+        <Box>
+          <Typography sx={getPointCounterStyle}>{"+ 4 pontos"}</Typography>
+          <NavigationButtons />
+        </Box>
       </Box>
     </Box>
   );
