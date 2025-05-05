@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import CardComponent from "./Components/CardComponent/CardComponent";
 import NavigationButtons from "./Components/NavigationButtons/NavigationButtons";
-import { GiFinishLine } from "react-icons/gi";
-import { FaMapPin } from "react-icons/fa";
 import {
   getContainerStyle,
   getContentContainerStyle,
