@@ -64,6 +64,10 @@ const GamePage = () => {
     nextPlayer();
     nextCard();
     setIsFliped(true);
+    addPoints(
+      currentPlayer.name,
+      challengeOrShot ? currentCard.quantity / 2 : currentCard.quantity
+    );
   };
 
   useEffect(() => {
@@ -80,9 +84,10 @@ const GamePage = () => {
       <Box sx={getContentContainerStyle}>
         <ProgressComponent
           color={currentPlayer.color}
-          total={1000}
+          total={50}
           current={currentPlayer.points}
           isFlipped={isFlipped}
+          players={players}
         />
         <CardComponent
           title={currentCard.title}
