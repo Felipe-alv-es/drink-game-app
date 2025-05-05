@@ -9,6 +9,7 @@ import React, {
 export interface Player {
   name: string;
   color: string;
+  points: number;
 }
 
 const playerColors = [
@@ -29,6 +30,7 @@ interface PlayersContextType {
   addPlayer: (name: string) => void;
   removePlayer: (name: string) => void;
   clearPlayers: () => void;
+  addPoints: (name: string, pointsToAdd: number) => void;
 }
 
 const PlayersContext = createContext<PlayersContextType | undefined>(undefined);
@@ -48,7 +50,7 @@ export const PlayersProvider = ({ children }: { children: ReactNode }) => {
   const addPlayer = (name: string) => {
     if (!name.trim() || players.find((p) => p.name === name)) return;
     const color = playerColors[players.length % playerColors.length];
-    setPlayers((prev) => [...prev, { name, color }]);
+    setPlayers((prev) => [...prev, { name, color, points: 0 }]);
   };
 
   const removePlayer = (name: string) => {
@@ -57,9 +59,19 @@ export const PlayersProvider = ({ children }: { children: ReactNode }) => {
 
   const clearPlayers = () => setPlayers([]);
 
+  const addPoints = (name: string, pointsToAdd: number) => {
+    setPlayers((prev) =>
+      prev.map((player) =>
+        player.name === name
+          ? { ...player, points: player.points + pointsToAdd }
+          : player
+      )
+    );
+  };
+
   return (
     <PlayersContext.Provider
-      value={{ players, addPlayer, removePlayer, clearPlayers }}
+      value={{ players, addPlayer, removePlayer, clearPlayers, addPoints }}
     >
       {children}
     </PlayersContext.Provider>

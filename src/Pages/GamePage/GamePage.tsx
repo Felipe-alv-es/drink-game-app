@@ -22,10 +22,9 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 };
 
 const GamePage = () => {
-  const { players } = usePlayers();
+  const { players, addPoints } = usePlayers();
   const [challengeOrShot, setChallengeOrShot] = useState(false);
   const [isFlipped, setIsFliped] = useState(true);
-
   const [playerQueue, setPlayerQueue] = useState(() => shuffleArray(players));
   const [currentPlayer, setCurrentPlayer] = useState(playerQueue[0]);
 

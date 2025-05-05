@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import {
   getContainerStyle,
@@ -36,8 +36,26 @@ export const CardComponent = React.forwardRef<
     },
     ref
   ) => {
+    const [animationStep, setAnimationStep] = useState<
+      "none" | "slideOut" | "slideUp"
+    >("none");
+
+    useEffect(() => {
+      if (isFlipped) {
+        setAnimationStep("slideOut");
+        const timeout = setTimeout(() => {
+          setAnimationStep("slideUp");
+        }, 700);
+        return () => clearTimeout(timeout);
+      }
+    }, [isFlipped]);
+
     return (
-      <Box sx={getPreContainerStyle} component={"button"} onClick={onClick}>
+      <Box
+        sx={getPreContainerStyle(animationStep)}
+        component={"button"}
+        onClick={onClick}
+      >
         <Box sx={getRotateStyle(isFlipped)}>
           <Box sx={getContainerStyle(challengeOrShot)}>
             <ChallengeContent

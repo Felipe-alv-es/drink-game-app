@@ -1,15 +1,34 @@
-export const getPreContainerStyle = () => ({
+export const getPreContainerStyle = (
+  animationStep: "none" | "slideOut" | "slideUp"
+) => ({
   perspective: "1000px",
   width: "100%",
   height: "85%",
-  animation: "slideUp 2s cubic-bezier(0.25, 0.8, 0.25, 1)",
+  animation:
+    animationStep === "slideOut"
+      ? "slideOut 0.7s ease-in"
+      : animationStep === "slideUp"
+      ? "slideUp 0.7s ease-out"
+      : "none",
   borderStyle: "none",
+  "@keyframes slideOut": {
+    "0%": {
+      transform: "translateX(0)",
+      opacity: 1,
+    },
+    "100%": {
+      transform: "translateX(100%)",
+      opacity: 0,
+    },
+  },
   "@keyframes slideUp": {
     "0%": {
       transform: "translateY(100%)",
+      opacity: 0,
     },
     "100%": {
       transform: "translateY(0)",
+      opacity: 1,
     },
   },
 });
