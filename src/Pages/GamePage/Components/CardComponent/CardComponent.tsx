@@ -45,7 +45,7 @@ export const CardComponent = React.forwardRef<
         setAnimationStep("slideOut");
         const timeout = setTimeout(() => {
           setAnimationStep("slideUp");
-        }, 700);
+        }, 650);
         return () => clearTimeout(timeout);
       }
     }, [isFlipped]);

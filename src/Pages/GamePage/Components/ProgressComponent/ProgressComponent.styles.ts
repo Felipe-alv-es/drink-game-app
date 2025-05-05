@@ -4,7 +4,7 @@ export const getContainerStyle = (isFlipped: boolean) => ({
   gap: "4px",
   position: "relative",
   opacity: isFlipped ? 0 : 100,
-  transition: "2s",
+  transition: "1s",
 });
 
 export const getFieldStyle = () => ({

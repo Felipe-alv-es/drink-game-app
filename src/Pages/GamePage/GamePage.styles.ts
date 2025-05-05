@@ -29,7 +29,7 @@ export const getFooterStyle = (isFlipped: boolean) => ({
   justifyContent: "space-between",
   width: "100%",
   opacity: isFlipped ? 0 : 100,
-  transition: "2s",
+  transition: "1s",
   "> div": {
     display: "flex",
     justifyContent: "space-between",
