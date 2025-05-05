@@ -8,16 +8,17 @@ interface ProgressComponentProps {
   color: string;
   total: number;
   current: number;
+  isFlipped: boolean;
 }
 
 export const ProgressComponent = React.forwardRef<
   HTMLButtonElement,
   ProgressComponentProps
->(({ color, total, current }, ref) => {
+>(({ color, total, current, isFlipped }, ref) => {
   const percentage = total > 0 ? (current / total) * 90 : 0;
 
   return (
-    <Box sx={getContainerStyle} ref={ref}>
+    <Box sx={getContainerStyle(isFlipped)} ref={ref}>
       <Box
         sx={{
           position: "absolute",

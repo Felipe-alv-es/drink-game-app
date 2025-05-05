@@ -1,4 +1,4 @@
-import { Player } from "./PlayerSelector";
+import { Player } from "../../Context/PlayersContext";
 
 export const getContainerStyle = () => ({
   padding: "16px",

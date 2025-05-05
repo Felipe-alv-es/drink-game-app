@@ -2,6 +2,16 @@ export const getPreContainerStyle = () => ({
   perspective: "1000px",
   width: "100%",
   height: "85%",
+  animation: "slideUp 2s cubic-bezier(0.25, 0.8, 0.25, 1)",
+  borderStyle: "none",
+  "@keyframes slideUp": {
+    "0%": {
+      transform: "translateY(100%)",
+    },
+    "100%": {
+      transform: "translateY(0)",
+    },
+  },
 });
 
 export const getRotateStyle = (isFlipped: boolean) => ({

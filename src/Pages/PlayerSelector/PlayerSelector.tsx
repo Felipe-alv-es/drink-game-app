@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { MdOutlinePersonAddAlt } from "react-icons/md";
@@ -12,46 +11,18 @@ import {
   getTextFieldStyle,
   getTitleStyle,
 } from "./PlayerSelector.styles";
-
-const playerColors = [
-  "#FF6B6B",
-  "#FFD93D",
-  "#6BCB77",
-  "#4D96FF",
-  "#FF6EC7",
-  "#FF8E72",
-  "#8D6EFF",
-  "#00C2CB",
-  "#FCA17D",
-  "#D065A9",
-];
-
-export interface Player {
-  id: number;
-  name: string;
-  color: string;
-}
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { usePlayers } from "../../Context/PlayersContext";
 
 const PlayerSelector = () => {
-  const [players, setPlayers] = useState<Player[]>([]);
+  const navigate = useNavigate();
+  const { players, addPlayer, removePlayer } = usePlayers();
   const [newPlayerName, setNewPlayerName] = useState("");
 
-  const addPlayer = () => {
-    if (!newPlayerName.trim()) return;
-
-    const color = playerColors[players.length % playerColors.length];
-    const newPlayer: Player = {
-      id: Date.now(),
-      name: newPlayerName.trim(),
-      color,
-    };
-
-    setPlayers([...players, newPlayer]);
-    setNewPlayerName("");
-  };
-
-  const removePlayer = (id: number) => {
-    setPlayers(players.filter((p) => p.id !== id));
+  const handleStart = () => {
+    if (players.length === 0) return;
+    navigate("/game-page");
   };
 
   return (
@@ -69,7 +40,10 @@ const PlayerSelector = () => {
           />
           <IconButton
             component="button"
-            onClick={addPlayer}
+            onClick={() => {
+              addPlayer(newPlayerName);
+              setNewPlayerName("");
+            }}
             sx={getAddButtonStyle}
           >
             <MdOutlinePersonAddAlt size={30} color=" #e6ecf3" />
@@ -77,17 +51,17 @@ const PlayerSelector = () => {
         </Box>
 
         {players.map((player, index) => (
-          <Box key={player.id} sx={getPlayersItemStyle(player)}>
+          <Box key={player.name} sx={getPlayersItemStyle(player)}>
             <Typography sx={getPlayerNameStyle}>
               {`Jogador ${index + 1}: ${player.name}`}
             </Typography>
-            <IconButton onClick={() => removePlayer(player.id)}>
+            <IconButton onClick={() => removePlayer(player.name)}>
               <FaRegTrashAlt color="#fff7ff" />
             </IconButton>
           </Box>
         ))}
       </Box>
-      <Button variant="contained" sx={getButtonStyle}>
+      <Button variant="contained" sx={getButtonStyle} onClick={handleStart}>
         {"Começar"}
       </Button>
     </Box>

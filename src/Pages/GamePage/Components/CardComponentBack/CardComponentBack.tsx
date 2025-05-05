@@ -7,9 +7,9 @@ import {
 
 const CardComponentBack = () => {
   return (
-    <Box sx={getContainerStyle}>
-      <Box sx={getFirstColorStyle} />
-      <Box sx={getSecondColorStyle} />
+    <Box sx={getContainerStyle()}>
+      <Box sx={getFirstColorStyle()} />
+      <Box sx={getSecondColorStyle()} />
       <Box
         sx={{
           position: "relative",

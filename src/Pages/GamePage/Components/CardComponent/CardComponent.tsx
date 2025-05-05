@@ -16,7 +16,8 @@ interface CardComponentProps {
   playerName: string;
   challengeOrShot: boolean;
   setChallengeOrShot: React.Dispatch<React.SetStateAction<boolean>>;
-  // isFlipped: boolean;
+  isFlipped: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const CardComponent = React.forwardRef<
@@ -24,12 +25,19 @@ export const CardComponent = React.forwardRef<
   CardComponentProps
 >(
   (
-    { title, description, playerName, challengeOrShot, setChallengeOrShot },
+    {
+      title,
+      description,
+      playerName,
+      challengeOrShot,
+      setChallengeOrShot,
+      isFlipped,
+      onClick,
+    },
     ref
   ) => {
-    const isFlipped = false;
     return (
-      <Box sx={getPreContainerStyle}>
+      <Box sx={getPreContainerStyle} component={"button"} onClick={onClick}>
         <Box sx={getRotateStyle(isFlipped)}>
           <Box sx={getContainerStyle(challengeOrShot)}>
             <ChallengeContent
