@@ -8,7 +8,7 @@ export const getPreContainerStyle = (
     animationStep === "slideOut"
       ? "slideOut 0.7s ease-in"
       : animationStep === "slideUp"
-      ? "slideUp 0.7s ease-out"
+      ? "slideUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1)"
       : "none",
   borderStyle: "none",
   "@keyframes slideOut": {

@@ -11,6 +11,8 @@ import {
 import ProgressComponent from "./Components/ProgressComponent/ProgressComponent";
 import { usePlayers } from "../../Context/PlayersContext";
 import { DefaultList, DefaultListTypes } from "../../Assets/Arrays/DefaultList";
+import { BottomWaves, TopWaves } from "./Components/Waves/Waves";
+import WaveMessage from "./Components/WaveMessage/WaveMessage";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const copy = [...array];
@@ -27,7 +29,6 @@ const GamePage = () => {
   const [isFlipped, setIsFliped] = useState(true);
   const [playerQueue, setPlayerQueue] = useState(() => shuffleArray(players));
   const [currentPlayer, setCurrentPlayer] = useState(playerQueue[0]);
-
   const [cardQueue, setCardQueue] = useState<DefaultListTypes[]>(() =>
     shuffleArray(DefaultList)
   );
@@ -75,11 +76,12 @@ const GamePage = () => {
 
   return (
     <Box sx={getContainerStyle}>
+      <TopWaves isVisible={isFlipped} />
       <Box sx={getContentContainerStyle}>
         <ProgressComponent
           color={currentPlayer.color}
           total={1000}
-          current={500}
+          current={currentPlayer.points}
           isFlipped={isFlipped}
         />
         <CardComponent
@@ -96,11 +98,15 @@ const GamePage = () => {
         <Divider />
         <Box>
           <Typography sx={getPointCounterStyle}>
-            {`+ ${currentCard.quantity} pontos`}
+            {`+ ${
+              challengeOrShot ? currentCard.quantity / 2 : currentCard.quantity
+            } pontos`}
           </Typography>
           <NavigationButtons onClick={handleNext} />
         </Box>
       </Box>
+      <BottomWaves isVisible={isFlipped} />
+      <WaveMessage isVisible={isFlipped} name={currentPlayer.name} />
     </Box>
   );
 };
