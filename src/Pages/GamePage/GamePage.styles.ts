@@ -25,9 +25,15 @@ export const getPointCounterStyle = () => ({
   color: "#383838",
 });
 
-export const getFooterStyle = () => ({
-  display: "flex",
+export const getFooterStyle = (isFlipped: boolean) => ({
   justifyContent: "space-between",
   width: "100%",
-  alignItems: "center",
+  opacity: isFlipped ? 0 : 100,
+  transition: "1s",
+  "> div": {
+    display: "flex",
+    justifyContent: "space-between",
+    paddingTop: "16px",
+    alignItems: "center",
+  },
 });

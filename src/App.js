@@ -1,5 +1,5 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { Home, GamePage } from "./Pages/Index.ts";
+import { Home, GamePage, PlayerSelector } from "./Pages/Index.ts";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           />
           <Route path="/selection-page" element={<Home />} />
           <Route path="/game-page" element={<GamePage />} />
+          <Route path="/player-selector" element={<PlayerSelector />} />
         </Routes>
       </BrowserRouter>
     </div>
