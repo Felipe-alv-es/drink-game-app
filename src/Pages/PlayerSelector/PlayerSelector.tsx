@@ -1,19 +1,16 @@
-import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
-import { MdOutlinePersonAddAlt } from "react-icons/md";
 import {
-  getAddButtonStyle,
-  getAddItemStyle,
-  getButtonStyle,
   getContainerStyle,
   getPlayerNameStyle,
   getPlayersItemStyle,
-  getTextFieldStyle,
   getTitleStyle,
 } from "./PlayerSelector.styles";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { usePlayers } from "../../Context/PlayersContext";
+import PlayerInput from "./Components/PlayerInput/PlayerInput";
+import PlayerSelectorButton from "./Components/PlayerSelectorButton/PlayerSelectorButton";
 
 const PlayerSelector = () => {
   const navigate = useNavigate();
@@ -29,27 +26,11 @@ const PlayerSelector = () => {
     <Box sx={getContainerStyle}>
       <Box>
         <Typography sx={getTitleStyle}>{"Adicione os jogadores"}</Typography>
-        <Box sx={getAddItemStyle}>
-          <TextField
-            label="Nome do Jogador"
-            value={newPlayerName}
-            onChange={(e) => setNewPlayerName(e.target.value)}
-            variant="outlined"
-            fullWidth
-            sx={getTextFieldStyle}
-          />
-          <IconButton
-            component="button"
-            onClick={() => {
-              addPlayer(newPlayerName);
-              setNewPlayerName("");
-            }}
-            sx={getAddButtonStyle}
-          >
-            <MdOutlinePersonAddAlt size={30} color=" #e6ecf3" />
-          </IconButton>
-        </Box>
-
+        <PlayerInput
+          newPlayerName={newPlayerName}
+          setNewPlayerName={setNewPlayerName}
+          addPlayer={addPlayer}
+        />
         {players.map((player, index) => (
           <Box key={player.name} sx={getPlayersItemStyle(player)}>
             <Typography sx={getPlayerNameStyle}>
@@ -61,9 +42,7 @@ const PlayerSelector = () => {
           </Box>
         ))}
       </Box>
-      <Button variant="contained" sx={getButtonStyle} onClick={handleStart}>
-        {"Começar"}
-      </Button>
+      <PlayerSelectorButton onClick={handleStart} />
     </Box>
   );
 };

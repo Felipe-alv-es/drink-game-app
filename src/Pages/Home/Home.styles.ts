@@ -1,4 +1,3 @@
-import { Player } from "../../Context/PlayersContext";
 import { keyframes } from "@mui/material";
 
 const gradientShift = keyframes`
@@ -14,39 +13,30 @@ const gradientShift = keyframes`
 `;
 
 export const getContainerStyle = () => ({
-  padding: "16px",
-  minHeight: "100vh",
   animation: `${gradientShift} 15s ease infinite`,
   background:
     "linear-gradient(135deg, #b7aecd, #8caedb, #2580b3, #d6a3a3, #e07b7b, #b32525)",
   backgroundSize: "400% 400%",
+  height: "100vh",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
 });
 
-export const getTitleStyle = () => ({
-  fontFamily: "kanit",
-  fontSize: "36px",
-  fontWeight: "700",
-  paddingBottom: "4px",
-  color: "#FFF7FF",
-  textAlign: "center",
-});
-
-export const getPlayersItemStyle = (player: Player) => ({
-  background: player.color,
-  padding: "16px",
-  borderRadius: "16px",
+export const getButtonContainerStyle = () => ({
   display: "flex",
-  gap: 2,
-  alignItems: "center",
-  marginBottom: "12px",
-  justifyContent: "space-between",
+  justifyContent: "center",
+  padding: "24px",
 });
 
-export const getPlayerNameStyle = () => ({
-  fontSize: "20px",
+export const getButtonStyle = () => ({
+  textTransform: "none",
+  borderRadius: "32px",
+  paddingX: "32px",
+  paddingY: "8px",
   fontFamily: "kanit",
-  color: "#FFF7FF",
+  color: "#fff7ff",
+  borderColor: "#fff7ff",
+  fontSize: "20px",
+  fontWeight: "600",
 });

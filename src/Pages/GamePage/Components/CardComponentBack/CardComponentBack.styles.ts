@@ -24,3 +24,12 @@ export const getSecondColorStyle = () => ({
   background: "linear-gradient(135deg, #d6a3a3, #e07b7b, #b32525)",
   clipPath: "polygon(100% 100%, 100% 0, 0 100%)",
 });
+
+export const getImageContainerStyle = () => ({
+  position: "relative",
+  zIndex: 1,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100%",
+});

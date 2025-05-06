@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import {
   getContainerStyle,
   getFirstColorStyle,
+  getImageContainerStyle,
   getSecondColorStyle,
 } from "./CardComponentBack.styles";
 //@ts-ignore
@@ -12,16 +13,7 @@ const CardComponentBack = () => {
     <Box sx={getContainerStyle()}>
       <Box sx={getFirstColorStyle()} />
       <Box sx={getSecondColorStyle()} />
-      <Box
-        sx={{
-          position: "relative",
-          zIndex: 1,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100%",
-        }}
-      >
+      <Box sx={getImageContainerStyle}>
         <Box
           component="img"
           src={Logo}

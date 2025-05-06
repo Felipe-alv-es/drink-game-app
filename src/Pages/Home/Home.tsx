@@ -1,16 +1,29 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
+import {
+  getButtonContainerStyle,
+  getButtonStyle,
+  getContainerStyle,
+} from "./Home.styles";
+import HomeLogo from "./Component/Logo/Logo";
+import TipsMessage from "./Component/TipsMessage/TipsMessage";
 
 const Home = () => {
   const navigate = useNavigate();
 
   return (
-    <Box>
-      <Typography variant="h1">Tela de início</Typography>
-      <Button onClick={() => navigate("/game-page")}>
-        Ir pra tela seguinte
-      </Button>
+    <Box sx={getContainerStyle}>
+      <HomeLogo />
+      <TipsMessage />
+      <Box sx={getButtonContainerStyle}>
+        <Button
+          variant="outlined"
+          onClick={() => navigate("/player-selector")}
+          sx={getButtonStyle}
+        >
+          {"Ativar modo irresponsável"}
+        </Button>
+      </Box>
     </Box>
   );
 };
