@@ -1,10 +1,4 @@
-import {
-  Box,
-  IconButton,
-  ToggleButton,
-  ToggleButtonGroup,
-  Typography,
-} from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
 import {
   getContainerStyle,
