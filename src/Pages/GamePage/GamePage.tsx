@@ -84,6 +84,8 @@ const GamePage = () => {
     );
   };
 
+  console.log(currentPlayer.points);
+
   useEffect(() => {
     if (players.length > 0 && playerQueue.length === 0) {
       const reshuffled = shuffleArray(players);
@@ -110,7 +112,7 @@ const GamePage = () => {
       <Box sx={getContentContainerStyle}>
         <ProgressComponent
           color={currentPlayer.color}
-          total={20}
+          total={maxPoints}
           current={currentPlayer.points}
           isFlipped={isFlipped}
           players={players}
