@@ -88,7 +88,7 @@ const GamePage = () => {
   };
 
   const handleNext = () => {
-    if (currentPlayer.babymode) {
+    if (currentPlayer.babymode && challengeOrShot) {
       setModalOpen(true);
       return;
     }
@@ -157,7 +157,11 @@ const GamePage = () => {
               challengeOrShot ? currentCard.quantity / 2 : currentCard.quantity
             } pontos`}
           </Typography>
-          <NavigationButtons onClick={handleNext} babyMode={showBabyMode} />
+          <NavigationButtons
+            onClick={handleNext}
+            babyMode={showBabyMode}
+            challengeOrShot={challengeOrShot}
+          />
         </Box>
       </Box>
       <BottomWaves isVisible={isFlipped} />
