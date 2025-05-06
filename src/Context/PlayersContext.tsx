@@ -23,6 +23,16 @@ const playerColors = [
   "#a1887f",
   "#90a4ae",
   "#f06292",
+  "#9575cd",
+  "#4caf50",
+  "#ffb74d",
+  "#7986cb",
+  "#e0e0e0",
+  "#f44336",
+  "#2196f3",
+  "#00bcd4",
+  "#9c27b0",
+  "#cddc39",
 ];
 
 interface PlayersContextType {
