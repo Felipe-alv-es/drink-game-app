@@ -84,8 +84,6 @@ const GamePage = () => {
     );
   };
 
-  console.log(currentPlayer.points);
-
   useEffect(() => {
     if (players.length > 0 && playerQueue.length === 0) {
       const reshuffled = shuffleArray(players);
@@ -127,6 +125,7 @@ const GamePage = () => {
           isFlipped={isFlipped}
           isFirstRender={isFirstRender}
           onClick={() => handleCardClick()}
+          babyMode={currentPlayer.babymode}
         />
       </Box>
       <Box sx={getFooterStyle(isFlipped)}>
