@@ -49,6 +49,7 @@ const DeckItem = ({
             <Checkbox
               checked={isSelected}
               onChange={() => onClick && onClick()}
+              onClick={onClick}
               sx={{ "& svg": { color: color } }}
             />
           </Box>
