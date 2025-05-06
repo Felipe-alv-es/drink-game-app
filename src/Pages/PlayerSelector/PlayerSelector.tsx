@@ -19,7 +19,7 @@ const PlayerSelector = () => {
 
   const handleStart = () => {
     if (players.length === 0) return;
-    navigate("/game-page");
+    navigate("/deck-selector");
   };
 
   return (
