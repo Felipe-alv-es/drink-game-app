@@ -104,6 +104,16 @@ const GamePage = () => {
     }
   }, [players, maxPoints, navigate]);
 
+  const [showBabyMode, setShowBabyMode] = useState(currentPlayer.babymode);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowBabyMode(currentPlayer.babymode);
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
+  }, [currentPlayer.babymode]);
+
   return (
     <Box sx={getContainerStyle}>
       <TopWaves isVisible={isFlipped} />
@@ -125,7 +135,7 @@ const GamePage = () => {
           isFlipped={isFlipped}
           isFirstRender={isFirstRender}
           onClick={() => handleCardClick()}
-          babyMode={currentPlayer.babymode}
+          showBabyMode={showBabyMode}
         />
       </Box>
       <Box sx={getFooterStyle(isFlipped)}>
@@ -136,7 +146,7 @@ const GamePage = () => {
               challengeOrShot ? currentCard.quantity / 2 : currentCard.quantity
             } pontos`}
           </Typography>
-          <NavigationButtons onClick={handleNext} />
+          <NavigationButtons onClick={handleNext} babyMode={showBabyMode} />
         </Box>
       </Box>
       <BottomWaves isVisible={isFlipped} />

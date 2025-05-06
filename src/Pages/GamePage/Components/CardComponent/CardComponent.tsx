@@ -20,7 +20,7 @@ interface CardComponentProps {
   isFlipped: boolean;
   isFirstRender: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  babyMode: boolean;
+  showBabyMode: boolean;
 }
 
 export const CardComponent = React.forwardRef<
@@ -38,7 +38,7 @@ export const CardComponent = React.forwardRef<
       isFlipped,
       isFirstRender,
       onClick,
-      babyMode,
+      showBabyMode,
     },
     ref
   ) => {
@@ -84,7 +84,7 @@ export const CardComponent = React.forwardRef<
               quantity={quantity}
               onClick={() => setChallengeOrShot(true)}
               challengeOrShot={challengeOrShot}
-              babyMode={babyMode}
+              showBabyMode={showBabyMode}
             />
           </Box>
           <CardComponentBack />

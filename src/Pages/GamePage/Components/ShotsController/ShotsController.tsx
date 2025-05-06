@@ -14,22 +14,13 @@ interface ShotsControllerProps {
   quantity: number;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   challengeOrShot: boolean;
-  babyMode: boolean;
+  showBabyMode: boolean;
 }
 
 export const ShotsController = React.forwardRef<
   HTMLButtonElement,
   ShotsControllerProps
->(({ quantity, onClick, challengeOrShot, babyMode }, ref) => {
-  const [showBabyMode, setShowBabyMode] = useState(babyMode);
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setShowBabyMode(babyMode);
-    }, 1000);
-
-    return () => clearTimeout(timeoutId);
-  }, [babyMode]);
+>(({ quantity, onClick, challengeOrShot, showBabyMode }, ref) => {
   return (
     <Box
       sx={getContainerStyle}
