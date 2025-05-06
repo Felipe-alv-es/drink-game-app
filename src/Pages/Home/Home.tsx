@@ -21,7 +21,7 @@ const Home = () => {
           onClick={() => navigate("/player-selector")}
           sx={getButtonStyle}
         >
-          {"Ativar modo irresponsável"}
+          {"Começar o caos"}
         </Button>
       </Box>
     </Box>

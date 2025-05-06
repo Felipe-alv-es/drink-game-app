@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Box, Divider, Typography } from "@mui/material";
 import CardComponent from "./Components/CardComponent/CardComponent";
 import NavigationButtons from "./Components/NavigationButtons/NavigationButtons";
@@ -10,9 +10,15 @@ import {
 } from "./GamePage.styles";
 import ProgressComponent from "./Components/ProgressComponent/ProgressComponent";
 import { usePlayers } from "../../Context/PlayersContext";
-import { DefaultList, DefaultListTypes } from "../../Assets/Arrays/DefaultList";
+import { useDeck } from "../../Context/DeckContext";
+import {
+  DesafioPadrão,
+  ListTypes,
+  ObedeçaOLider,
+} from "../../Assets/Arrays/DefaultList";
 import { BottomWaves, TopWaves } from "./Components/Waves/Waves";
 import WaveMessage from "./Components/WaveMessage/WaveMessage";
+import { useNavigate } from "react-router-dom";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const copy = [...array];
@@ -23,18 +29,23 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return copy;
 };
 
+export const DeckMap: Record<string, ListTypes[]> = {
+  DesafioPadrão,
+  ObedeçaOLider,
+};
+
 const GamePage = () => {
-  const { players, addPoints } = usePlayers();
+  const navigate = useNavigate();
+  const { players, addPoints, maxPoints } = usePlayers();
+  const { selectedDecks } = useDeck();
   const [challengeOrShot, setChallengeOrShot] = useState(false);
   const [isFlipped, setIsFliped] = useState(true);
   const [playerQueue, setPlayerQueue] = useState(() => shuffleArray(players));
   const [currentPlayer, setCurrentPlayer] = useState(playerQueue[0]);
-  const [cardQueue, setCardQueue] = useState<DefaultListTypes[]>(() =>
-    shuffleArray(DefaultList)
+  const [cardQueue, setCardQueue] = useState<ListTypes[]>(() =>
+    shuffleArray(selectedDecks.flatMap((deckName) => DeckMap[deckName] || []))
   );
-  const [currentCard, setCurrentCard] = useState<DefaultListTypes>(
-    cardQueue[0]
-  );
+  const [currentCard, setCurrentCard] = useState<ListTypes>(cardQueue[0]);
   const [isFirstRender, setIsFirstRender] = useState(true);
 
   const nextPlayer = () => {
@@ -51,7 +62,9 @@ const GamePage = () => {
 
   const nextCard = () => {
     if (cardQueue.length <= 1) {
-      const reshuffled = shuffleArray(DefaultList);
+      const reshuffled = shuffleArray(
+        selectedDecks.flatMap((deckName) => DeckMap[deckName] || [])
+      );
       setCardQueue(reshuffled);
       setCurrentCard(reshuffled[0]);
     } else {
@@ -84,13 +97,20 @@ const GamePage = () => {
     setIsFliped(false);
   };
 
+  useEffect(() => {
+    const winner = players.find((player) => player.points >= maxPoints);
+    if (winner) {
+      navigate("/win-screen", { state: { winner } });
+    }
+  }, [players, maxPoints, navigate]);
+
   return (
     <Box sx={getContainerStyle}>
       <TopWaves isVisible={isFlipped} />
       <Box sx={getContentContainerStyle}>
         <ProgressComponent
           color={currentPlayer.color}
-          total={50}
+          total={20}
           current={currentPlayer.points}
           isFlipped={isFlipped}
           players={players}

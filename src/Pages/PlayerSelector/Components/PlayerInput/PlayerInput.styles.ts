@@ -24,7 +24,7 @@ export const getTextFieldStyle = () => ({
 });
 
 export const getAddButtonStyle = () => ({
-  backgroundColor: "#FFF7FF",
+  borderColor: "#FFF7FF",
   color: "#2580b3",
   fontWeight: "bold",
   borderRadius: "24px",

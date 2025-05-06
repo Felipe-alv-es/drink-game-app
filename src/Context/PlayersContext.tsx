@@ -23,6 +23,16 @@ const playerColors = [
   "#a1887f",
   "#90a4ae",
   "#f06292",
+  "#9575cd",
+  "#4caf50",
+  "#ffb74d",
+  "#7986cb",
+  "#e0e0e0",
+  "#f44336",
+  "#2196f3",
+  "#00bcd4",
+  "#9c27b0",
+  "#cddc39",
 ];
 
 interface PlayersContextType {
@@ -31,12 +41,15 @@ interface PlayersContextType {
   removePlayer: (name: string) => void;
   clearPlayers: () => void;
   addPoints: (name: string, pointsToAdd: number) => void;
+  maxPoints: number;
+  setMaxPoints: (value: number) => void;
 }
 
 const PlayersContext = createContext<PlayersContextType | undefined>(undefined);
 
 export const PlayersProvider = ({ children }: { children: ReactNode }) => {
   const [players, setPlayers] = useState<Player[]>([]);
+  const [maxPoints, setMaxPoints] = useState<number>(50);
 
   useEffect(() => {
     const stored = localStorage.getItem("players");
@@ -71,7 +84,15 @@ export const PlayersProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <PlayersContext.Provider
-      value={{ players, addPlayer, removePlayer, clearPlayers, addPoints }}
+      value={{
+        players,
+        addPlayer,
+        removePlayer,
+        clearPlayers,
+        addPoints,
+        maxPoints,
+        setMaxPoints,
+      }}
     >
       {children}
     </PlayersContext.Provider>
