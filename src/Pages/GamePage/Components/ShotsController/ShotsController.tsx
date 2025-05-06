@@ -1,12 +1,13 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { BsCupFill } from "react-icons/bs";
 import {
   getContainerStyle,
   getIconContainerStyle,
   getIconStyle,
   getTitleStyle,
 } from "./ShotsController.styles";
+//@ts-ignore
+import Shot from "../../../../Assets/Images/Utils/Shot.png";
 
 interface ShotsControllerProps {
   quantity: number;
@@ -30,9 +31,14 @@ export const ShotsController = React.forwardRef<
           sx={getTitleStyle(challengeOrShot)}
         >{`Tome ${quantity} Shots`}</Typography>
         <Box sx={getIconContainerStyle}>
-          {Array.from({ length: quantity }).map((_, index) => (
+          {Array.from({ length: quantity / 2 }).map((_, index) => (
             <Box sx={getIconStyle(challengeOrShot)}>
-              <BsCupFill key={index} size={48} color="#fff7ff" />
+              <Box
+                component="img"
+                src={Shot}
+                alt="Man avatar generic image"
+                sx={{ height: "54px", width: "54px" }}
+              />
             </Box>
           ))}
         </Box>

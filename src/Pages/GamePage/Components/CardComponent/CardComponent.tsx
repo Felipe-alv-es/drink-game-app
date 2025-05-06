@@ -13,6 +13,7 @@ import CardComponentBack from "../CardComponentBack/CardComponentBack";
 interface CardComponentProps {
   title: string;
   description: string;
+  quantity: number;
   playerName: string;
   challengeOrShot: boolean;
   setChallengeOrShot: React.Dispatch<React.SetStateAction<boolean>>;
@@ -29,6 +30,7 @@ export const CardComponent = React.forwardRef<
     {
       title,
       description,
+      quantity,
       playerName,
       challengeOrShot,
       setChallengeOrShot,
@@ -76,7 +78,7 @@ export const CardComponent = React.forwardRef<
             />
             <SideSelector challengeOrShot={challengeOrShot} />
             <ShotsController
-              quantity={4}
+              quantity={quantity}
               onClick={() => setChallengeOrShot(true)}
               challengeOrShot={challengeOrShot}
             />

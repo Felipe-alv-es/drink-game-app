@@ -1,4 +1,4 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Snackbar, Typography } from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
 import {
   getContainerStyle,
@@ -17,10 +17,18 @@ const PlayerSelector = () => {
   const navigate = useNavigate();
   const { players, addPlayer, removePlayer } = usePlayers();
   const [newPlayerName, setNewPlayerName] = useState("");
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const handleStart = () => {
-    if (players.length === 0) return;
+    if (players.length === 0) {
+      setSnackbarOpen(true);
+      return;
+    }
     navigate("/deck-selector");
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
   };
 
   return (
@@ -45,6 +53,13 @@ const PlayerSelector = () => {
         ))}
       </Box>
       <PlayerSelectorButton onClick={handleStart} />
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={handleSnackbarClose}
+        message="Deve haver pelo menos um jogador para iniciar"
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      />
     </Box>
   );
 };

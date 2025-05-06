@@ -50,7 +50,12 @@ const DeckItem = ({
               checked={isSelected}
               onChange={() => onClick && onClick()}
               onClick={onClick}
-              sx={{ "& svg": { color: color } }}
+              sx={{
+                "& svg": { color: color },
+                "&.Mui-checked": {
+                  color: "#383838",
+                },
+              }}
             />
           </Box>
         </Box>

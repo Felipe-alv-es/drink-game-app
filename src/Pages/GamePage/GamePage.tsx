@@ -120,6 +120,7 @@ const GamePage = () => {
         <CardComponent
           title={currentCard.title}
           description={currentCard.description}
+          quantity={currentCard.quantity}
           playerName={currentPlayer.name}
           setChallengeOrShot={setChallengeOrShot}
           challengeOrShot={challengeOrShot}

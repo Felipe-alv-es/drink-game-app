@@ -14,12 +14,20 @@ export const getTextFieldStyle = () => ({
     fontFamily: "kanit",
     fontSize: "20px",
   },
+  "& .MuiFormLabel-root.Mui-focused": {
+    color: "#FFF7FF",
+  },
   "& .MuiInputBase-root": {
     borderRadius: "16px",
     color: "#FFF7FF",
   },
-  "& .MuiOutlinedInput-notchedOutline": {
-    borderColor: "#FFF7FF",
+  "& .MuiOutlinedInput-root": {
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#FFF7FF",
+    },
+    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#FFF7FF",
+    },
   },
 });
 
