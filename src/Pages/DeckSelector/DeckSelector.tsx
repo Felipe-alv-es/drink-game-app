@@ -43,9 +43,7 @@ const DeckSelector = () => {
           isSelected={selectedDecks.includes("ObedeçaOLider")}
         />
       </Box>
-
       <DeckSelectorButton onClick={handleOnClick} />
-
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={3000}

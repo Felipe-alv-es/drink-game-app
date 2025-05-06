@@ -1,17 +1,12 @@
-import { Box, IconButton, Snackbar, Typography } from "@mui/material";
-import { FaRegTrashAlt } from "react-icons/fa";
-import {
-  getContainerStyle,
-  getPlayerNameStyle,
-  getPlayersItemStyle,
-  getTitleStyle,
-} from "./PlayerSelector.styles";
+import { Box, Snackbar, Typography } from "@mui/material";
+import { getContainerStyle, getTitleStyle } from "./PlayerSelector.styles";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { usePlayers } from "../../Context/PlayersContext";
 import PlayerInput from "./Components/PlayerInput/PlayerInput";
 import PlayerSelectorButton from "./Components/PlayerSelectorButton/PlayerSelectorButton";
 import PointsSelector from "./Components/PointsSelector/PointsSelector";
+import PlayerCard from "./Components/PlayerCard/PlayerCard";
 
 const PlayerSelector = () => {
   const navigate = useNavigate();
@@ -42,14 +37,11 @@ const PlayerSelector = () => {
           addPlayer={addPlayer}
         />
         {players.map((player, index) => (
-          <Box key={player.name} sx={getPlayersItemStyle(player)}>
-            <Typography sx={getPlayerNameStyle}>
-              {`Jogador ${index + 1}: ${player.name}`}
-            </Typography>
-            <IconButton onClick={() => removePlayer(player.name)}>
-              <FaRegTrashAlt color="#fff7ff" />
-            </IconButton>
-          </Box>
+          <PlayerCard
+            player={player}
+            index={index}
+            removePlayer={removePlayer}
+          />
         ))}
       </Box>
       <PlayerSelectorButton onClick={handleStart} />
