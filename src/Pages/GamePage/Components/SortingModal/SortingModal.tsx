@@ -1,6 +1,10 @@
 import { Box, Modal, Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { getButtonStyle, getModalStyle } from "./SortingModal.styles";
+import {
+  getButtonStyle,
+  getModalStyle,
+  getTitleStyle,
+} from "./SortingModal.styles";
 import RouletteWhell from "./RouletteWhell/RouletteWhell";
 
 interface SortingModalProps {
@@ -82,11 +86,7 @@ const SortingModal = ({
           rouletteData={rouletteData}
           setMustSpin={setMustSpin}
         />
-        {lastResult && (
-          <Typography variant="h6" align="center" sx={{ mt: 2, mb: 1 }}>
-            Resultado: {lastResult}
-          </Typography>
-        )}
+        {lastResult && <Typography sx={getTitleStyle}>{lastResult}</Typography>}
         <Button
           onClick={handleButtonClick}
           disabled={mustSpin}

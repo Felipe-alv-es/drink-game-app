@@ -17,3 +17,12 @@ export const getButtonStyle = () => ({
   fontSize: "20px",
   borderRadius: "16px",
 });
+
+export const getTitleStyle = () => ({
+  fontFamily: "kanit",
+  fontSize: "20px",
+  fontWeight: "700",
+  paddingBottom: "4px",
+  color: "#FFF7FF",
+  textAlign: "center",
+});
