@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Box, Divider, Typography } from "@mui/material";
 import CardComponent from "./Components/CardComponent/CardComponent";
 import NavigationButtons from "./Components/NavigationButtons/NavigationButtons";
@@ -19,6 +19,7 @@ import {
 import { BottomWaves, TopWaves } from "./Components/Waves/Waves";
 import WaveMessage from "./Components/WaveMessage/WaveMessage";
 import { useNavigate } from "react-router-dom";
+import SortingModal from "./Components/SortingModal/SortingModal";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const copy = [...array];
@@ -47,6 +48,8 @@ const GamePage = () => {
   );
   const [currentCard, setCurrentCard] = useState<ListTypes>(cardQueue[0]);
   const [isFirstRender, setIsFirstRender] = useState(true);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const handleClose = () => setModalOpen(false);
 
   const nextPlayer = () => {
     if (playerQueue.length <= 1) {
@@ -74,7 +77,7 @@ const GamePage = () => {
     }
   };
 
-  const handleNext = () => {
+  const advanceToNextPlayer = () => {
     nextPlayer();
     nextCard();
     setIsFliped(true);
@@ -82,6 +85,14 @@ const GamePage = () => {
       currentPlayer.name,
       challengeOrShot ? currentCard.quantity / 2 : currentCard.quantity
     );
+  };
+
+  const handleNext = () => {
+    if (currentPlayer.babymode) {
+      setModalOpen(true);
+      return;
+    }
+    advanceToNextPlayer();
   };
 
   useEffect(() => {
@@ -151,6 +162,12 @@ const GamePage = () => {
       </Box>
       <BottomWaves isVisible={isFlipped} />
       <WaveMessage isVisible={isFlipped} name={currentPlayer.name} />
+      <SortingModal
+        open={isModalOpen}
+        handleClose={handleClose}
+        quantity={currentCard.quantity / 2}
+        advanceToNextPlayer={advanceToNextPlayer}
+      />
     </Box>
   );
 };

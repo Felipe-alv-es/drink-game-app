@@ -1,11 +1,7 @@
-import { Box, Checkbox, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { getPlayerNameStyle, getPlayersItemStyle } from "./PlayerCard.styles";
 import { Player } from "../../../../Context/PlayersContext";
-//@ts-ignore
-import Pacifier from "../../../../Assets/Images/Utils/Pacifier.png";
-//@ts-ignore
-import Pacifier2 from "../../../../Assets/Images/Utils/Pacifier2.png";
 import Babymode from "../Babymode/Babymode";
 
 interface PlayerCardProps {
