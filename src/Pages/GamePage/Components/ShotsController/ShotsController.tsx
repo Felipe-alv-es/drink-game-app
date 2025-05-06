@@ -8,7 +8,7 @@ import {
 } from "./ShotsController.styles";
 //@ts-ignore
 import Shot from "../../../../Assets/Images/Utils/Shot.png";
-import { IoFlower } from "react-icons/io5";
+import { IoDice } from "react-icons/io5";
 
 interface ShotsControllerProps {
   quantity: number;
@@ -21,11 +21,11 @@ export const ShotsController = React.forwardRef<
   HTMLButtonElement,
   ShotsControllerProps
 >(({ quantity, onClick, challengeOrShot, babyMode }, ref) => {
-  const [showImage, setShowImage] = useState(babyMode);
+  const [showBabyMode, setShowBabyMode] = useState(babyMode);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setShowImage(babyMode);
+      setShowBabyMode(babyMode);
     }, 1000);
 
     return () => clearTimeout(timeoutId);
@@ -38,14 +38,16 @@ export const ShotsController = React.forwardRef<
       ref={ref}
     >
       <Box>
-        <Typography sx={getTitleStyle(challengeOrShot)}>{`Tome ${
-          quantity / 2
-        } Shots`}</Typography>
+        <Typography sx={getTitleStyle(challengeOrShot)}>
+          {showBabyMode
+            ? `Tire ${quantity / 2} Prendas`
+            : `Tome ${quantity / 2} Shots`}
+        </Typography>
         <Box sx={getIconContainerStyle}>
           {Array.from({ length: quantity / 2 }).map((_, index) => (
             <Box sx={getIconStyle(challengeOrShot)}>
-              {showImage ? (
-                <IoFlower size={54} color="#fff7ff" />
+              {showBabyMode ? (
+                <IoDice size={54} color="#fff7ff" />
               ) : (
                 <Box
                   component="img"

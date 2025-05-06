@@ -68,6 +68,7 @@ export const CardComponent = React.forwardRef<
         sx={getPreContainerStyle(animationStep, isFirstRender, hasFadedIn)}
         component={"button"}
         onClick={onClick}
+        ref={ref}
       >
         <Box sx={getRotateStyle(isFlipped)}>
           <Box sx={getContainerStyle(challengeOrShot)}>
