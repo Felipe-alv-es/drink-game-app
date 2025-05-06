@@ -1,5 +1,7 @@
 export const getPreContainerStyle = (
-  animationStep: "none" | "slideOut" | "slideUp"
+  animationStep: "none" | "slideOut" | "slideUp",
+  isFirstRender: boolean,
+  hasFadedIn: boolean
 ) => ({
   perspective: "1000px",
   width: "100%",
@@ -11,6 +13,8 @@ export const getPreContainerStyle = (
       ? "slideUp 0.7s cubic-bezier(0.25, 0.8, 0.25, 1)"
       : "none",
   borderStyle: "none",
+  opacity: isFirstRender && !hasFadedIn ? 0 : 1,
+  transition: isFirstRender ? "opacity 0.7s ease-in-out" : undefined,
   "@keyframes slideOut": {
     "0%": {
       transform: "translateX(0)",

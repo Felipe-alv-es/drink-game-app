@@ -35,6 +35,7 @@ const GamePage = () => {
   const [currentCard, setCurrentCard] = useState<DefaultListTypes>(
     cardQueue[0]
   );
+  const [isFirstRender, setIsFirstRender] = useState(true);
 
   const nextPlayer = () => {
     if (playerQueue.length <= 1) {
@@ -78,6 +79,11 @@ const GamePage = () => {
     }
   }, [players, playerQueue]);
 
+  const handleCardClick = () => {
+    setIsFirstRender(false);
+    setIsFliped(false);
+  };
+
   return (
     <Box sx={getContainerStyle}>
       <TopWaves isVisible={isFlipped} />
@@ -96,7 +102,8 @@ const GamePage = () => {
           setChallengeOrShot={setChallengeOrShot}
           challengeOrShot={challengeOrShot}
           isFlipped={isFlipped}
-          onClick={() => setIsFliped(false)}
+          isFirstRender={isFirstRender}
+          onClick={() => handleCardClick()}
         />
       </Box>
       <Box sx={getFooterStyle(isFlipped)}>

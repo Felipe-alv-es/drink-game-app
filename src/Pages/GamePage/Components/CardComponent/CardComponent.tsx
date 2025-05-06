@@ -17,6 +17,7 @@ interface CardComponentProps {
   challengeOrShot: boolean;
   setChallengeOrShot: React.Dispatch<React.SetStateAction<boolean>>;
   isFlipped: boolean;
+  isFirstRender: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -32,6 +33,7 @@ export const CardComponent = React.forwardRef<
       challengeOrShot,
       setChallengeOrShot,
       isFlipped,
+      isFirstRender,
       onClick,
     },
     ref
@@ -39,20 +41,27 @@ export const CardComponent = React.forwardRef<
     const [animationStep, setAnimationStep] = useState<
       "none" | "slideOut" | "slideUp"
     >("none");
+    const [hasFadedIn, setHasFadedIn] = useState(false);
 
     useEffect(() => {
-      if (isFlipped) {
+      if (isFirstRender) {
+        const timeout = setTimeout(() => {
+          setHasFadedIn(true);
+        }, 700);
+        setAnimationStep("slideUp");
+        return () => clearTimeout(timeout);
+      } else if (isFlipped) {
         setAnimationStep("slideOut");
         const timeout = setTimeout(() => {
           setAnimationStep("slideUp");
         }, 650);
         return () => clearTimeout(timeout);
       }
-    }, [isFlipped]);
+    }, [isFlipped, isFirstRender]);
 
     return (
       <Box
-        sx={getPreContainerStyle(animationStep)}
+        sx={getPreContainerStyle(animationStep, isFirstRender, hasFadedIn)}
         component={"button"}
         onClick={onClick}
       >
