@@ -52,12 +52,14 @@ const SortingModal = ({
     if (open && rouletteData.length > 0 && spinsLeft === quantity) {
       spinRoulette();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, rouletteData, spinsLeft, quantity]);
 
   useEffect(() => {
     if (!mustSpin && rouletteData.length > 0 && spinsLeft < quantity) {
       setLastResult(rouletteData[prizeNumber].completeOption);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mustSpin]);
 
   const handleButtonClick = () => {
