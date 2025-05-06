@@ -1,4 +1,10 @@
-import { Box, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  ToggleButton,
+  ToggleButtonGroup,
+  Typography,
+} from "@mui/material";
 import { FaRegTrashAlt } from "react-icons/fa";
 import {
   getContainerStyle,
@@ -11,6 +17,7 @@ import { useState } from "react";
 import { usePlayers } from "../../Context/PlayersContext";
 import PlayerInput from "./Components/PlayerInput/PlayerInput";
 import PlayerSelectorButton from "./Components/PlayerSelectorButton/PlayerSelectorButton";
+import PointsSelector from "./Components/PointsSelector/PointsSelector";
 
 const PlayerSelector = () => {
   const navigate = useNavigate();
@@ -26,6 +33,7 @@ const PlayerSelector = () => {
     <Box sx={getContainerStyle}>
       <Box>
         <Typography sx={getTitleStyle}>{"Adicione os jogadores"}</Typography>
+        <PointsSelector />
         <PlayerInput
           newPlayerName={newPlayerName}
           setNewPlayerName={setNewPlayerName}

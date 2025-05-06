@@ -18,6 +18,7 @@ import {
 } from "../../Assets/Arrays/DefaultList";
 import { BottomWaves, TopWaves } from "./Components/Waves/Waves";
 import WaveMessage from "./Components/WaveMessage/WaveMessage";
+import { useNavigate } from "react-router-dom";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const copy = [...array];
@@ -34,7 +35,8 @@ export const DeckMap: Record<string, ListTypes[]> = {
 };
 
 const GamePage = () => {
-  const { players, addPoints } = usePlayers();
+  const navigate = useNavigate();
+  const { players, addPoints, maxPoints } = usePlayers();
   const { selectedDecks } = useDeck();
   const [challengeOrShot, setChallengeOrShot] = useState(false);
   const [isFlipped, setIsFliped] = useState(true);
@@ -95,13 +97,20 @@ const GamePage = () => {
     setIsFliped(false);
   };
 
+  useEffect(() => {
+    const winner = players.find((player) => player.points >= maxPoints);
+    if (winner) {
+      navigate("/win-screen", { state: { winner } });
+    }
+  }, [players, maxPoints, navigate]);
+
   return (
     <Box sx={getContainerStyle}>
       <TopWaves isVisible={isFlipped} />
       <Box sx={getContentContainerStyle}>
         <ProgressComponent
           color={currentPlayer.color}
-          total={50}
+          total={20}
           current={currentPlayer.points}
           isFlipped={isFlipped}
           players={players}
