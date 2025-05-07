@@ -65,6 +65,28 @@ export const DesafioPadrão: ListTypes[] = [
     description: "E fique até o final do jogo.",
     quantity: 8,
   },
+  {
+    title: "Ligue para a última pessoa que mandou mensagem no WhatsApp",
+    description:
+      "Diga que está apaixonado(a) por ela. Só vale desmentir depois de 5 minutos.",
+    quantity: 8,
+  },
+  {
+    title: "Dance na boquinha da garrafa",
+    description:
+      "A clássica do É o Tchan! Faça a coreografia completa, sem vergonha.",
+    quantity: 8,
+  },
+  {
+    title: "Imite um animal fazendo algo sensual",
+    description: "Escolha o animal com cuidado, vai que dá certo.",
+    quantity: 8,
+  },
+  {
+    title: "Ligue para alguém e diga: 'Eu te amo, mas é segredo'",
+    description: "Sem dar risada, tem que ser sério.",
+    quantity: 6,
+  },
 ];
 
 export const ObedeçaOLider: ListTypes[] = [

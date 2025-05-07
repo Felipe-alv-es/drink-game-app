@@ -16,10 +16,10 @@ interface SortingModalProps {
 }
 
 const initialData = [
-  { option: "😌 Fácil", completeOption: "😌 Fácil" },
-  { option: "😬 Moderado", completeOption: "😬 Moderado" },
-  { option: "😖 Sofrimento", completeOption: "😖 Sofrimento" },
-  { option: "💀 Desgraçado", completeOption: "💀 Desgraçado" },
+  { option: "😱 Surpresa", completeOption: "😱 Surpresa" },
+  { option: "😳 Perguntas", completeOption: "😳 Perguntas" },
+  { option: "😖 Pimenta", completeOption: "😖 Pimenta" },
+  { option: "🎨 Artes", completeOption: "🎨 Artes" },
 ];
 
 const SortingModal = ({

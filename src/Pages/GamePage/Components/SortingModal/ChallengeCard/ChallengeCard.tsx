@@ -1,13 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Typography, Paper, Box } from "@mui/material";
 import {
-  EasyChallenges,
-  MediumChallenges,
-  SufferingChallenges,
-  BastardChallenges,
+  SurpriseChallenges,
+  QuestionChallenges,
+  PepperChallenges,
+  ArtisticChallenges,
 } from "../../../../../Assets/Arrays/Challenges";
 import {
-  getActionStyle,
   getContainerStyle,
   getDescriptionStyle,
   getFlipBoxStyle,
@@ -34,13 +33,13 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
 
   const getRandomChallenge = useMemo(() => {
     const challengeList = [
-      EasyChallenges,
-      MediumChallenges,
-      SufferingChallenges,
-      BastardChallenges,
+      SurpriseChallenges,
+      QuestionChallenges,
+      PepperChallenges,
+      ArtisticChallenges,
     ];
 
-    const selectedList = challengeList[variation] || EasyChallenges;
+    const selectedList = challengeList[variation] || SurpriseChallenges;
 
     const filtered = selectedList.filter(
       (challenge) =>
