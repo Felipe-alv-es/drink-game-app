@@ -55,6 +55,15 @@ export const getDescriptionStyle = () => ({
   fontStyle: "italic",
 });
 
+export const getActionStyle = () => ({
+  color: "#fff7ff",
+  fontSize: "14px",
+  fontWeight: "300",
+  fontFamily: "kanit",
+  fontStyle: "italic",
+  paddingBottom: "32px",
+});
+
 export const getJokeStyle = () => ({
   color: "#fff7ff",
   fontSize: "14px",

@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Typography, Paper, Box } from "@mui/material";
-import { SufferingChallenges } from "../../../../../Assets/Arrays/EmbarrassingQuestions";
 import {
+  EasyChallenges,
+  MediumChallenges,
+  SufferingChallenges,
+  BastardChallenges,
+} from "../../../../../Assets/Arrays/Challenges";
+import {
+  getActionStyle,
   getContainerStyle,
   getDescriptionStyle,
   getFlipBoxStyle,
@@ -20,10 +26,23 @@ interface ChallengeCardProps {
 
 const ChallengeCard: React.FC<ChallengeCardProps> = ({
   setShowChallengeCard,
-  variation,
+  variation = 0,
 }) => {
   const [hasEntered, setHasEntered] = useState(false);
   const [timeToFlip, setTimeToFlip] = useState(false);
+
+  const getRandomChallenge = useMemo(() => {
+    const challengeList = [
+      EasyChallenges,
+      MediumChallenges,
+      SufferingChallenges,
+      BastardChallenges,
+    ];
+
+    const selectedList = challengeList[variation] || EasyChallenges;
+    const randomIndex = Math.floor(Math.random() * selectedList.length);
+    return selectedList[randomIndex];
+  }, [variation]);
 
   useEffect(() => {
     const entryTimer = setTimeout(() => {
@@ -47,19 +66,20 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
   return (
     <Box sx={getFlipContainerStyle(hasEntered)}>
       <Box onClick={handleFlip} sx={getFlipBoxStyle(timeToFlip)}>
-        <Paper sx={getContainerStyle(variation)}>
+        <Paper elevation={6} sx={getContainerStyle(variation)}>
           <Box>
+            <Typography sx={getActionStyle}>
+              {getRandomChallenge.description}
+            </Typography>
             <Typography sx={getTitleStyle}>
-              {SufferingChallenges[0].title}
+              {getRandomChallenge.title}
             </Typography>
             <Typography sx={getDescriptionStyle}>
-              {SufferingChallenges[0].description}
+              {getRandomChallenge.description}
             </Typography>
           </Box>
           <Box>
-            <Typography sx={getJokeStyle}>
-              {SufferingChallenges[0].joke}
-            </Typography>
+            <Typography sx={getJokeStyle}>{getRandomChallenge.joke}</Typography>
             <ChallengeCardButton setShowChallengeCard={setShowChallengeCard} />
           </Box>
         </Paper>
