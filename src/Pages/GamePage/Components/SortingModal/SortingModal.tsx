@@ -66,7 +66,8 @@ const SortingModal = ({
       setLastResult(rouletteData[prizeNumber].completeOption);
       setShowChallengeCard(true);
     }
-  }, [mustSpin, rouletteData, prizeNumber]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mustSpin, prizeNumber]);
 
   const handleButtonClick = () => {
     if (spinsLeft === 1) {
