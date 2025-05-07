@@ -91,8 +91,8 @@ export const ObedeçaOLider: ListTypes[] = [
   },
   {
     title: "Nova regra: Você só pode se locomover em sua moto invisível",
-    description: "Cuidado com as câmeras.",
-    quantity: 2,
+    description: "Cuidado com os radares de velocidade.",
+    quantity: 6,
   },
 ];
 

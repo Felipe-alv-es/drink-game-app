@@ -83,9 +83,6 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
       <Box onClick={handleFlip} sx={getFlipBoxStyle(timeToFlip)}>
         <Paper elevation={6} sx={getContainerStyle(variation)}>
           <Box>
-            <Typography sx={getActionStyle}>
-              {getRandomChallenge.description}
-            </Typography>
             <Typography sx={getTitleStyle}>
               {getRandomChallenge.title}
             </Typography>

@@ -57,10 +57,16 @@ const SortingModal = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mustSpin, prizeNumber]);
 
+  useEffect(() => {
+    setSpinsLeft(quantity);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
+  console.log(open);
+
   const handleButtonClick = () => {
     if (spinsLeft === 1) {
       handleClose();
-      setSpinsLeft(quantity);
       advanceToNextPlayer();
     } else {
       setSpinsLeft((prev) => prev - 1);
