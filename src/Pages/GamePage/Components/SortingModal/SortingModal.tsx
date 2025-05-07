@@ -80,8 +80,6 @@ const SortingModal = ({
     }
   };
 
-  console.log(prizeNumber);
-
   return (
     <Modal open={open} sx={getModalStyle}>
       <>

@@ -15,9 +15,9 @@ import {
   getJokeStyle,
   getTitleStyle,
 } from "./ChallengeCard.styles";
-//@ts-ignore
 import ChallengeCardBack from "./ChallengeCardBack/ChallengeCardBack";
 import ChallengeCardButton from "./ChallengeCardButton/ChallengeCardButton";
+import { useDeck } from "../../../../../Context/DeckContext";
 
 interface ChallengeCardProps {
   setShowChallengeCard: (value: React.SetStateAction<boolean>) => void;
@@ -30,6 +30,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
 }) => {
   const [hasEntered, setHasEntered] = useState(false);
   const [timeToFlip, setTimeToFlip] = useState(false);
+  const { category: blockedCategories } = useDeck();
 
   const getRandomChallenge = useMemo(() => {
     const challengeList = [
@@ -40,9 +41,23 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
     ];
 
     const selectedList = challengeList[variation] || EasyChallenges;
-    const randomIndex = Math.floor(Math.random() * selectedList.length);
-    return selectedList[randomIndex];
-  }, [variation]);
+
+    const filtered = selectedList.filter(
+      (challenge) =>
+        !challenge.category || !blockedCategories.includes(challenge.category)
+    );
+
+    if (filtered.length === 0) {
+      return {
+        title: "Sem desafios disponíveis",
+        description: "Todos os desafios dessa categoria foram bloqueados.",
+        joke: "Tente desbloquear uma categoria para continuar.",
+      };
+    }
+
+    const randomIndex = Math.floor(Math.random() * filtered.length);
+    return filtered[randomIndex];
+  }, [variation, blockedCategories]);
 
   useEffect(() => {
     const entryTimer = setTimeout(() => {

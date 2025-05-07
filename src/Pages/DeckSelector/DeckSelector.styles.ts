@@ -22,7 +22,7 @@ export const getContainerStyle = () => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-  "> div ": {
+  "> div:first-of-type": {
     display: "flex",
     flexDirection: "column",
     gap: 2,

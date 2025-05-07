@@ -6,11 +6,16 @@ import DeckSelectorButton from "./Components/DeckSelectorButton/DeckSelectorButt
 import { useDeck } from "../../Context/DeckContext";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import DeckSelectorModal from "./Components/DeckSelectorModal/DeckSelectorModal";
+import DeckSelectorMenuButton from "./Components/DeckSelectorMenuButton/DeckSelectorMenuButton";
 
 const DeckSelector = () => {
   const navigate = useNavigate();
   const { toggleDeck, selectedDecks } = useDeck();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const handleClose = () => setOpen(false);
+  const handleOpen = () => setOpen(true);
 
   const handleOnClick = () => {
     if (selectedDecks.length === 0) {
@@ -43,7 +48,11 @@ const DeckSelector = () => {
           isSelected={selectedDecks.includes("ObedeçaOLider")}
         />
       </Box>
-      <DeckSelectorButton onClick={handleOnClick} />
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+        <DeckSelectorMenuButton handleOpen={handleOpen} />
+        <DeckSelectorButton onClick={handleOnClick} />
+      </Box>
+      <DeckSelectorModal open={open} handleClose={handleClose} />
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={3000}
