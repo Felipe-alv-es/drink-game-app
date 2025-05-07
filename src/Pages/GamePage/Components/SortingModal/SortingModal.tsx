@@ -6,6 +6,7 @@ import {
   getTitleStyle,
 } from "./SortingModal.styles";
 import RouletteWhell from "./RouletteWhell/RouletteWhell";
+import ChallengeCard from "./ChallengeCard/ChallengeCard";
 
 interface SortingModalProps {
   open: boolean;
@@ -34,6 +35,7 @@ const SortingModal = ({
   >([]);
   const [spinsLeft, setSpinsLeft] = useState(quantity);
   const [lastResult, setLastResult] = useState<string | null>(null);
+  const [showChallengeCard, setShowChallengeCard] = useState(false);
 
   const spinRoulette = () => {
     if (!mustSpin && spinsLeft > 0) {
@@ -60,12 +62,14 @@ const SortingModal = ({
   }, [open, rouletteData, spinsLeft, quantity]);
 
   useEffect(() => {
-    if (!mustSpin && rouletteData.length > 0 && spinsLeft < quantity) {
+    if (!mustSpin && rouletteData.length > 0 && prizeNumber >= 0) {
+      // Quando o spin terminar e o prizeNumber estiver válido
       setLastResult(rouletteData[prizeNumber].completeOption);
+      setShowChallengeCard(true); // Exibe o card de desafio imediatamente
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mustSpin]);
+  }, [mustSpin, rouletteData, prizeNumber]);
 
+  console.log(showChallengeCard);
   const handleButtonClick = () => {
     if (spinsLeft === 1) {
       handleClose();
@@ -79,24 +83,31 @@ const SortingModal = ({
 
   return (
     <Modal open={open} onClose={handleClose} sx={getModalStyle}>
-      <Box>
-        <RouletteWhell
-          mustSpin={mustSpin}
-          prizeNumber={prizeNumber}
-          rouletteData={rouletteData}
-          setMustSpin={setMustSpin}
-        />
-        {lastResult && <Typography sx={getTitleStyle}>{lastResult}</Typography>}
-        <Button
-          onClick={handleButtonClick}
-          disabled={mustSpin}
-          fullWidth
-          variant="contained"
-          sx={getButtonStyle}
-        >
-          {spinsLeft === 1 ? "Completo" : `Giros restantes: ${spinsLeft - 1}`}
-        </Button>
-      </Box>
+      <>
+        <Box>
+          <RouletteWhell
+            mustSpin={mustSpin}
+            prizeNumber={prizeNumber}
+            rouletteData={rouletteData}
+            setMustSpin={setMustSpin}
+          />
+          {lastResult && (
+            <Typography sx={getTitleStyle}>{lastResult}</Typography>
+          )}
+          <Button
+            onClick={handleButtonClick}
+            disabled={mustSpin}
+            fullWidth
+            variant="contained"
+            sx={getButtonStyle}
+          >
+            {spinsLeft === 1 ? "Completo" : `Giros restantes: ${spinsLeft - 1}`}
+          </Button>
+        </Box>
+        {showChallengeCard && (
+          <ChallengeCard setShowChallengeCard={setShowChallengeCard} />
+        )}
+      </>
     </Modal>
   );
 };
