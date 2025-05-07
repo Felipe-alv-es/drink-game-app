@@ -13,12 +13,14 @@ import CardComponentBack from "../CardComponentBack/CardComponentBack";
 interface CardComponentProps {
   title: string;
   description: string;
+  quantity: number;
   playerName: string;
   challengeOrShot: boolean;
   setChallengeOrShot: React.Dispatch<React.SetStateAction<boolean>>;
   isFlipped: boolean;
   isFirstRender: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  showBabyMode: boolean;
 }
 
 export const CardComponent = React.forwardRef<
@@ -29,12 +31,14 @@ export const CardComponent = React.forwardRef<
     {
       title,
       description,
+      quantity,
       playerName,
       challengeOrShot,
       setChallengeOrShot,
       isFlipped,
       isFirstRender,
       onClick,
+      showBabyMode,
     },
     ref
   ) => {
@@ -45,16 +49,13 @@ export const CardComponent = React.forwardRef<
 
     useEffect(() => {
       if (isFirstRender) {
-        const timeout = setTimeout(() => {
-          setHasFadedIn(true);
-        }, 700);
+        setHasFadedIn(true);
         setAnimationStep("slideUp");
-        return () => clearTimeout(timeout);
       } else if (isFlipped) {
         setAnimationStep("slideOut");
         const timeout = setTimeout(() => {
           setAnimationStep("slideUp");
-        }, 650);
+        }, 700);
         return () => clearTimeout(timeout);
       }
     }, [isFlipped, isFirstRender]);
@@ -64,6 +65,7 @@ export const CardComponent = React.forwardRef<
         sx={getPreContainerStyle(animationStep, isFirstRender, hasFadedIn)}
         component={"button"}
         onClick={onClick}
+        ref={ref}
       >
         <Box sx={getRotateStyle(isFlipped)}>
           <Box sx={getContainerStyle(challengeOrShot)}>
@@ -76,9 +78,10 @@ export const CardComponent = React.forwardRef<
             />
             <SideSelector challengeOrShot={challengeOrShot} />
             <ShotsController
-              quantity={4}
+              quantity={quantity}
               onClick={() => setChallengeOrShot(true)}
               challengeOrShot={challengeOrShot}
+              showBabyMode={showBabyMode}
             />
           </Box>
           <CardComponentBack />

@@ -3,12 +3,24 @@ import { createContext, useContext, useState, ReactNode } from "react";
 interface DeckContextType {
   selectedDecks: string[];
   toggleDeck: (deckName: string) => void;
+  category: string[];
+  addCategory: (newCategory: string) => void;
+  removeCategory: (categoryToRemove: string) => void;
 }
 
 const DeckContext = createContext<DeckContextType | undefined>(undefined);
 
-const DeckProvider = ({ children }: { children: ReactNode }) => {
+interface DeckProviderProps {
+  children: ReactNode;
+  initialCategory?: string[];
+}
+
+const DeckProvider = ({
+  children,
+  initialCategory = [],
+}: DeckProviderProps) => {
   const [selectedDecks, setSelectedDecks] = useState<string[]>([]);
+  const [category, setCategory] = useState<string[]>(initialCategory);
 
   const toggleDeck = (deckName: string) => {
     setSelectedDecks((prevDecks) =>
@@ -18,8 +30,26 @@ const DeckProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  const addCategory = (newCategory: string) => {
+    setCategory((prev) =>
+      prev.includes(newCategory) ? prev : [...prev, newCategory]
+    );
+  };
+
+  const removeCategory = (categoryToRemove: string) => {
+    setCategory((prev) => prev.filter((c) => c !== categoryToRemove));
+  };
+
   return (
-    <DeckContext.Provider value={{ selectedDecks, toggleDeck }}>
+    <DeckContext.Provider
+      value={{
+        selectedDecks,
+        toggleDeck,
+        category,
+        addCategory,
+        removeCategory,
+      }}
+    >
       {children}
     </DeckContext.Provider>
   );

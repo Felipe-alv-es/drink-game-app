@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">drink-game.app</string>
+    <string name="title_activity_main">drink-game.app</string>
+    <string name="package_name">drinkgame.app.id</string>
+    <string name="custom_url_scheme">drinkgame.app.id</string>
+</resources>

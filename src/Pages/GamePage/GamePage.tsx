@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Box, Divider, Typography } from "@mui/material";
 import CardComponent from "./Components/CardComponent/CardComponent";
 import NavigationButtons from "./Components/NavigationButtons/NavigationButtons";
@@ -19,6 +19,7 @@ import {
 import { BottomWaves, TopWaves } from "./Components/Waves/Waves";
 import WaveMessage from "./Components/WaveMessage/WaveMessage";
 import { useNavigate } from "react-router-dom";
+import SortingModal from "./Components/SortingModal/SortingModal";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const copy = [...array];
@@ -47,6 +48,8 @@ const GamePage = () => {
   );
   const [currentCard, setCurrentCard] = useState<ListTypes>(cardQueue[0]);
   const [isFirstRender, setIsFirstRender] = useState(true);
+  const [isModalOpen, setModalOpen] = useState(false);
+  const handleClose = () => setModalOpen(false);
 
   const nextPlayer = () => {
     if (playerQueue.length <= 1) {
@@ -74,7 +77,7 @@ const GamePage = () => {
     }
   };
 
-  const handleNext = () => {
+  const advanceToNextPlayer = () => {
     nextPlayer();
     nextCard();
     setIsFliped(true);
@@ -82,6 +85,14 @@ const GamePage = () => {
       currentPlayer.name,
       challengeOrShot ? currentCard.quantity / 2 : currentCard.quantity
     );
+  };
+
+  const handleNext = () => {
+    if (currentPlayer.babymode && challengeOrShot) {
+      setModalOpen(true);
+      return;
+    }
+    advanceToNextPlayer();
   };
 
   useEffect(() => {
@@ -104,13 +115,23 @@ const GamePage = () => {
     }
   }, [players, maxPoints, navigate]);
 
+  const [showBabyMode, setShowBabyMode] = useState(currentPlayer.babymode);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowBabyMode(currentPlayer.babymode);
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
+  }, [currentPlayer.babymode]);
+
   return (
     <Box sx={getContainerStyle}>
       <TopWaves isVisible={isFlipped} />
       <Box sx={getContentContainerStyle}>
         <ProgressComponent
           color={currentPlayer.color}
-          total={20}
+          total={maxPoints}
           current={currentPlayer.points}
           isFlipped={isFlipped}
           players={players}
@@ -118,12 +139,14 @@ const GamePage = () => {
         <CardComponent
           title={currentCard.title}
           description={currentCard.description}
+          quantity={currentCard.quantity}
           playerName={currentPlayer.name}
           setChallengeOrShot={setChallengeOrShot}
           challengeOrShot={challengeOrShot}
           isFlipped={isFlipped}
           isFirstRender={isFirstRender}
           onClick={() => handleCardClick()}
+          showBabyMode={showBabyMode}
         />
       </Box>
       <Box sx={getFooterStyle(isFlipped)}>
@@ -134,11 +157,21 @@ const GamePage = () => {
               challengeOrShot ? currentCard.quantity / 2 : currentCard.quantity
             } pontos`}
           </Typography>
-          <NavigationButtons onClick={handleNext} />
+          <NavigationButtons
+            onClick={handleNext}
+            babyMode={showBabyMode}
+            challengeOrShot={challengeOrShot}
+          />
         </Box>
       </Box>
       <BottomWaves isVisible={isFlipped} />
       <WaveMessage isVisible={isFlipped} name={currentPlayer.name} />
+      <SortingModal
+        open={isModalOpen}
+        handleClose={handleClose}
+        quantity={currentCard.quantity / 2}
+        advanceToNextPlayer={advanceToNextPlayer}
+      />
     </Box>
   );
 };

@@ -5,15 +5,18 @@ import { getButtonStyle } from "./NavigationButtons.styles";
 
 interface NavigationButtonsProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  babyMode: boolean;
+  challengeOrShot: boolean;
 }
 
 export const NavigationButtons = React.forwardRef<
   HTMLButtonElement,
   NavigationButtonsProps
->(({ onClick }, ref) => {
+>(({ onClick, babyMode, challengeOrShot }, ref) => {
   return (
     <Button variant="contained" sx={getButtonStyle} onClick={onClick}>
-      {"Feito"} <FaArrowRight size={24} />
+      {babyMode && challengeOrShot ? "Castigo" : "Feito"}{" "}
+      <FaArrowRight size={24} />
     </Button>
   );
 });

@@ -5,42 +5,21 @@ import React, {
   useState,
   ReactNode,
 } from "react";
+import { playerColors } from "../Assets/Arrays/PlayerColors";
 
 export interface Player {
   name: string;
   color: string;
   points: number;
+  babymode: boolean;
 }
-
-const playerColors = [
-  "#e57373",
-  "#64b5f6",
-  "#81c784",
-  "#ffd54f",
-  "#ba68c8",
-  "#4dd0e1",
-  "#ff8a65",
-  "#a1887f",
-  "#90a4ae",
-  "#f06292",
-  "#9575cd",
-  "#4caf50",
-  "#ffb74d",
-  "#7986cb",
-  "#e0e0e0",
-  "#f44336",
-  "#2196f3",
-  "#00bcd4",
-  "#9c27b0",
-  "#cddc39",
-];
-
 interface PlayersContextType {
   players: Player[];
   addPlayer: (name: string) => void;
   removePlayer: (name: string) => void;
   clearPlayers: () => void;
   addPoints: (name: string, pointsToAdd: number) => void;
+  setBabymode: (name: string, value: boolean) => void;
   maxPoints: number;
   setMaxPoints: (value: number) => void;
 }
@@ -53,7 +32,14 @@ export const PlayersProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const stored = localStorage.getItem("players");
-    if (stored) setPlayers(JSON.parse(stored));
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      const updated = parsed.map((p: any) => ({
+        ...p,
+        babymode: p.babymode ?? false,
+      }));
+      setPlayers(updated);
+    }
   }, []);
 
   useEffect(() => {
@@ -63,7 +49,15 @@ export const PlayersProvider = ({ children }: { children: ReactNode }) => {
   const addPlayer = (name: string) => {
     if (!name.trim() || players.find((p) => p.name === name)) return;
     const color = playerColors[players.length % playerColors.length];
-    setPlayers((prev) => [...prev, { name, color, points: 0 }]);
+    setPlayers((prev) => [
+      ...prev,
+      {
+        name,
+        color,
+        points: 0,
+        babymode: false,
+      },
+    ]);
   };
 
   const removePlayer = (name: string) => {
@@ -82,6 +76,14 @@ export const PlayersProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  const setBabymode = (name: string, value: boolean) => {
+    setPlayers((prev) =>
+      prev.map((player) =>
+        player.name === name ? { ...player, babymode: value } : player
+      )
+    );
+  };
+
   return (
     <PlayersContext.Provider
       value={{
@@ -90,6 +92,7 @@ export const PlayersProvider = ({ children }: { children: ReactNode }) => {
         removePlayer,
         clearPlayers,
         addPoints,
+        setBabymode,
         maxPoints,
         setMaxPoints,
       }}

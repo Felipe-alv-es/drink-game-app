@@ -1,4 +1,3 @@
-import { Player } from "../../Context/PlayersContext";
 import { keyframes } from "@mui/material";
 
 const gradientShift = keyframes`
@@ -32,21 +31,4 @@ export const getTitleStyle = () => ({
   paddingBottom: "4px",
   color: "#FFF7FF",
   textAlign: "center",
-});
-
-export const getPlayersItemStyle = (player: Player) => ({
-  background: player.color,
-  padding: "16px",
-  borderRadius: "16px",
-  display: "flex",
-  gap: 2,
-  alignItems: "center",
-  marginBottom: "12px",
-  justifyContent: "space-between",
-});
-
-export const getPlayerNameStyle = () => ({
-  fontSize: "20px",
-  fontFamily: "kanit",
-  color: "#FFF7FF",
 });
