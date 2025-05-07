@@ -16,10 +16,10 @@ interface SortingModalProps {
 }
 
 const initialData = [
-  { text: "😌 Fácil" },
-  { text: "😬 Moderado" },
-  { text: "😖 Sofrimento" },
-  { text: "💀 Desgraçado" },
+  { option: "😌 Fácil", completeOption: "😌 Fácil" },
+  { option: "😬 Moderado", completeOption: "😬 Moderado" },
+  { option: "😖 Sofrimento", completeOption: "😖 Sofrimento" },
+  { option: "💀 Desgraçado", completeOption: "💀 Desgraçado" },
 ];
 
 const SortingModal = ({
@@ -30,40 +30,28 @@ const SortingModal = ({
 }: SortingModalProps) => {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
-  const [rouletteData, setRouletteData] = useState<
-    { option: string; completeOption: string }[]
-  >([]);
   const [spinsLeft, setSpinsLeft] = useState(quantity);
   const [lastResult, setLastResult] = useState<string | null>(null);
   const [showChallengeCard, setShowChallengeCard] = useState(false);
 
   const spinRoulette = () => {
     if (!mustSpin && spinsLeft > 0) {
-      const newPrize = Math.floor(Math.random() * rouletteData.length);
+      const newPrize = Math.floor(Math.random() * initialData.length);
       setPrizeNumber(newPrize);
       setMustSpin(true);
     }
   };
 
   useEffect(() => {
-    const formatted = initialData.map((item) => ({
-      completeOption: item.text,
-      option:
-        item.text.length > 30 ? item.text.slice(0, 30) + "..." : item.text,
-    }));
-    setRouletteData(formatted);
-  }, []);
-
-  useEffect(() => {
-    if (open && rouletteData.length > 0 && spinsLeft === quantity) {
+    if (open && initialData.length > 0 && spinsLeft === quantity) {
       spinRoulette();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, rouletteData, spinsLeft, quantity]);
+  }, [open, initialData, spinsLeft, quantity]);
 
   useEffect(() => {
-    if (!mustSpin && rouletteData.length > 0 && prizeNumber >= 0) {
-      setLastResult(rouletteData[prizeNumber].completeOption);
+    if (!mustSpin && initialData.length > 0 && prizeNumber >= 0) {
+      setLastResult(initialData[prizeNumber].completeOption);
       setShowChallengeCard(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -87,7 +75,7 @@ const SortingModal = ({
           <RouletteWhell
             mustSpin={mustSpin}
             prizeNumber={prizeNumber}
-            rouletteData={rouletteData}
+            rouletteData={initialData}
             setMustSpin={setMustSpin}
           />
           {lastResult && (
