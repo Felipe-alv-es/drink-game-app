@@ -81,7 +81,7 @@ const SortingModal = ({
   };
 
   return (
-    <Modal open={open} onClose={handleClose} sx={getModalStyle}>
+    <Modal open={open} sx={getModalStyle}>
       <>
         <Box>
           <RouletteWhell
