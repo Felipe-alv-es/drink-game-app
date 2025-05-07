@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { Player } from "../../Context/PlayersContext";
@@ -10,7 +11,6 @@ import {
   getTitleStyle,
 } from "./WinScreen.styles";
 import RouletteWhell from "../GamePage/Components/SortingModal/RouletteWhell/RouletteWhell";
-import { useEffect, useState } from "react";
 import ChallengeCard from "../GamePage/Components/SortingModal/ChallengeCard/ChallengeCard";
 
 const SPIN_DURATION = 3000;
@@ -94,21 +94,18 @@ const WinScreen = () => {
       <Typography sx={getDescriptionStyle}>
         Com {winner.points} pontos!
       </Typography>
-
       {!isComplete && (
         <Typography sx={{ paddingBottom: "24px", fontSize: 20 }}>
           Sorteando prenda para:
           <strong>{losers[currentLoserIndex]?.name}</strong>
         </Typography>
       )}
-
       <RouletteWhell
         mustSpin={mustSpin}
         prizeNumber={prizeNumber}
         rouletteData={initialData}
         setMustSpin={setMustSpin}
       />
-
       <WinScreenButton
         handleRestart={isComplete ? handleRestart : handleSpinClick}
         label={
@@ -122,6 +119,7 @@ const WinScreen = () => {
         <ChallengeCard
           setShowChallengeCard={setShowChallengeCard}
           variation={prizeNumber}
+          isFinalRoulette
         />
       )}
     </Box>

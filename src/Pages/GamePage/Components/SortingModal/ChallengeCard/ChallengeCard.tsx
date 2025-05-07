@@ -7,6 +7,12 @@ import {
   ArtisticChallenges,
 } from "../../../../../Assets/Arrays/Challenges";
 import {
+  EasyChallenges,
+  MediumChallenges,
+  SufferingChallenges,
+  BastardChallenges,
+} from "../../../../../Assets/Arrays/FinalChallenges";
+import {
   getContainerStyle,
   getDescriptionStyle,
   getFlipBoxStyle,
@@ -21,11 +27,13 @@ import { useDeck } from "../../../../../Context/DeckContext";
 interface ChallengeCardProps {
   setShowChallengeCard: (value: React.SetStateAction<boolean>) => void;
   variation?: number;
+  isFinalRoulette?: boolean;
 }
 
 const ChallengeCard: React.FC<ChallengeCardProps> = ({
   setShowChallengeCard,
   variation = 0,
+  isFinalRoulette,
 }) => {
   const [hasEntered, setHasEntered] = useState(false);
   const [timeToFlip, setTimeToFlip] = useState(false);
@@ -33,10 +41,10 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
 
   const getRandomChallenge = useMemo(() => {
     const challengeList = [
-      SurpriseChallenges,
-      QuestionChallenges,
-      PepperChallenges,
-      ArtisticChallenges,
+      isFinalRoulette ? EasyChallenges : SurpriseChallenges,
+      isFinalRoulette ? MediumChallenges : QuestionChallenges,
+      isFinalRoulette ? SufferingChallenges : PepperChallenges,
+      isFinalRoulette ? BastardChallenges : ArtisticChallenges,
     ];
 
     const selectedList = challengeList[variation] || SurpriseChallenges;
