@@ -63,13 +63,11 @@ const SortingModal = ({
 
   useEffect(() => {
     if (!mustSpin && rouletteData.length > 0 && prizeNumber >= 0) {
-      // Quando o spin terminar e o prizeNumber estiver válido
       setLastResult(rouletteData[prizeNumber].completeOption);
-      setShowChallengeCard(true); // Exibe o card de desafio imediatamente
+      setShowChallengeCard(true);
     }
   }, [mustSpin, rouletteData, prizeNumber]);
 
-  console.log(showChallengeCard);
   const handleButtonClick = () => {
     if (spinsLeft === 1) {
       handleClose();

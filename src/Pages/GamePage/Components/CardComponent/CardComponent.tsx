@@ -49,16 +49,13 @@ export const CardComponent = React.forwardRef<
 
     useEffect(() => {
       if (isFirstRender) {
-        const timeout = setTimeout(() => {
-          setHasFadedIn(true);
-        }, 700);
+        setHasFadedIn(true);
         setAnimationStep("slideUp");
-        return () => clearTimeout(timeout);
       } else if (isFlipped) {
         setAnimationStep("slideOut");
         const timeout = setTimeout(() => {
           setAnimationStep("slideUp");
-        }, 650);
+        }, 700);
         return () => clearTimeout(timeout);
       }
     }, [isFlipped, isFirstRender]);

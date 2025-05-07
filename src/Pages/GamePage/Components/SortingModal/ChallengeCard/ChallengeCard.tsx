@@ -19,7 +19,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
   setShowChallengeCard,
 }) => {
   const [hasEntered, setHasEntered] = useState(false);
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [timeToFlip, setTimeToFlip] = useState(false);
 
   useEffect(() => {
     const entryTimer = setTimeout(() => {
@@ -27,7 +27,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
     }, 50);
 
     const flipTimer = setTimeout(() => {
-      setIsFlipped(true);
+      setTimeToFlip(true);
     }, 1500);
 
     return () => {
@@ -37,7 +37,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
   }, []);
 
   const handleFlip = () => {
-    setIsFlipped((prev) => !prev);
+    setTimeToFlip((prev) => !prev);
   };
 
   return (
@@ -62,7 +62,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
           width: "100%",
           transformStyle: "preserve-3d",
           transition: "transform 0.8s",
-          transform: isFlipped ? "rotateY(0deg)" : "rotateY(180deg)", // Card flip
+          transform: timeToFlip ? "rotateY(0deg)" : "rotateY(180deg)",
           position: "relative",
         }}
       >
