@@ -80,6 +80,8 @@ const SortingModal = ({
     }
   };
 
+  console.log(prizeNumber);
+
   return (
     <Modal open={open} sx={getModalStyle}>
       <>
@@ -104,7 +106,10 @@ const SortingModal = ({
           </Button>
         </Box>
         {showChallengeCard && (
-          <ChallengeCard setShowChallengeCard={setShowChallengeCard} />
+          <ChallengeCard
+            setShowChallengeCard={setShowChallengeCard}
+            variation={prizeNumber}
+          />
         )}
       </>
     </Modal>

@@ -1,37 +1,25 @@
 import { Paper, Box } from "@mui/material";
-
+import {
+  getCardbackFlipContainerStyle,
+  getCardbackImageStyle,
+  getContainerStyle,
+} from "./ChallengeCardBack.styles";
 //@ts-ignore
-import FourEnemy from "../../../../../../Assets/Images/Utils/FourEnemy.png";
+import Logo from "../../../../../../Assets/Images/Logo/Logo.png";
 
-const ChallengeCardBack = () => {
+interface ChallengeCardBackProps {
+  variation?: number;
+}
+
+const ChallengeCardBack: React.FC<ChallengeCardBackProps> = ({ variation }) => {
   return (
-    <Box
-      sx={{
-        backfaceVisibility: "hidden",
-        transform: "rotateY(180deg)",
-        position: "absolute",
-        width: "95vw",
-        height: "80vh",
-        borderRadius: "32px",
-      }}
-    >
-      <Paper
-        sx={{
-          width: "100%",
-          height: "100%",
-          borderRadius: "32px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          background: "linear-gradient(135deg, #6a0dad, #5e2b97, #3e1f63)",
-        }}
-      >
+    <Box sx={getCardbackFlipContainerStyle}>
+      <Paper sx={getContainerStyle(variation)}>
         <Box
           component="img"
-          src={FourEnemy}
-          alt="Man avatar generic image"
-          sx={{ height: "200px", width: "200px", borderRadius: "200px" }}
+          src={Logo}
+          alt="Enemy avatar"
+          sx={getCardbackImageStyle}
         />
       </Paper>
     </Box>
