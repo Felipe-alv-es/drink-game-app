@@ -78,13 +78,15 @@ const GamePage = () => {
   };
 
   const advanceToNextPlayer = () => {
-    nextPlayer();
-    nextCard();
     setIsFliped(true);
+    nextPlayer();
     addPoints(
       currentPlayer.name,
       challengeOrShot ? currentCard.quantity / 2 : currentCard.quantity
     );
+    setTimeout(() => {
+      nextCard();
+    }, 100);
   };
 
   const handleNext = () => {
