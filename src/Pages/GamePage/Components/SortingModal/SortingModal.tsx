@@ -37,7 +37,10 @@ const SortingModal = ({
 
   const spinRoulette = () => {
     if (!mustSpin && spinsLeft > 0) {
-      const newPrize = Math.floor(Math.random() * initialData.length);
+      let newPrize;
+      do {
+        newPrize = Math.floor(Math.random() * initialData.length);
+      } while (newPrize === prizeNumber && initialData.length > 1);
       setPrizeNumber(newPrize);
       setMustSpin(true);
     }
