@@ -15,6 +15,7 @@ import {
   DesafioPadrão,
   ListTypes,
   ObedeçaOLider,
+  ConstrangimentoAdulto,
 } from "../../Assets/Arrays/DefaultList";
 import { BottomWaves, TopWaves } from "./Components/Waves/Waves";
 import WaveMessage from "./Components/WaveMessage/WaveMessage";
@@ -33,6 +34,7 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 export const DeckMap: Record<string, ListTypes[]> = {
   DesafioPadrão,
   ObedeçaOLider,
+  ConstrangimentoAdulto,
 };
 
 const GamePage = () => {

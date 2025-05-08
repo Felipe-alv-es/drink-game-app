@@ -1,7 +1,11 @@
 import { Box, Typography, Snackbar } from "@mui/material";
 import { getContainerStyle, getTitleStyle } from "./DeckSelector.styles";
 import DeckItem from "./Components/DeckItem/DeckItem";
-import { DesafioPadrão, ObedeçaOLider } from "../../Assets/Arrays/DefaultList";
+import {
+  DesafioPadrão,
+  ObedeçaOLider,
+  ConstrangimentoAdulto,
+} from "../../Assets/Arrays/DefaultList";
 import DeckSelectorButton from "./Components/DeckSelectorButton/DeckSelectorButton";
 import { useDeck } from "../../Context/DeckContext";
 import { useNavigate } from "react-router-dom";
@@ -46,6 +50,14 @@ const DeckSelector = () => {
           color="#fff7ff"
           onClick={() => toggleDeck("ObedeçaOLider")}
           isSelected={selectedDecks.includes("ObedeçaOLider")}
+        />
+        <DeckItem
+          title="ConstrangimentoAdulto"
+          questions={ConstrangimentoAdulto}
+          background="#BC8F8F"
+          color="#fff7ff"
+          onClick={() => toggleDeck("ConstrangimentoAdulto")}
+          isSelected={selectedDecks.includes("ConstrangimentoAdulto")}
         />
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>

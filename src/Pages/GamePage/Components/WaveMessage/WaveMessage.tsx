@@ -33,7 +33,7 @@ const WaveMessage = ({ isVisible, name }: WaveMessageProps) => {
           fontFamily: "kanit",
         }}
       >
-        {`Deixe os problemas de amanhã, pro ${name} de amanhã`}
+        {`Deixe os problemas de amanhã, para você de amanhã`}
       </Typography>
     </Box>
   );
