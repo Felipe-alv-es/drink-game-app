@@ -71,43 +71,43 @@ export const DesafioPadrão: ListTypes[] = [
 
 export const ObedeçaOLider: ListTypes[] = [
   {
-    title: "Nova regra: Ninguém pode xingar por três rodadas",
-    description: "Beba toda vez que vacilar.",
+    title: "Ninguém pode xingar",
+    description: "Dura três rodadas, Beba toda vez que vacilar.",
     quantity: 4,
   },
   {
-    title:
-      "Nova regra: Todas as frases devem soar como perguntas por três rodadas",
-    description: "Toda vez que vacilar? Não aguento mais beber?",
+    title: "Todas as frases devem soar como perguntas",
+    description: "Dura três rodadas ? Não aguento mais beber?",
     quantity: 4,
   },
   {
-    title: "Nova regra: Se atire no chão quando alguém gritar “Granada”",
-    description: "Mais fácil continuar no chão.",
+    title: "Se atire no chão quando alguém gritar “Granada”",
+    description: "Dura três rodadas, Mais fácil continuar no chão.",
     quantity: 8,
   },
   {
-    title: "Nova regra: Você só pode conversar cochichando por três rodadas",
-    description: "Beba toda vez que falhar.",
+    title: "Você só pode conversar cochichando",
+    description: "Dura três rodadas, Beba toda vez que falhar.",
     quantity: 4,
   },
   {
-    title: "Nova regra: Você só pode se locomover em sua moto invisível",
-    description: "Cuidado com os radares de velocidade.",
+    title: "Você só pode se locomover em sua moto invisível",
+    description: "Dura três rodadas, cuidado com os radares de velocidade.",
     quantity: 6,
   },
 ];
 
 export const ConstrangimentoAdulto: ListTypes[] = [
   {
-    title:
-      "Envie uma mensagem de voz dizendo tudo o que vai fazer com seu terceiro contato na cama",
-    description: "Grave com emoção e mande",
+    title: "Mensagem de voz picante",
+    description:
+      "Envie uma mensagem de voz dizendo o que fará com seu 3º contato na cama. Capriche na emoção!",
     quantity: 8,
   },
   {
-    title: "Poste um status dizendo o que você gosta de fazer na hora H",
-    description: "Com detalhes, a galera precisa saber.",
+    title: "Status picante",
+    description:
+      "Poste um status dizendo o que você gosta de fazer na hora H, com detalhes — a galera precisa saber.",
     quantity: 8,
   },
   {

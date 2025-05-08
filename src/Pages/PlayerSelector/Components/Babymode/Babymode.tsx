@@ -24,7 +24,7 @@ const Babymode = ({ playerName }: BabymodeProps) => {
 
   return (
     <Box sx={getContainerStyle}>
-      <Typography sx={getTitleStyle}>{"Babymode: "}</Typography>
+      <Typography sx={getTitleStyle}>{"Sem alcool: "}</Typography>
       <Checkbox
         checked={isChecked}
         onChange={handleChange}
