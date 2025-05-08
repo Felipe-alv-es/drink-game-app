@@ -21,6 +21,7 @@ import { BottomWaves, TopWaves } from "./Components/Waves/Waves";
 import WaveMessage from "./Components/WaveMessage/WaveMessage";
 import { useNavigate } from "react-router-dom";
 import SortingModal from "./Components/SortingModal/SortingModal";
+import ExitGameModal from "./Components/ExitGamemodal/ExitGamemodal";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const copy = [...array];
@@ -39,7 +40,8 @@ export const DeckMap: Record<string, ListTypes[]> = {
 
 const GamePage = () => {
   const navigate = useNavigate();
-  const { players, addPoints, maxPoints } = usePlayers();
+  const { players, addPoints, maxPoints, clearPlayers, setMaxPoints } =
+    usePlayers();
   const { selectedDecks } = useDeck();
   const [challengeOrShot, setChallengeOrShot] = useState(false);
   const [isFlipped, setIsFliped] = useState(true);
@@ -52,6 +54,8 @@ const GamePage = () => {
   const [isFirstRender, setIsFirstRender] = useState(true);
   const [isModalOpen, setModalOpen] = useState(false);
   const handleClose = () => setModalOpen(false);
+  const [isExitModalOpen, setExitModalOpen] = useState(false);
+  const handleExitClose = () => setExitModalOpen(false);
 
   const nextPlayer = () => {
     if (playerQueue.length <= 1) {
@@ -129,6 +133,29 @@ const GamePage = () => {
     return () => clearTimeout(timeoutId);
   }, [currentPlayer.babymode]);
 
+  useEffect(() => {
+    const handleBack = (event: PopStateEvent) => {
+      event.preventDefault();
+      setExitModalOpen(true);
+      window.history.pushState(null, "", window.location.href);
+    };
+
+    window.history.pushState(null, "", window.location.href);
+    window.addEventListener("popstate", handleBack);
+
+    return () => {
+      window.removeEventListener("popstate", handleBack);
+    };
+  }, []);
+
+  const handleConfirmExit = () => {
+    setExitModalOpen(false);
+    clearPlayers();
+    setMaxPoints(50);
+    localStorage.removeItem("players");
+    navigate("/");
+  };
+
   return (
     <Box sx={getContainerStyle}>
       <TopWaves isVisible={isFlipped} />
@@ -175,6 +202,11 @@ const GamePage = () => {
         handleClose={handleClose}
         quantity={currentCard.quantity / 2}
         advanceToNextPlayer={advanceToNextPlayer}
+      />
+      <ExitGameModal
+        open={isExitModalOpen}
+        onClose={handleExitClose}
+        onConfirmExit={handleConfirmExit}
       />
     </Box>
   );
