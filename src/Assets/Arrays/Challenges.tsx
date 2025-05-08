@@ -96,7 +96,6 @@ export const PepperChallenges = [
     description:
       "Três gotas? Acho que você vai precisar de água... ou de coragem!",
     joke: "Se sobreviver, pode se considerar imune ao fogo!",
-    quantity: 8,
     category: "Pimenta",
   },
   {
@@ -109,7 +108,7 @@ export const PepperChallenges = [
   {
     title: "Beba um shot de pimenta com tequila",
     description: "Uma combinação explosiva que vai deixar sua boca em chamas.",
-    joke: "Se conseguir engolir sem fazer careta, a próxima rodada vai ser mais tranquila.",
+    joke: "Se não beber alcool, pode ser vinagre ou algo igualmente ruim",
     category: "Pimenta",
   },
 ];
@@ -127,14 +126,12 @@ export const ArtisticChallenges = [
     description:
       "Deixe seu visual bem 'vintage' com um bigodinho clássico na cara.",
     joke: "Se alguém não reconhecer, a próxima rodada vai ter que ser com bigodinho de verdade.",
-    quantity: 8,
     category: "Desenho",
   },
   {
     title: "Desenhe uma piroca na testa",
     description: "Deixe sua testa bem 'artística' para o resto da noite.",
     joke: "Se alguém rir, você ganha um prêmio... se não, é mais uma rodada de zoeira.",
-    quantity: 8,
     category: "Desenho",
   },
   {
@@ -142,7 +139,6 @@ export const ArtisticChallenges = [
     description:
       "Uma declaração de amor improvisada, mas no lugar mais visível!",
     joke: "Se ficar torto, você tem que cantar uma música de amor no karaokê.",
-    quantity: 8,
     category: "Zoeira",
   },
   {
@@ -150,7 +146,6 @@ export const ArtisticChallenges = [
     description:
       "Capriche no estilo do bigode! Pode ser um clássico ou algo completamente inusitado.",
     joke: "Se o mustache não for digno de um galã, tem que repetir até acertar.",
-    quantity: 8,
     category: "Zoeira",
   },
 ];
