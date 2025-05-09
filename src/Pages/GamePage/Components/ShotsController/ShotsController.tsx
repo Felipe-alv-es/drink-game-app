@@ -31,11 +31,13 @@ export const ShotsController = React.forwardRef<
       <Box>
         <Typography sx={getTitleStyle(challengeOrShot)}>
           {showBabyMode
-            ? `Tire ${quantity / 2} Prendas`
+            ? `Tire ${quantity <= 4 ? 1 : 2} Prendas`
             : `Tome ${quantity / 2} Shots`}
         </Typography>
         <Box sx={getIconContainerStyle}>
-          {Array.from({ length: quantity / 2 }).map((_, index) => (
+          {Array.from({
+            length: showBabyMode ? (quantity <= 4 ? 1 : 2) : quantity / 2,
+          }).map((_, index) => (
             <Box sx={getIconStyle(challengeOrShot)}>
               {showBabyMode ? (
                 <IoDice size={54} color="#fff7ff" />

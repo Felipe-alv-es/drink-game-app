@@ -11,7 +11,7 @@ export const DesafioPadrão: ListTypes[] = [
     quantity: 4,
   },
   {
-    title: "Venda os olhos até o próximo turno",
+    title: "Vende os olhos até o próximo turno",
     description: 'Vai confiar nos seus "amigos"? Boa sorte.',
     quantity: 2,
   },
@@ -129,7 +129,7 @@ export const DesafioPadrão: ListTypes[] = [
   },
   {
     title: "Gire 8 vezes e ande em linha reta",
-    description: "Vamos ver se consegue manter o equilíbrio! 🌀",
+    description: "Vamos ver se consegue manter o equilíbrio!",
     quantity: 4,
   },
   {

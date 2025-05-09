@@ -204,7 +204,7 @@ const GamePage = () => {
       <SortingModal
         open={isModalOpen}
         handleClose={handleClose}
-        quantity={currentCard.quantity / 2}
+        quantity={currentCard.quantity <= 4 ? 1 : 2}
         advanceToNextPlayer={advanceToNextPlayer}
       />
       <ExitGameModal
