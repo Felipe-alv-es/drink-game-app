@@ -12,10 +12,12 @@ import ProgressComponent from "./Components/ProgressComponent/ProgressComponent"
 import { usePlayers } from "../../Context/PlayersContext";
 import { useDeck } from "../../Context/DeckContext";
 import {
-  DesafioPadrão,
   ListTypes,
+  DesafioPadrão,
   ObedeçaOLider,
+  FimDaCarreiraSocial,
   ConstrangimentoAdulto,
+  DesgraçaColetiva,
 } from "../../Assets/Arrays/DefaultList";
 import { BottomWaves, TopWaves } from "./Components/Waves/Waves";
 import WaveMessage from "./Components/WaveMessage/WaveMessage";
@@ -35,7 +37,9 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 export const DeckMap: Record<string, ListTypes[]> = {
   DesafioPadrão,
   ObedeçaOLider,
+  FimDaCarreiraSocial,
   ConstrangimentoAdulto,
+  DesgraçaColetiva,
 };
 
 const GamePage = () => {

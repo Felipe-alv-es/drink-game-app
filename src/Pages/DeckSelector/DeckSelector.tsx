@@ -4,7 +4,9 @@ import DeckItem from "./Components/DeckItem/DeckItem";
 import {
   DesafioPadrão,
   ObedeçaOLider,
+  FimDaCarreiraSocial,
   ConstrangimentoAdulto,
+  DesgraçaColetiva,
 } from "../../Assets/Arrays/DefaultList";
 import DeckSelectorButton from "./Components/DeckSelectorButton/DeckSelectorButton";
 import { useDeck } from "../../Context/DeckContext";
@@ -52,12 +54,28 @@ const DeckSelector = () => {
           isSelected={selectedDecks.includes("ObedeçaOLider")}
         />
         <DeckItem
+          title="FimDaCarreiraSocial"
+          questions={FimDaCarreiraSocial}
+          background="#4A90E2"
+          color="#fff7ff"
+          onClick={() => toggleDeck("FimDaCarreiraSocial")}
+          isSelected={selectedDecks.includes("FimDaCarreiraSocial")}
+        />
+        <DeckItem
           title="ConstrangimentoAdulto"
           questions={ConstrangimentoAdulto}
           background="#BC8F8F"
           color="#fff7ff"
           onClick={() => toggleDeck("ConstrangimentoAdulto")}
           isSelected={selectedDecks.includes("ConstrangimentoAdulto")}
+        />
+        <DeckItem
+          title="DesgraçaColetiva"
+          questions={DesgraçaColetiva}
+          background="#E0C066"
+          color="#fff7ff"
+          onClick={() => toggleDeck("DesgraçaColetiva")}
+          isSelected={selectedDecks.includes("DesgraçaColetiva")}
         />
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>

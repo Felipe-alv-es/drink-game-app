@@ -138,6 +138,29 @@ export const DesafioPadrão: ListTypes[] = [
       "Desafie sua dicção e criatividade, mas se encostar os labios, beba",
     quantity: 6,
   },
+  {
+    title: "Beba 4 vezes",
+    description: "Se fudeoooooo KKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+    quantity: 8,
+  },
+  {
+    title: "Deixe o próximo jogador escrever algo em sua testa",
+    description:
+      "Você não pode ver o que foi escrito até o próximo turno. Prepare-se para surpresas!",
+    quantity: 8,
+  },
+  {
+    title: "Imite um animal à escolha do grupo",
+    description:
+      "O grupo escolhe o bicho e você dá o show. Vale som, gesto e até andar igual!",
+    quantity: 4,
+  },
+  {
+    title: "Poste uma foto fazendo bolinha de baba",
+    description:
+      "Coragem, estilo e muita saliva! Poste sem medo no grupo ou nas redes (se for ousado).",
+    quantity: 8,
+  },
 ];
 
 export const ObedeçaOLider: ListTypes[] = [
@@ -188,7 +211,7 @@ export const ObedeçaOLider: ListTypes[] = [
   },
   {
     title: "Se encostar no seu celular, você bebe",
-    description: "Sai do telefone, interaja socialmente",
+    description: "Sai do telefone, interaja socialmente, dura 3 rodadas",
     quantity: 6,
   },
   {
@@ -197,10 +220,20 @@ export const ObedeçaOLider: ListTypes[] = [
     quantity: 6,
   },
   {
-    title: "Imite um animal à escolha do grupo",
-    description:
-      "O grupo escolhe o bicho e você dá o show. Vale som, gesto e até andar igual!",
+    title: "Sempre grite 'Saúde!' antes de beber",
+    description: "Se esquecer, beba de novo como punição. Vacilou, engoliu!",
     quantity: 4,
+  },
+  {
+    title: "Quando alguem apontar para você, desvie de balas",
+    description:
+      "Vale por três rodadas, você escolheu a pilula azul ? Ou a vermelha ? ",
+    quantity: 8,
+  },
+  {
+    title: "Termine todas suas frases falando 'Câmbio'",
+    description: "Vale por três rodadas, Vacilou ? Bebeu, cambio e desligo",
+    quantity: 8,
   },
 ];
 
@@ -316,5 +349,80 @@ export const ConstrangimentoAdulto: ListTypes[] = [
     title: "Explique como você quer que seja sua próxima transa",
     description: "Seja detalhado, mas sem assustar ninguém! 😅",
     quantity: 8,
+  },
+  {
+    title: "Vende seus olhos e dance no colo de alguém",
+    description:
+      "Prepare-se para a dança da confiança! Sem ver nada, só sentindo a música e o ritmo.",
+    quantity: 8,
+  },
+  {
+    title: "Deixe alguem escrever 'Cú Flamejante' no seu Cóccix",
+    description: "Depois de uma voltinha para mostrar a tatuagem nova",
+    quantity: 4,
+  },
+];
+
+export const DesgraçaColetiva: ListTypes[] = [
+  {
+    title: "Quem estiver segurando uma bebida, bebe",
+    description: "Simples assim: se a bebida está na sua mão, é hora de beber!",
+    quantity: 2,
+  },
+  {
+    title: "Quem estiver com sutiã, bebe",
+    description:
+      "Se você está usando, é hora de dar um gole! Não vale se esconder.",
+    quantity: 4,
+  },
+  {
+    title: "Quem for ateu bebe",
+    description: "Como deus não existe, ninguem vai te salvar",
+    quantity: 4,
+  },
+  {
+    title: "Quem não for ateu bebe",
+    description: "Nem Deus vai te salvar da sua prenda HAHAHAHAHA",
+    quantity: 4,
+  },
+  {
+    title: "As mulheres bebem",
+    description: "Porque ? Porque não ? ",
+    quantity: 4,
+  },
+  {
+    title: "Todos solteiros bebem",
+    description: "Porque o amor não veio, mas a bebida chegou!",
+    quantity: 4,
+  },
+  {
+    title: "O chão é lava",
+    description: "Beba sempre que tocar o chão, vale por 1 rodadas",
+    quantity: 2,
+  },
+  {
+    title: "Quem já deu PT e foi parar no hospital, bebe",
+    description: "Para relembrar os velhos tempos",
+    quantity: 2,
+  },
+  {
+    title: "Quem ja esteve em um acidente de carro, bebe",
+    description: "A bebida é passageira, o tráuma é eterno",
+    quantity: 2,
+  },
+  {
+    title: "Quem estiver de verde, bebe",
+    description: "Foda-se o meio ambiente",
+    quantity: 2,
+  },
+  {
+    title: "Todos os jogadores bebem o que estiverem segurando",
+    description: "Não importa se é água ou veneno... agora é tarde!",
+    quantity: 2,
+  },
+  {
+    title: "O último a dar um tapa na própria testa bebe",
+    description: "Reflexos afiados salvam! Quem vacilar, brinda.",
+    quantity: 4,
   },
 ];
