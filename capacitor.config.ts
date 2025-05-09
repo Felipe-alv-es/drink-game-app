@@ -1,9 +1,9 @@
-import type { CapacitorConfig } from '@capacitor/cli';
+import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: 'drinkgame.app.id',
-  appName: 'drink-game.app',
-  webDir: 'build'
+  appId: "D&D - Drink & Desgraça",
+  appName: "D&D - Drink & Desgraça",
+  webDir: "build",
 };
 
 export default config;
