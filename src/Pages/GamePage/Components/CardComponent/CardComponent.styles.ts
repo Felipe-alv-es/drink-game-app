@@ -44,6 +44,7 @@ export const getRotateStyle = (isFlipped: boolean) => ({
   transition: "transform 0.6s",
   transformStyle: "preserve-3d",
   transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+  background: "#e6ecf3",
 });
 
 export const getContainerStyle = (challengeOrShot: boolean) => ({

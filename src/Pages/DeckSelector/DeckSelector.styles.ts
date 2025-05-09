@@ -26,6 +26,7 @@ export const getContainerStyle = () => ({
     display: "flex",
     flexDirection: "column",
     gap: 2,
+    paddingBottom: "24px",
   },
 });
 

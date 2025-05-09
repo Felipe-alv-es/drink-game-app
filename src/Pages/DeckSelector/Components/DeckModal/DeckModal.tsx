@@ -18,7 +18,7 @@ const DeckModal = ({ open, handleClose, questions }: PlayerInputProps) => {
     <Modal open={open} onClose={handleClose}>
       <Box sx={getContainerStyle}>
         <Typography sx={getTitleStyle}>{"Exemplo de perguntas"}</Typography>
-        {questions.map((q, i) => (
+        {questions.slice(0, 3).map((q, i) => (
           <Typography key={i} sx={getTasksStyle}>
             - {q.title}
           </Typography>

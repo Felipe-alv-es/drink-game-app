@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 import { Player } from "../../Context/PlayersContext";
@@ -10,7 +11,6 @@ import {
   getTitleStyle,
 } from "./WinScreen.styles";
 import RouletteWhell from "../GamePage/Components/SortingModal/RouletteWhell/RouletteWhell";
-import { useEffect, useState } from "react";
 import ChallengeCard from "../GamePage/Components/SortingModal/ChallengeCard/ChallengeCard";
 
 const SPIN_DURATION = 3000;
@@ -26,6 +26,7 @@ const WinScreen = () => {
   const [isComplete, setIsComplete] = useState(false);
   const [showChallengeCard, setShowChallengeCard] = useState(false);
   const [isFirstRender, setIsFirstRender] = useState(true);
+  const [lastIndex, setLastIndex] = useState<number | null>(null);
 
   const winner: Player | undefined = location.state?.winner;
   const losers = players.filter((player) => player.name !== winner?.name);
@@ -49,8 +50,13 @@ const WinScreen = () => {
   const handleSpinClick = () => {
     if (mustSpin || currentLoserIndex >= losers.length) return;
 
-    const randomIndex = Math.floor(Math.random() * initialData.length);
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * initialData.length);
+    } while (randomIndex === lastIndex && initialData.length > 1);
+
     setPrizeNumber(randomIndex);
+    setLastIndex(randomIndex);
     setMustSpin(true);
     setIsFirstRender(false);
 
@@ -94,21 +100,18 @@ const WinScreen = () => {
       <Typography sx={getDescriptionStyle}>
         Com {winner.points} pontos!
       </Typography>
-
       {!isComplete && (
         <Typography sx={{ paddingBottom: "24px", fontSize: 20 }}>
           Sorteando prenda para:
           <strong>{losers[currentLoserIndex]?.name}</strong>
         </Typography>
       )}
-
       <RouletteWhell
         mustSpin={mustSpin}
         prizeNumber={prizeNumber}
         rouletteData={initialData}
         setMustSpin={setMustSpin}
       />
-
       <WinScreenButton
         handleRestart={isComplete ? handleRestart : handleSpinClick}
         label={
@@ -122,6 +125,7 @@ const WinScreen = () => {
         <ChallengeCard
           setShowChallengeCard={setShowChallengeCard}
           variation={prizeNumber}
+          isFinalRoulette
         />
       )}
     </Box>

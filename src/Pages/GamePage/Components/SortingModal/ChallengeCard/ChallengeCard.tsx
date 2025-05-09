@@ -1,13 +1,18 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Typography, Paper, Box } from "@mui/material";
 import {
+  SurpriseChallenges,
+  QuestionChallenges,
+  PepperChallenges,
+  ArtisticChallenges,
+} from "../../../../../Assets/Arrays/Challenges";
+import {
   EasyChallenges,
   MediumChallenges,
   SufferingChallenges,
   BastardChallenges,
-} from "../../../../../Assets/Arrays/Challenges";
+} from "../../../../../Assets/Arrays/FinalChallenges";
 import {
-  getActionStyle,
   getContainerStyle,
   getDescriptionStyle,
   getFlipBoxStyle,
@@ -22,11 +27,13 @@ import { useDeck } from "../../../../../Context/DeckContext";
 interface ChallengeCardProps {
   setShowChallengeCard: (value: React.SetStateAction<boolean>) => void;
   variation?: number;
+  isFinalRoulette?: boolean;
 }
 
 const ChallengeCard: React.FC<ChallengeCardProps> = ({
   setShowChallengeCard,
   variation = 0,
+  isFinalRoulette,
 }) => {
   const [hasEntered, setHasEntered] = useState(false);
   const [timeToFlip, setTimeToFlip] = useState(false);
@@ -34,13 +41,13 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
 
   const getRandomChallenge = useMemo(() => {
     const challengeList = [
-      EasyChallenges,
-      MediumChallenges,
-      SufferingChallenges,
-      BastardChallenges,
+      isFinalRoulette ? EasyChallenges : SurpriseChallenges,
+      isFinalRoulette ? MediumChallenges : QuestionChallenges,
+      isFinalRoulette ? SufferingChallenges : PepperChallenges,
+      isFinalRoulette ? BastardChallenges : ArtisticChallenges,
     ];
 
-    const selectedList = challengeList[variation] || EasyChallenges;
+    const selectedList = challengeList[variation] || SurpriseChallenges;
 
     const filtered = selectedList.filter(
       (challenge) =>
@@ -50,8 +57,8 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
     if (filtered.length === 0) {
       return {
         title: "Sem desafios disponíveis",
-        description: "Todos os desafios dessa categoria foram bloqueados.",
-        joke: "Tente desbloquear uma categoria para continuar.",
+        description: "Todos os desafios dessa categoria foram bloqueados",
+        joke: "O grupo decidirá o seu desafio ao invés disso, boa sorte, vai precisar!",
       };
     }
 
@@ -83,9 +90,6 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
       <Box onClick={handleFlip} sx={getFlipBoxStyle(timeToFlip)}>
         <Paper elevation={6} sx={getContainerStyle(variation)}>
           <Box>
-            <Typography sx={getActionStyle}>
-              {getRandomChallenge.description}
-            </Typography>
             <Typography sx={getTitleStyle}>
               {getRandomChallenge.title}
             </Typography>
