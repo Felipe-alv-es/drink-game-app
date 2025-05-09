@@ -19,7 +19,7 @@ export const SurpriseChallenges = [
     category: "Sabor",
   },
   {
-    title: "Coma 3 coisas misteriosas",
+    title: "Coma coisas misteriosas x3",
     description:
       "Você não sabe o que vai comer. O grupo escolhe, você só engole.",
     joke: "Se conseguir, ganha pontos. Se não conseguir, o grupo escolhe mais uma coisa.",
@@ -31,6 +31,34 @@ export const SurpriseChallenges = [
     joke: "Se sua cara ficar mais azeda que o limão, a bebida é por sua conta.",
     category: "Sabor",
   },
+  {
+    title: "Vista seu calçado nas mãos",
+    description:
+      "Coloque os sapatos nas mãos e continue o jogo assim até cumprir sua próxima prenda.",
+    joke: "Se alguém perguntar se você perdeu a cabeça, diga que foi só os pés.",
+    category: "Zoeira",
+  },
+  {
+    title: "Coma limão com sal sem fazer careta",
+    description:
+      "Desafie suas papilas gustativas e mantenha a pose. Nada de caretas!",
+    joke: "Se fizer careta, tem que repetir a dose… ou a vergonha.",
+    category: "Zoeira",
+  },
+  {
+    title: "Imite um animal à escolha do grupo",
+    description:
+      "O grupo escolhe o bicho e você dá o show. Vale som, gesto e até andar igual!",
+    joke: "Se alguém te der comida, aceite com gratidão.",
+    category: "Zoeira",
+  },
+  {
+    title: "Fique em estátua na pose escolhida pelo grupo",
+    description:
+      "Congele na posição decidida pela galera e só se mexa na próxima rodada.",
+    joke: "Se alguém espirrar perto, tente não rir ou já era a estátua!",
+    category: "Zoeira",
+  },
 ];
 
 export const QuestionChallenges = [
@@ -38,43 +66,61 @@ export const QuestionChallenges = [
     title: "Qual foi a coisa mais vulgar que você disse na hora H?",
     description: "Solta sem filtro, a roda quer saber.",
     joke: "Se alguém ficar vermelho, ponto bônus.",
-    category: "Constrangimento",
+    category: "Adulto",
   },
   {
     title: "Conte um segredo íntimo que ninguém da roda sabe",
     description: "Mas é segredo, então não vale contar tudo de uma vez.",
     joke: "Se alguém ficar mais vermelho que um tomate, você venceu.",
-    category: "Constrangimento",
+    category: "Adulto",
   },
   {
     title: "Você já mandou nude?",
     description: "Assuma sem medo, quem nunca?",
     joke: "Se alguém perguntar 'pra quem?', a resposta é 'pra mim'.",
-    category: "Constrangimento",
+    category: "Adulto",
   },
   {
     title: "Confesse que pessoa da roda você pegaria",
     description: "Sem rodeios, solte o nome e encare a reação.",
     joke: "Se rolar clima, o jogo virou date.",
-    category: "Sedução",
+    category: "Adulto",
   },
   {
     title: "Conte como perdeu a virgindade",
     description: "Sem cortes, a gente quer detalhes.",
     joke: "Se alguém ficar sem palavras, você é o herói da noite.",
-    category: "Constrangimento",
+    category: "Adulto",
   },
   {
     title: "Sexo romântico ou selvagem?",
     description: "Escolha sem pensar, a resposta sai de dentro.",
     joke: "Se mudar de ideia durante, a bebida é por sua conta.",
-    category: "Sedução",
+    category: "Adulto",
   },
   {
     title: "Você grita quando goza ou geme baixinho?",
     description: "Responda sem vergonha, a roda está ouvindo.",
     joke: "Se alguém se esconder de vergonha, a bebida é dobrada.",
-    category: "Sedução",
+    category: "Adulto",
+  },
+  {
+    title: "Qual o apelido mais engraçado que já te deram?",
+    description: "Conta aí aquele apelido que até hoje te persegue.",
+    joke: "Se for vergonhoso, ponto bônus pra criatividade alheia.",
+    category: "Zoeira",
+  },
+  {
+    title: "Imite alguém da roda por 3 rodadas",
+    description: "Sem medo de ser cancelado pelo grupo.",
+    joke: "Se ninguém adivinhar quem é, você paga mico de novo.",
+    category: "Zoeira",
+  },
+  {
+    title: "Você se relacionaria com alguém do mesmo sexo?",
+    description: "Vale sinceridade total — sem julgamentos, só curiosidade.",
+    joke: "Se responder 'depende', o grupo tem direito a uma pergunta bônus.",
+    category: "Reflexivo",
   },
 ];
 
@@ -146,6 +192,13 @@ export const ArtisticChallenges = [
     description:
       "Capriche no estilo do bigode! Pode ser um clássico ou algo completamente inusitado.",
     joke: "Se o mustache não for digno de um galã, tem que repetir até acertar.",
+    category: "Zoeira",
+  },
+  {
+    title: "Desenhe o que der na telha",
+    description:
+      "Vale tudo: desde um rabisco sem sentido até uma obra digna de museu. Solte a criatividade sem amarras!",
+    joke: "Se alguém perguntar o que é, diga que é arte abstrata e mantenha a pose de artista.",
     category: "Zoeira",
   },
 ];

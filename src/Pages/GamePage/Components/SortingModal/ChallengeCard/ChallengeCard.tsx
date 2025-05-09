@@ -57,8 +57,8 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
     if (filtered.length === 0) {
       return {
         title: "Sem desafios disponíveis",
-        description: "Todos os desafios dessa categoria foram bloqueados.",
-        joke: "Tente desbloquear uma categoria para continuar.",
+        description: "Todos os desafios dessa categoria foram bloqueados",
+        joke: "O grupo decidirá o seu desafio ao invés disso, boa sorte, vai precisar!",
       };
     }
 
