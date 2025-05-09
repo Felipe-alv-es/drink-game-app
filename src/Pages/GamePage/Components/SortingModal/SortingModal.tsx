@@ -34,6 +34,8 @@ const SortingModal = ({
   const [lastResult, setLastResult] = useState<string | null>(null);
   const [showChallengeCard, setShowChallengeCard] = useState(false);
   const [isFirstRender, setIsFirstRender] = useState(true);
+  const [shuffledIndexes, setShuffledIndexes] = useState<number[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const spinRoulette = () => {
     if (!mustSpin && spinsLeft > 0) {
@@ -47,12 +49,17 @@ const SortingModal = ({
   };
 
   useEffect(() => {
-    if (open && initialData.length > 0 && spinsLeft === quantity) {
+    if (open) {
+      const indexes = initialData.map((_, i) => i);
+      const shuffled = indexes.sort(() => Math.random() - 0.5);
+      setShuffledIndexes(shuffled);
+      setSpinsLeft(quantity);
+      setCurrentIndex(0);
       setIsFirstRender(false);
-      spinRoulette();
+      setTimeout(spinRoulette, 300);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, initialData, spinsLeft, quantity]);
+  }, [open]);
 
   useEffect(() => {
     if (
@@ -73,12 +80,13 @@ const SortingModal = ({
   }, [open]);
 
   const handleButtonClick = () => {
-    if (spinsLeft === 1) {
+    if (spinsLeft === 1 || currentIndex >= shuffledIndexes.length - 1) {
       handleClose();
       advanceToNextPlayer();
       setIsFirstRender(true);
     } else {
       setSpinsLeft((prev) => prev - 1);
+      setCurrentIndex((prev) => prev + 1);
       spinRoulette();
     }
   };
