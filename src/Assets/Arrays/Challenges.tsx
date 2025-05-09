@@ -202,34 +202,34 @@ export const ArtisticChallenges = [
     category: "Desenho",
   },
   {
-    title: "Desenhe um bigodinho estilo Hitler",
+    title: "Deixe alguém te desenhar um bigodinho estilo Hitler",
     description:
-      "Deixe seu visual bem 'vintage' com um bigodinho clássico na cara.",
-    joke: "Se alguém não reconhecer, a próxima rodada vai ter que ser com bigodinho de verdade.",
+      "Permita que um artista do grupo adicione um bigodinho clássico no seu rosto. Nada mais 'vintage'!",
+    joke: "Se ninguém reconhecer o visual, o próximo vai ter que usar um de verdade.",
     category: "Desenho",
   },
   {
-    title: "Desenhe uma piroca na testa",
+    title: "Deixe alguém te desenhar uma piroca na testa",
     description: "Deixe sua testa bem 'artística' para o resto da noite.",
     joke: "Se alguém rir, você ganha um prêmio... se não, é mais uma rodada de zoeira.",
     category: "Desenho",
   },
   {
-    title: "Desenhe um coração no rosto de alguém",
+    title: "Deixe alguém te desenhar um coração no rosto",
     description:
       "Uma declaração de amor improvisada, mas no lugar mais visível!",
     joke: "Se ficar torto, você tem que cantar uma música de amor no karaokê.",
     category: "Zoeira",
   },
   {
-    title: "Desenhe um mustache estiloso",
+    title: "Deixe alguém te desenhar um mustache estiloso",
     description:
       "Capriche no estilo do bigode! Pode ser um clássico ou algo completamente inusitado.",
     joke: "Se o mustache não for digno de um galã, tem que repetir até acertar.",
     category: "Zoeira",
   },
   {
-    title: "Desenhe o que der na telha",
+    title: "O grupo te desenha o que der na telha",
     description:
       "Vale tudo: desde um rabisco sem sentido até uma obra digna de museu. Solte a criatividade sem amarras!",
     joke: "Se alguém perguntar o que é, diga que é arte abstrata e mantenha a pose de artista.",

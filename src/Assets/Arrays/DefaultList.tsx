@@ -11,7 +11,7 @@ export const DesafioPadrão: ListTypes[] = [
     quantity: 4,
   },
   {
-    title: "Venda os olhos até o próximo turno",
+    title: "Vende os olhos até o próximo turno",
     description: 'Vai confiar nos seus "amigos"? Boa sorte.',
     quantity: 2,
   },
@@ -129,7 +129,7 @@ export const DesafioPadrão: ListTypes[] = [
   },
   {
     title: "Gire 8 vezes e ande em linha reta",
-    description: "Vamos ver se consegue manter o equilíbrio! 🌀",
+    description: "Vamos ver se consegue manter o equilíbrio!",
     quantity: 4,
   },
   {
@@ -144,7 +144,7 @@ export const DesafioPadrão: ListTypes[] = [
     quantity: 8,
   },
   {
-    title: "Deixe o próximo jogador escrever algo em sua testa",
+    title: "Deixe o jogador a sua frente escrever algo em sua testa",
     description:
       "Você não pode ver o que foi escrito até o próximo turno. Prepare-se para surpresas!",
     quantity: 8,
