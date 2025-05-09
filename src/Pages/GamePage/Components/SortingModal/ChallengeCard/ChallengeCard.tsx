@@ -64,6 +64,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
 
     const randomIndex = Math.floor(Math.random() * filtered.length);
     return filtered[randomIndex];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [variation, blockedCategories]);
 
   useEffect(() => {
