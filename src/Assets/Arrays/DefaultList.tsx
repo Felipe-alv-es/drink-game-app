@@ -132,6 +132,12 @@ export const DesafioPadrão: ListTypes[] = [
     description: "Vamos ver se consegue manter o equilíbrio! 🌀",
     quantity: 4,
   },
+  {
+    title: "Fale por 30 segundos sem encostar os lábios nenhuma vez",
+    description:
+      "Desafie sua dicção e criatividade, mas se encostar os labios, beba",
+    quantity: 6,
+  },
 ];
 
 export const ObedeçaOLider: ListTypes[] = [
@@ -189,6 +195,12 @@ export const ObedeçaOLider: ListTypes[] = [
     title: "Comece suas frases com Senhoras e Senhores",
     description: "Dura três rodadas, Beba toda vez que falhar.",
     quantity: 6,
+  },
+  {
+    title: "Imite um animal à escolha do grupo",
+    description:
+      "O grupo escolhe o bicho e você dá o show. Vale som, gesto e até andar igual!",
+    quantity: 4,
   },
 ];
 
@@ -263,6 +275,17 @@ export const ConstrangimentoAdulto: ListTypes[] = [
     title: "Faça um boquete em uma garrafa",
     description: "Não precisa fingir que não curte.",
     quantity: 6,
+  },
+  {
+    title:
+      "Simule duas de suas posições sexuais preferidas e mostre como elas funcionam",
+    description: "Sem medo e sem vergonha, bora",
+    quantity: 8,
+  },
+  {
+    title: "Simule um orgasmo",
+    description: "Se nunca teve, imagine como seria se tiesse um",
+    quantity: 8,
   },
   {
     title: "Conte com que frequência você se masturba",

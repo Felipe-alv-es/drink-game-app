@@ -46,17 +46,51 @@ export const SurpriseChallenges = [
     category: "Zoeira",
   },
   {
-    title: "Imite um animal à escolha do grupo",
-    description:
-      "O grupo escolhe o bicho e você dá o show. Vale som, gesto e até andar igual!",
-    joke: "Se alguém te der comida, aceite com gratidão.",
-    category: "Zoeira",
-  },
-  {
     title: "Fique em estátua na pose escolhida pelo grupo",
     description:
       "Congele na posição decidida pela galera e só se mexa na próxima rodada.",
     joke: "Se alguém espirrar perto, tente não rir ou já era a estátua!",
+    category: "Zoeira",
+  },
+  {
+    title: "Use sua cueca ou calcinha em cima da calça por 2 rodadas",
+    description:
+      "O estilo é o que importa! Mostre como arrasar no look inusitado.",
+    joke: "Se alguém perguntar o motivo, diga que é tendência do momento.",
+    category: "Zoeira",
+  },
+  {
+    title: "Molhe o rosto e passe farinha",
+    description:
+      "Prepare-se para a sensação de estar em um filme de comédia — molha o rosto e espalha farinha como se não houvesse amanhã!",
+    joke: "Se alguém perguntar se você virou chef de cozinha, aceite com orgulho.",
+    category: "Zoeira",
+  },
+  {
+    title: "Coma uma mistura de ketchup e chocolate",
+    description: "Sim, você leu certo. Agora aguente o gosto!",
+    joke: "Se você não conseguir, tem que repetir com mais ketchup.",
+    category: "Sabor",
+  },
+  {
+    title: "Seja o garçom do grupo por 3 rodadas",
+    description:
+      "Agora é sua vez de servir! Sirva bebidas, petiscos e ajude o grupo com tudo que for preciso.",
+    joke: "Se alguém pedir mais, a resposta é sempre 'Claro, senhor(a)!'.",
+    category: "Zoeira",
+  },
+  {
+    title: "Você só pode responder sim ou não",
+    description:
+      "Durante a próxima rodada, só responda com 'sim' ou 'não'. Qualquer outra palavra e você repete o desafio.",
+    joke: "Se alguém perguntar algo que exija explicação, só diga 'sim' ou 'não'... e boa sorte.",
+    category: "Zoeira",
+  },
+  {
+    title: "Faça uma pose de yoga e fique nela por 1 minuto",
+    description:
+      "Escolha sua pose favorita ou a mais desafiadora, e mantenha a calma por 1 minuto.",
+    joke: "Se você cair, tem que repetir, mas com estilo zen!",
     category: "Zoeira",
   },
 ];
