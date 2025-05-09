@@ -277,7 +277,12 @@ export const FimDaCarreiraSocial: ListTypes[] = [
   {
     title: "Pergunte a um estranho se ele vende drogas",
     description: "Aja como se precisasse delas",
-    quantity: 1,
+    quantity: 4,
+  },
+  {
+    title: "Peça um autografo a um estranho",
+    description: "Faça ele pensar que é famoso",
+    quantity: 4,
   },
 ];
 
@@ -392,7 +397,12 @@ export const DesgraçaColetiva: ListTypes[] = [
   },
   {
     title: "As mulheres bebem",
-    description: "Porque ? Porque não ? ",
+    description: "Porque ? Porque não ?",
+    quantity: 4,
+  },
+  {
+    title: "Os homens bebem",
+    description: "Sim, simples assim mesmo.",
     quantity: 4,
   },
   {
