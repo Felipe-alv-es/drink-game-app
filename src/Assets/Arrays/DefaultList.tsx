@@ -161,6 +161,11 @@ export const DesafioPadrão: ListTypes[] = [
       "Coragem, estilo e muita saliva! Poste sem medo no grupo ou nas redes (se for ousado).",
     quantity: 8,
   },
+  {
+    title: "Envie 'To com uma diarreira explosiva' para um contato",
+    description: "Tem que ser aleatório do seu telefone, boa sorte",
+    quantity: 4,
+  },
 ];
 
 export const ObedeçaOLider: ListTypes[] = [
@@ -423,6 +428,16 @@ export const DesgraçaColetiva: ListTypes[] = [
   {
     title: "O último a dar um tapa na própria testa bebe",
     description: "Reflexos afiados salvam! Quem vacilar, brinda.",
+    quantity: 4,
+  },
+  {
+    title: "Todos os gordos bebem",
+    description: "E engordam mais",
+    quantity: 4,
+  },
+  {
+    title: "Todos desempregados bebem",
+    description: "ooooh vida merda",
     quantity: 4,
   },
 ];
