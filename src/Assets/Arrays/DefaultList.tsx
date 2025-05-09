@@ -144,7 +144,7 @@ export const DesafioPadrão: ListTypes[] = [
     quantity: 8,
   },
   {
-    title: "Deixe o próximo jogador escrever algo em sua testa",
+    title: "Deixe o jogador a sua frente escrever algo em sua testa",
     description:
       "Você não pode ver o que foi escrito até o próximo turno. Prepare-se para surpresas!",
     quantity: 8,
