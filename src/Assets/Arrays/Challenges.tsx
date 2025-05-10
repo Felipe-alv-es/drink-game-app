@@ -235,4 +235,10 @@ export const ArtisticChallenges = [
     joke: "Se alguém perguntar o que é, diga que é arte abstrata e mantenha a pose de artista.",
     category: "Zoeira",
   },
+  {
+    title: "O grupo te desenha um óculos estiloso",
+    description: "Agora é a sua vez de brilhar! Escolha um oculos de respeito",
+    joke: "Se o oculos não causar inveja, bora desenhar de novo até virar ícone de moda facial.",
+    category: "Zoeira",
+  },
 ];

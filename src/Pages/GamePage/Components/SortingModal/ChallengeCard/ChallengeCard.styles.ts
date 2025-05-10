@@ -5,7 +5,7 @@ export const getFlipContainerStyle = (hasEntered: boolean) => ({
   transform: "translate(-50%, -50%)",
   zIndex: 1300,
   perspective: "1000px",
-  width: "95vw",
+  width: "90vw",
   opacity: hasEntered ? 1 : 0,
   transition: "top 0.8s ease, opacity 0.8s ease",
 });

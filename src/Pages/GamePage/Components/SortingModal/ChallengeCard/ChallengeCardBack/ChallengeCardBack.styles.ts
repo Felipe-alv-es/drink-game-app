@@ -22,7 +22,7 @@ export const getCardbackFlipContainerStyle = () => ({
   backfaceVisibility: "hidden",
   transform: "rotateY(180deg)",
   position: "absolute",
-  width: "95vw",
+  width: "90vw",
   height: "80vh",
   borderRadius: "32px",
 });

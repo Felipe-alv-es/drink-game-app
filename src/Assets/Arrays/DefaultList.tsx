@@ -73,8 +73,8 @@ export const DesafioPadrão: ListTypes[] = [
     quantity: 4,
   },
   {
-    title: "Deixe alguém desenhar um 'pirocóptero' no canto da sua boca",
-    description: "É só canetinha, mas o trauma pode durar pra sempre 😂",
+    title: "O grupo desenha um pinto no canto da sua boca",
+    description: "É só canetinha, a interpretação fica a critério do grupo",
     quantity: 6,
   },
   {
