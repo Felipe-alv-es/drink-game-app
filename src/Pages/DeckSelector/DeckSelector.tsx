@@ -54,7 +54,7 @@ const DeckSelector = () => {
             questions={DesafioPadrão}
             onClick={() => toggleDeck("DesafioPadrão")}
             isSelected={selectedDecks.includes("DesafioPadrão")}
-            icon={<FaRegGrimace size={32} color="#383838" />}
+            icon={<FaRegGrimace size={32} color="#4c4c4c" />}
           />
           <DeckItem
             title="ObedeçaOLider"

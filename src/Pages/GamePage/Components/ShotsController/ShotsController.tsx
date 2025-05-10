@@ -38,7 +38,7 @@ export const ShotsController = React.forwardRef<
           {Array.from({
             length: showBabyMode ? (quantity <= 4 ? 1 : 2) : quantity / 2,
           }).map((_, index) => (
-            <Box sx={getIconStyle(challengeOrShot)}>
+            <Box sx={getIconStyle(challengeOrShot)} key={index}>
               {showBabyMode ? (
                 <IoDice size={54} color="#fff7ff" />
               ) : (

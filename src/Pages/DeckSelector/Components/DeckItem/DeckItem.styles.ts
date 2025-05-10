@@ -1,9 +1,8 @@
 export const getContainerStyle = (background?: string) => ({
   padding: "16px",
   borderRadius: "16px",
-  // background: background ? background : "",
   borderStyle: "solid",
-  borderColor: background ? background : "",
+  borderColor: background ? background : "#4c4c4c",
 });
 
 export const getTitleStyle = (color?: string) => ({
@@ -12,7 +11,7 @@ export const getTitleStyle = (color?: string) => ({
   textAlign: "center",
   fontSize: "24px",
   fontWeight: "600",
-  color: color ? color : "#383838",
+  color: color ? color : "#4c4c4c",
 });
 
 export const getQuestionStyle = () => ({
@@ -28,7 +27,7 @@ export const getSelectorContainerStyle = () => ({
 export const getSelectorTitleStyle = (color?: string) => ({
   fontFamily: "kanit",
   fontWeight: "300",
-  color: color ? color : "#383838",
+  color: color ? color : "#4c4c4c",
 });
 
 export const getCardAlignStyle = () => ({

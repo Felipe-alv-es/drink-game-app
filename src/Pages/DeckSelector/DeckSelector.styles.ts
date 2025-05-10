@@ -50,7 +50,8 @@ export const getTitleStyle = () => ({
 
 export const getFixedFooterStyle = () => ({
   position: "fixed",
-  background: "linear-gradient(135deg, #b7aecd, #8caedb, #2580b3)",
+  background:
+    "linear-gradient(135deg, rgba(183, 174, 205, 0.85), rgba(140, 174, 219, 0.85), rgba(37, 128, 179, 0.85))",
   width: "100%",
   left: 0,
   bottom: -1,
