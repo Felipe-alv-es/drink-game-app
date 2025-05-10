@@ -137,21 +137,6 @@ const GamePage = () => {
     return () => clearTimeout(timeoutId);
   }, [currentPlayer.babymode]);
 
-  useEffect(() => {
-    const handleBack = (event: PopStateEvent) => {
-      event.preventDefault();
-      setExitModalOpen(true);
-      window.history.pushState(null, "", window.location.href);
-    };
-
-    window.history.pushState(null, "", window.location.href);
-    window.addEventListener("popstate", handleBack);
-
-    return () => {
-      window.removeEventListener("popstate", handleBack);
-    };
-  }, []);
-
   const handleConfirmExit = () => {
     setExitModalOpen(false);
     clearPlayers();
