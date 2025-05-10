@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { Box, Checkbox, Paper, Typography } from "@mui/material";
 import { ListTypes } from "../../../../Assets/Arrays/DefaultList";
 import {
@@ -18,6 +18,7 @@ interface PlayerInputProps {
   color?: string;
   onClick?: () => void;
   isSelected?: boolean;
+  icon?: ReactNode;
 }
 
 const DeckItem = ({
@@ -27,6 +28,7 @@ const DeckItem = ({
   color,
   onClick,
   isSelected = false,
+  icon,
 }: PlayerInputProps) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -41,11 +43,7 @@ const DeckItem = ({
             .replace(/([A-Z])([A-Z][a-z])/g, "$1 $2")}
         </Typography>
         <Box sx={getCardAlignStyle}>
-          <QuestionButton handleOpen={handleOpen} color={color} />
           <Box sx={getSelectorContainerStyle}>
-            <Typography sx={getSelectorTitleStyle(color)}>
-              {"Selecionar baralho"}
-            </Typography>
             <Checkbox
               checked={isSelected}
               onChange={() => onClick && onClick()}
@@ -57,6 +55,19 @@ const DeckItem = ({
                 },
               }}
             />
+            <Typography sx={getSelectorTitleStyle(color)}>
+              {"Selecionar baralho"}
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              paddingRight: "8px",
+            }}
+          >
+            <QuestionButton handleOpen={handleOpen} color={color} />
+            {icon}
           </Box>
         </Box>
       </Paper>

@@ -1,7 +1,10 @@
 import { Player } from "../../../../Context/PlayersContext";
 
 export const getPlayersItemStyle = (player: Player) => ({
-  background: player.color,
+  // background: player.color,
+  background: "#ffffff",
+  borderStyle: "solid",
+  borderColor: player.color,
   padding: "16px",
   borderRadius: "16px",
   display: "flex",
@@ -11,8 +14,8 @@ export const getPlayersItemStyle = (player: Player) => ({
   justifyContent: "space-between",
 });
 
-export const getPlayerNameStyle = () => ({
+export const getPlayerNameStyle = (player: Player) => ({
   fontSize: "20px",
   fontFamily: "kanit",
-  color: "#FFF7FF",
+  color: player.color,
 });

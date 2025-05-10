@@ -1,10 +1,12 @@
+import { Player } from "../../../../Context/PlayersContext";
+
 export const getContainerStyle = () => ({
   display: "flex",
   alignItems: "center",
 });
 
-export const getTitleStyle = () => ({
-  color: "#fff7ff",
+export const getTitleStyle = (player: Player) => ({
+  color: player.color,
   fontFamily: "kanit",
   fontWeight: "500",
 });

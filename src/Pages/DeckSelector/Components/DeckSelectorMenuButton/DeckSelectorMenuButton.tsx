@@ -13,10 +13,11 @@ const DeckSelectorMenuButton = ({
       onClick={() => handleOpen()}
       sx={{
         textTransform: "none",
-        background: "#383838",
+        background: "#4c4c4c",
+        borderStyle: "solid",
         color: "#fff7ff",
         fontFamily: "kanit",
-        fontSize: "20px",
+        fontSize: "16px",
         borderRadius: "16px",
       }}
     >

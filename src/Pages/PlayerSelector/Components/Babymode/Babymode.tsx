@@ -1,10 +1,8 @@
 import { Box, Checkbox, Typography, FormControlLabel } from "@mui/material";
 import { getContainerStyle, getTitleStyle } from "./Babymode.styles";
-//@ts-ignore
-import Pacifier from "../../../../Assets/Images/Utils/Pacifier.png";
-//@ts-ignore
-import Pacifier2 from "../../../../Assets/Images/Utils/Pacifier2.png";
 import { usePlayers } from "../../../../Context/PlayersContext";
+import { FaBaby } from "react-icons/fa";
+import { FaCocktail } from "react-icons/fa";
 
 interface BabymodeProps {
   playerName: string;
@@ -25,30 +23,20 @@ const Babymode = ({ playerName }: BabymodeProps) => {
   return (
     <Box sx={getContainerStyle}>
       <FormControlLabel
+        label={
+          <Typography sx={getTitleStyle(player)}>
+            {isChecked ? "Toddynho" : "Alcoólico"}
+          </Typography>
+        }
         control={
           <Checkbox
             checked={isChecked}
             onChange={handleChange}
-            icon={
-              <Box
-                component="img"
-                src={Pacifier}
-                alt="Desmarcado"
-                sx={{ height: "24px", width: "24px" }}
-              />
-            }
-            checkedIcon={
-              <Box
-                component="img"
-                src={Pacifier2}
-                alt="Marcado"
-                sx={{ height: "24px", width: "24px" }}
-              />
-            }
+            icon={<FaCocktail size={24} color={player.color} />}
+            checkedIcon={<FaBaby size={24} color={player.color} />}
           />
         }
-        label={<Typography sx={getTitleStyle}>{"Sem álcool"}</Typography>}
-        sx={{ cursor: "pointer" }}
+        labelPlacement="start"
       />
     </Box>
   );

@@ -37,11 +37,7 @@ const PlayerSelector = () => {
           addPlayer={addPlayer}
         />
         {players.map((player, index) => (
-          <PlayerCard
-            player={player}
-            index={index}
-            removePlayer={removePlayer}
-          />
+          <PlayerCard key={index} player={player} removePlayer={removePlayer} />
         ))}
       </Box>
       <PlayerSelectorButton onClick={handleStart} />
