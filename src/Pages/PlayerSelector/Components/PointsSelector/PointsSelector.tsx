@@ -23,27 +23,29 @@ const PointsSelector = () => {
   return (
     <Box sx={getPointsContainerStyle}>
       <Typography sx={getTitleStyle}>{"Pontos: "}</Typography>
-      <IconButton onClick={decrease}>
-        <FaMinus color="#FFF7FF" />
-      </IconButton>
+      <Box sx={{ display: "flex" }}>
+        <IconButton onClick={decrease}>
+          <FaMinus color="#FFF7FF" size={20} />
+        </IconButton>
 
-      <Box sx={{ width: "80px" }}>
-        <TextField
-          type="number"
-          value={maxPoints}
-          onChange={handleChange}
-          slotProps={{
-            input: {
-              readOnly: true,
-            },
-          }}
-          sx={getTextFieldStyle}
-        />
+        <Box sx={{ width: "50px" }}>
+          <TextField
+            type="number"
+            value={maxPoints}
+            onChange={handleChange}
+            slotProps={{
+              input: {
+                readOnly: true,
+              },
+            }}
+            sx={getTextFieldStyle}
+          />
+        </Box>
+
+        <IconButton onClick={increase}>
+          <FaPlus color="#FFF7FF" size={20} />
+        </IconButton>
       </Box>
-
-      <IconButton onClick={increase}>
-        <FaPlus color="#FFF7FF" />
-      </IconButton>
     </Box>
   );
 };

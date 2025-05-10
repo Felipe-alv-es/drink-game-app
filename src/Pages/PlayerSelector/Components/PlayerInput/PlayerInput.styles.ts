@@ -1,8 +1,7 @@
 export const getAddItemStyle = () => ({
-  paddingY: "16px",
-  borderRadius: "16px",
+  borderRadius: "12px",
   display: "flex",
-  gap: 2,
+  gap: 1,
   alignItems: "center",
   marginBottom: "24px",
   justifyContent: "space-between",
@@ -19,7 +18,7 @@ export const getTextFieldStyle = () => ({
     color: "#FFF7FF",
   },
   "& .MuiInputBase-root": {
-    borderRadius: "16px",
+    borderRadius: "8px",
     color: "#FFF7FF",
   },
   "& .MuiOutlinedInput-root": {

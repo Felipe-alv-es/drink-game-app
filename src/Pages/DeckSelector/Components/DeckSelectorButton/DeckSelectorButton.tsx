@@ -7,7 +7,7 @@ interface DeckSelectorButtonProps {
 
 const DeckSelectorButton = ({ onClick }: DeckSelectorButtonProps) => {
   return (
-    <Button variant="outlined" sx={getButtonStyle} onClick={onClick}>
+    <Button variant="contained" sx={getButtonStyle} onClick={onClick}>
       {"Começar"}
     </Button>
   );

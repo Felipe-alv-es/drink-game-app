@@ -1,10 +1,9 @@
 export const getButtonStyle = () => ({
   textTransform: "none",
-  borderColor: "#FFF7FF",
-  borderWidth: "2px",
+  background: "#4c4c4c",
   color: "#FFF7FF",
   fontFamily: "kanit",
   fontSize: "20px",
   borderRadius: "16px",
-  fontWeight: "600",
+  fontWeight: "800",
 });

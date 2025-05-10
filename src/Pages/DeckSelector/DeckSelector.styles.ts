@@ -50,8 +50,8 @@ export const getTitleStyle = () => ({
 
 export const getFixedFooterStyle = () => ({
   position: "fixed",
-  background:
-    "linear-gradient(135deg, rgba(183, 174, 205, 0.85), rgba(140, 174, 219, 0.85), rgba(37, 128, 179, 0.85))",
+  background: "rgba(255, 255, 255, 0)",
+  backdropFilter: "blur(10px)",
   width: "100%",
   left: 0,
   bottom: -1,
@@ -59,7 +59,6 @@ export const getFixedFooterStyle = () => ({
     display: "flex",
     flexDirection: "column",
     gap: 1,
-    paddingX: "16px",
-    paddingY: "8px",
+    padding: "16px",
   },
 });

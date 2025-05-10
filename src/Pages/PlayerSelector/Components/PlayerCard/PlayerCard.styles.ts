@@ -1,7 +1,6 @@
 import { Player } from "../../../../Context/PlayersContext";
 
 export const getPlayersItemStyle = (player: Player) => ({
-  // background: player.color,
   background: "#ffffff",
   borderStyle: "solid",
   borderColor: player.color,

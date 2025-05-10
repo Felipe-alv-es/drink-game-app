@@ -35,7 +35,7 @@ const PlayerInput = ({
         sx={getAddButtonStyle}
         variant="outlined"
       >
-        <MdOutlinePersonAddAlt size={30} color="#fff7ff" />
+        <MdOutlinePersonAddAlt size={32} color="#fff7ff" />
       </Button>
     </Box>
   );

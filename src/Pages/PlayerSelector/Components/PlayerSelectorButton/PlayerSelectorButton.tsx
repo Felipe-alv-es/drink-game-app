@@ -15,12 +15,12 @@ const PlayerSelectorButton = ({ onClick }: PlayerSelectorButtonProps) => {
         paddingX: "32px",
         paddingY: "16px",
         bottom: 0,
-        background:
-          "linear-gradient(135deg, rgba(183, 174, 205, 0.85), rgba(140, 174, 219, 0.85), rgba(37, 128, 179, 0.85))",
+        background: "rgba(255, 255, 255, 0)",
+        backdropFilter: "blur(10px)",
       }}
     >
       <Button
-        variant="outlined"
+        variant="contained"
         sx={getButtonStyle}
         onClick={onClick}
         fullWidth
