@@ -186,9 +186,9 @@ export const PepperChallenges = [
     category: "Pimenta",
   },
   {
-    title: "Beba um shot de pimenta com tequila",
+    title: "Beba um shot de pimenta com Vinagre",
     description: "Uma combinação explosiva que vai deixar sua boca em chamas.",
-    joke: "Se não beber alcool, pode ser vinagre ou algo igualmente ruim",
+    joke: "Sem frescura, se cuspir vai ter que tomar denovo",
     category: "Pimenta",
   },
 ];
