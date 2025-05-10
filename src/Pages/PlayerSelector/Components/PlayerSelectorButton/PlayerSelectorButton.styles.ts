@@ -5,4 +5,5 @@ export const getButtonStyle = () => ({
   fontFamily: "kanit",
   fontSize: "20px",
   borderRadius: "16px",
+  fontWeight: "300",
 });

@@ -1,5 +1,6 @@
 import { Box, Typography, Snackbar } from "@mui/material";
 import {
+  getCardContainerStyle,
   getContainerStyle,
   getFixedFooterStyle,
   getTitleStyle,
@@ -18,6 +19,10 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import DeckSelectorModal from "./Components/DeckSelectorModal/DeckSelectorModal";
 import DeckSelectorMenuButton from "./Components/DeckSelectorMenuButton/DeckSelectorMenuButton";
+import { FaUserTie, FaRegGrimace } from "react-icons/fa";
+import { RiUserUnfollowFill } from "react-icons/ri";
+import { FaFire } from "react-icons/fa";
+import { BsTornado } from "react-icons/bs";
 
 const DeckSelector = () => {
   const navigate = useNavigate();
@@ -43,44 +48,51 @@ const DeckSelector = () => {
     <Box sx={getContainerStyle}>
       <Box>
         <Typography sx={getTitleStyle}>{"Selecione o baralho"}</Typography>
-        <DeckItem
-          title="DesafioPadrão"
-          questions={DesafioPadrão}
-          onClick={() => toggleDeck("DesafioPadrão")}
-          isSelected={selectedDecks.includes("DesafioPadrão")}
-        />
-        <DeckItem
-          title="ObedeçaOLider"
-          questions={ObedeçaOLider}
-          background="linear-gradient(135deg, #4B5320, #7A8450)"
-          color="#fff7ff"
-          onClick={() => toggleDeck("ObedeçaOLider")}
-          isSelected={selectedDecks.includes("ObedeçaOLider")}
-        />
-        <DeckItem
-          title="FimDaCarreiraSocial"
-          questions={FimDaCarreiraSocial}
-          background="linear-gradient(135deg, #4A90E2, #89CFF0)"
-          color="#fff7ff"
-          onClick={() => toggleDeck("FimDaCarreiraSocial")}
-          isSelected={selectedDecks.includes("FimDaCarreiraSocial")}
-        />
-        <DeckItem
-          title="ConstrangimentoAdulto"
-          questions={ConstrangimentoAdulto}
-          background="linear-gradient(135deg, #BC8F8F, #C0B7BD)"
-          color="#fff7ff"
-          onClick={() => toggleDeck("ConstrangimentoAdulto")}
-          isSelected={selectedDecks.includes("ConstrangimentoAdulto")}
-        />
-        <DeckItem
-          title="DesgraçaColetiva"
-          questions={DesgraçaColetiva}
-          background="linear-gradient(135deg, #E0C066, #4B5320)"
-          color="#fff7ff"
-          onClick={() => toggleDeck("DesgraçaColetiva")}
-          isSelected={selectedDecks.includes("DesgraçaColetiva")}
-        />
+        <Box sx={getCardContainerStyle}>
+          <DeckItem
+            title="DesafioPadrão"
+            questions={DesafioPadrão}
+            onClick={() => toggleDeck("DesafioPadrão")}
+            isSelected={selectedDecks.includes("DesafioPadrão")}
+            icon={<FaRegGrimace size={32} color="#383838" />}
+          />
+          <DeckItem
+            title="ObedeçaOLider"
+            questions={ObedeçaOLider}
+            background="#556B2F"
+            color="#556B2F"
+            onClick={() => toggleDeck("ObedeçaOLider")}
+            isSelected={selectedDecks.includes("ObedeçaOLider")}
+            icon={<FaUserTie size={32} color="#556B2F" />}
+          />
+          <DeckItem
+            title="FimDaCarreiraSocial"
+            questions={FimDaCarreiraSocial}
+            background="#89CFF0"
+            color="#89CFF0"
+            onClick={() => toggleDeck("FimDaCarreiraSocial")}
+            isSelected={selectedDecks.includes("FimDaCarreiraSocial")}
+            icon={<RiUserUnfollowFill size={32} color="#89CFF0" />}
+          />
+          <DeckItem
+            title="DesgraçaColetiva"
+            questions={DesgraçaColetiva}
+            background="#C5A84D"
+            color="#C5A84D"
+            onClick={() => toggleDeck("DesgraçaColetiva")}
+            isSelected={selectedDecks.includes("DesgraçaColetiva")}
+            icon={<BsTornado size={32} color="#C5A84D" />}
+          />
+          <DeckItem
+            title="ConstrangimentoAdulto"
+            questions={ConstrangimentoAdulto}
+            background="#BC8F8F"
+            color="#BC8F8F"
+            onClick={() => toggleDeck("ConstrangimentoAdulto")}
+            isSelected={selectedDecks.includes("ConstrangimentoAdulto")}
+            icon={<FaFire size={32} color="#BC8F8F" />}
+          />
+        </Box>
       </Box>
       <Box sx={getFixedFooterStyle}>
         <Box>

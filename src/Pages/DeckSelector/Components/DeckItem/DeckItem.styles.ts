@@ -1,12 +1,14 @@
 export const getContainerStyle = (background?: string) => ({
   padding: "16px",
   borderRadius: "16px",
-  background: background ? background : "",
+  // background: background ? background : "",
+  borderStyle: "solid",
+  borderColor: background ? background : "",
 });
 
 export const getTitleStyle = (color?: string) => ({
   fontFamily: "kanit",
-  paddingBottom: "8px",
+  paddingBottom: "16px",
   textAlign: "center",
   fontSize: "24px",
   fontWeight: "600",
@@ -31,5 +33,7 @@ export const getSelectorTitleStyle = (color?: string) => ({
 
 export const getCardAlignStyle = () => ({
   display: "flex",
+  flexDirection: "column",
   justifyContent: "space-between",
+  gap: 2,
 });

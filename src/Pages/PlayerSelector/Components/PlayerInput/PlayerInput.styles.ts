@@ -13,6 +13,7 @@ export const getTextFieldStyle = () => ({
     color: "#FFF7FF",
     fontFamily: "kanit",
     fontSize: "20px",
+    fontWeight: "300",
   },
   "& .MuiFormLabel-root.Mui-focused": {
     color: "#FFF7FF",
@@ -35,6 +36,6 @@ export const getAddButtonStyle = () => ({
   borderColor: "#FFF7FF",
   color: "#2580b3",
   fontWeight: "bold",
-  borderRadius: "24px",
-  height: "56px",
+  height: "64px",
+  borderRadius: "50%",
 });

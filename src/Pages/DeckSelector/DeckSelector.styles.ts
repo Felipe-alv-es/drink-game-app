@@ -32,6 +32,13 @@ export const getContainerStyle = () => ({
   },
 });
 
+export const getCardContainerStyle = () => ({
+  paddingX: "20px",
+  display: "flex",
+  flexDirection: "column",
+  gap: 2,
+});
+
 export const getTitleStyle = () => ({
   fontFamily: "kanit",
   fontSize: "36px",
@@ -46,11 +53,12 @@ export const getFixedFooterStyle = () => ({
   background: "linear-gradient(135deg, #b7aecd, #8caedb, #2580b3)",
   width: "100%",
   left: 0,
-  bottom: 0,
+  bottom: -1,
   "> div": {
     display: "flex",
     flexDirection: "column",
     gap: 1,
-    padding: "16px",
+    paddingX: "16px",
+    paddingY: "8px",
   },
 });

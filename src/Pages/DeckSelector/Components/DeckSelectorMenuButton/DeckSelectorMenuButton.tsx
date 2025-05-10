@@ -14,9 +14,10 @@ const DeckSelectorMenuButton = ({
       sx={{
         textTransform: "none",
         background: "#383838",
+        borderStyle: "solid",
         color: "#fff7ff",
         fontFamily: "kanit",
-        fontSize: "20px",
+        fontSize: "16px",
         borderRadius: "16px",
       }}
     >
