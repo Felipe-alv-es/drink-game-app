@@ -13,7 +13,9 @@ const gradientShift = keyframes`
 `;
 
 export const getContainerStyle = () => ({
-  padding: "16px",
+  paddingX: "16px",
+  paddingTop: "16px",
+  paddingBottom: "128px",
   minHeight: "100vh",
   animation: `${gradientShift} 15s ease infinite`,
   background:
@@ -37,4 +39,18 @@ export const getTitleStyle = () => ({
   paddingBottom: "4px",
   color: "#FFF7FF",
   textAlign: "center",
+});
+
+export const getFixedFooterStyle = () => ({
+  position: "fixed",
+  background: "linear-gradient(135deg, #b7aecd, #8caedb, #2580b3)",
+  width: "100%",
+  left: 0,
+  bottom: 0,
+  "> div": {
+    display: "flex",
+    flexDirection: "column",
+    gap: 1,
+    padding: "16px",
+  },
 });

@@ -1,5 +1,9 @@
 import { Box, Typography, Snackbar } from "@mui/material";
-import { getContainerStyle, getTitleStyle } from "./DeckSelector.styles";
+import {
+  getContainerStyle,
+  getFixedFooterStyle,
+  getTitleStyle,
+} from "./DeckSelector.styles";
 import DeckItem from "./Components/DeckItem/DeckItem";
 import {
   DesafioPadrão,
@@ -48,7 +52,7 @@ const DeckSelector = () => {
         <DeckItem
           title="ObedeçaOLider"
           questions={ObedeçaOLider}
-          background="#4B5320"
+          background="linear-gradient(135deg, #4B5320, #7A8450)"
           color="#fff7ff"
           onClick={() => toggleDeck("ObedeçaOLider")}
           isSelected={selectedDecks.includes("ObedeçaOLider")}
@@ -56,7 +60,7 @@ const DeckSelector = () => {
         <DeckItem
           title="FimDaCarreiraSocial"
           questions={FimDaCarreiraSocial}
-          background="#4A90E2"
+          background="linear-gradient(135deg, #4A90E2, #89CFF0)"
           color="#fff7ff"
           onClick={() => toggleDeck("FimDaCarreiraSocial")}
           isSelected={selectedDecks.includes("FimDaCarreiraSocial")}
@@ -64,7 +68,7 @@ const DeckSelector = () => {
         <DeckItem
           title="ConstrangimentoAdulto"
           questions={ConstrangimentoAdulto}
-          background="#BC8F8F"
+          background="linear-gradient(135deg, #BC8F8F, #C0B7BD)"
           color="#fff7ff"
           onClick={() => toggleDeck("ConstrangimentoAdulto")}
           isSelected={selectedDecks.includes("ConstrangimentoAdulto")}
@@ -72,15 +76,17 @@ const DeckSelector = () => {
         <DeckItem
           title="DesgraçaColetiva"
           questions={DesgraçaColetiva}
-          background="#E0C066"
+          background="linear-gradient(135deg, #E0C066, #4B5320)"
           color="#fff7ff"
           onClick={() => toggleDeck("DesgraçaColetiva")}
           isSelected={selectedDecks.includes("DesgraçaColetiva")}
         />
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-        <DeckSelectorMenuButton handleOpen={handleOpen} />
-        <DeckSelectorButton onClick={handleOnClick} />
+      <Box sx={getFixedFooterStyle}>
+        <Box>
+          <DeckSelectorMenuButton handleOpen={handleOpen} />
+          <DeckSelectorButton onClick={handleOnClick} />
+        </Box>
       </Box>
       <DeckSelectorModal open={open} handleClose={handleClose} />
       <Snackbar

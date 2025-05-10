@@ -9,7 +9,7 @@ export const getTitleStyle = (color?: string) => ({
   paddingBottom: "8px",
   textAlign: "center",
   fontSize: "24px",
-  fontWeight: "400",
+  fontWeight: "600",
   color: color ? color : "#383838",
 });
 
