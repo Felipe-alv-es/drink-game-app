@@ -284,6 +284,31 @@ export const FimDaCarreiraSocial: ListTypes[] = [
     description: "Faça ele pensar que é famoso",
     quantity: 4,
   },
+  {
+    title: "Fale 'te amo' para o primeiro contato da agenda",
+    description: "E não explique nada por pelo menos 10 minutos.",
+    quantity: 4,
+  },
+  {
+    title: "Poste no status: 'Alguém quer lamber meu suvaco?'",
+    description: "E aguarde os corajosos se manifestarem.",
+    quantity: 6,
+  },
+  {
+    title: "Mande um áudio cantando ópera no grupo da família",
+    description: "Capriche nos agudos!",
+    quantity: 6,
+  },
+  {
+    title: "Envie um áudio dizendo que está preso(a) e precisa de ajuda",
+    description: "Depois diga que é no banheiro com a barriga ruim.",
+    quantity: 4,
+  },
+  {
+    title: "Poste uma enquete no Instagram: 'Devo fazer topless hoje?'",
+    description: "Só pode apagar depois de 10 minutos.",
+    quantity: 8,
+  },
 ];
 
 export const ConstrangimentoAdulto: ListTypes[] = [
@@ -371,6 +396,21 @@ export const ConstrangimentoAdulto: ListTypes[] = [
     description: "Depois de uma voltinha para mostrar a tatuagem nova",
     quantity: 4,
   },
+  {
+    title: "Envie um emoji de pêssego + berinjela pra sua mãe",
+    description: "E se perguntarem, diz que é receita de suco!",
+    quantity: 6,
+  },
+  {
+    title: "Imite o som que você faz na hora H",
+    description: "Não vale sussurrar... tem que todo mundo ouvir!",
+    quantity: 8,
+  },
+  {
+    title: "Descreva a melhor transa da sua vida em detalhes",
+    description: "Todo mundo adora uma boa história quente.",
+    quantity: 8,
+  },
 ];
 
 export const DesgraçaColetiva: ListTypes[] = [
@@ -449,5 +489,20 @@ export const DesgraçaColetiva: ListTypes[] = [
     title: "Todos desempregados bebem",
     description: "ooooh vida merda",
     quantity: 4,
+  },
+  {
+    title: "Quem já chorou por ex, bebe",
+    description: "Lágrimas não matam, mas desidratam. Reponha o líquido!",
+    quantity: 4,
+  },
+  {
+    title: "Quem já fingiu que estava dormindo pra não ajudar, bebe",
+    description: "A consciência pesa, mas o copo também.",
+    quantity: 4,
+  },
+  {
+    title: "Quem estiver com meias, bebe",
+    description: "O conforto tem seu preço.",
+    quantity: 2,
   },
 ];
