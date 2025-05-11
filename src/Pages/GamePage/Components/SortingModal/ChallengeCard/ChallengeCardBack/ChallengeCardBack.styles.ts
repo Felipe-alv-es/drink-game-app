@@ -32,7 +32,9 @@ export const getContainerStyle = (
     justifyContent: "center",
     alignItems: "center",
     backgroundImage: `url(${backgrounds[variation]})`,
-    backgroundSize: "cover",
+    backgroundSize: "100% 100%",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
   };
 };
 
