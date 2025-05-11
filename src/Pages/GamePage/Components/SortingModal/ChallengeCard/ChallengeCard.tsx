@@ -103,7 +103,10 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
             <ChallengeCardButton setShowChallengeCard={setShowChallengeCard} />
           </Box>
         </Paper>
-        <ChallengeCardBack variation={variation} />
+        <ChallengeCardBack
+          variation={variation}
+          isFinalRouletten={isFinalRoulette}
+        />
       </Box>
     </Box>
   );
