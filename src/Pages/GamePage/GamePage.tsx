@@ -24,6 +24,7 @@ import WaveMessage from "./Components/WaveMessage/WaveMessage";
 import { useNavigate } from "react-router-dom";
 import SortingModal from "./Components/SortingModal/SortingModal";
 import ExitGameModal from "./Components/ExitGamemodal/ExitGamemodal";
+import NavigateBackButton from "../../Components/NavigateBackButton/NavigateBackButton";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const copy = [...array];
@@ -147,6 +148,10 @@ const GamePage = () => {
 
   return (
     <Box sx={getContainerStyle}>
+      <NavigateBackButton
+        color="#383838"
+        onBackPress={() => setExitModalOpen(true)}
+      />
       <TopWaves isVisible={isFlipped} />
       <Box sx={getContentContainerStyle}>
         <ProgressComponent

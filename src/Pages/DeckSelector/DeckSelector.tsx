@@ -23,6 +23,7 @@ import { FaUserTie, FaRegGrimace } from "react-icons/fa";
 import { RiUserUnfollowFill } from "react-icons/ri";
 import { FaFire } from "react-icons/fa";
 import { BsTornado } from "react-icons/bs";
+import NavigateBackButton from "../../Components/NavigateBackButton/NavigateBackButton";
 
 const DeckSelector = () => {
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ const DeckSelector = () => {
 
   return (
     <Box sx={getContainerStyle}>
+      <NavigateBackButton color="#FFF7FF" />
       <Box>
         <Typography sx={getTitleStyle}>{"Selecione o baralho"}</Typography>
         <Box sx={getCardContainerStyle}>

@@ -26,6 +26,13 @@ export const EasyChallenges = [
     joke: "Se não tiver do instagram, pode ser de outras redes",
     category: "18+",
   },
+  {
+    title: "Story enigmático",
+    description:
+      "Grave um vídeo olhando pro nada e diga: 'Agora tudo faz sentido...'.",
+    joke: "Deixe 24h no ar e não explique nada.",
+    category: "Caos",
+  },
 ];
 
 export const MediumChallenges = [
@@ -48,6 +55,12 @@ export const MediumChallenges = [
     description: "Se sim, conta o contexto. Se não… sortudo!",
     joke: "Broxar é humano. O que importa é rir depois.",
     category: "18+",
+  },
+  {
+    title: "Amor do passado",
+    description: "Poste uma música triste no status e marque um @ aleatório.",
+    joke: "Se perguntarem o motivo, diga: 'Certas feridas não cicatrizam'.",
+    category: "Caos",
   },
 ];
 
@@ -72,6 +85,12 @@ export const SufferingChallenges = [
     joke: "Se a pessoa responder, manda print pro grupo.",
     category: "Caos",
   },
+  {
+    title: "Novo crush",
+    description: "Poste no status: 'Acho que estou apaixonado(a) de novo...'.",
+    joke: "Se alguém responder curioso, você tem que inventar quem é.",
+    category: "Caos",
+  },
 ];
 
 export const BastardChallenges = [
@@ -94,5 +113,12 @@ export const BastardChallenges = [
       "Status, feed ou close friends. Você escolhe o campo de batalha.",
     joke: "Se alguém marcar a pessoa envolvida… o jogo acabou pra você.",
     category: "Caos",
+  },
+  {
+    title: "Perfil do Tinder",
+    description:
+      "Deixe o grupo montar sua bio do Tinder e uma foto de perfil por 24h.",
+    joke: "Se der match, tem que conversar.",
+    category: "18+",
   },
 ];
