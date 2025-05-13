@@ -151,6 +151,7 @@ const GamePage = () => {
       <NavigateBackButton
         color="#383838"
         onBackPress={() => setExitModalOpen(true)}
+        isFlipped={isFlipped}
       />
       <TopWaves isVisible={isFlipped} />
       <Box sx={getContentContainerStyle}>

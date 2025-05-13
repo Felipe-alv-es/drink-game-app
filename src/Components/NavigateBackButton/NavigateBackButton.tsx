@@ -9,11 +9,13 @@ interface NavigateBackButtonProps {
 interface NavigateBackButtonProps {
   color: string;
   onBackPress?: () => void;
+  isFlipped?: boolean;
 }
 
 const NavigateBackButton = ({
   color,
   onBackPress,
+  isFlipped,
 }: NavigateBackButtonProps) => {
   const navigate = useNavigate();
 
@@ -32,6 +34,8 @@ const NavigateBackButton = ({
         top: 10,
         left: 10,
         zIndex: 2,
+        transition: "1s",
+        opacity: isFlipped ? 0 : 100,
       }}
       onClick={handleClick}
     >
