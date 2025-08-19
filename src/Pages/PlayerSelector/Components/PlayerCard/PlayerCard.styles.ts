@@ -11,6 +11,12 @@ export const getPlayersItemStyle = (player: Player) => ({
   alignItems: "center",
   marginBottom: "12px",
   justifyContent: "space-between",
+  animation: "floating 2s ease-in-out infinite",
+  "@keyframes floating": {
+    "0%": { transform: "translateY(-1.5px)" },
+    "50%": { transform: "translateY(1.5px)" },
+    "100%": { transform: "translateY(-1.5px)" },
+  },
 });
 
 export const getPlayerNameStyle = (player: Player) => ({

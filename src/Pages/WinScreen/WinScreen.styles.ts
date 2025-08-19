@@ -1,10 +1,10 @@
 export const getContainerStyle = (background: string) => ({
-  display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
   minHeight: "100vh",
   width: "100vw",
+  display: "flex",
   background: background,
   color: "#fff7ff",
 });

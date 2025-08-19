@@ -1,5 +1,5 @@
 import { IconButton } from "@mui/material";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaChevronLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 interface NavigateBackButtonProps {
@@ -39,7 +39,7 @@ const NavigateBackButton = ({
       }}
       onClick={handleClick}
     >
-      <FaArrowLeftLong color={color} />
+      <FaChevronLeft color={color} size={20} />
     </IconButton>
   );
 };

@@ -1,5 +1,5 @@
 import { Box, IconButton, TextField, Typography } from "@mui/material";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { IoCaretBack, IoCaretForward } from "react-icons/io5";
 import {
   getPointsContainerStyle,
   getTextFieldStyle,
@@ -25,7 +25,7 @@ const PointsSelector = () => {
       <Typography sx={getTitleStyle}>{"Pontos: "}</Typography>
       <Box sx={{ display: "flex" }}>
         <IconButton onClick={decrease}>
-          <FaMinus color="#FFF7FF" size={20} />
+          <IoCaretBack color="#FFF7FF" size={20} />
         </IconButton>
 
         <Box sx={{ width: "50px" }}>
@@ -43,7 +43,7 @@ const PointsSelector = () => {
         </Box>
 
         <IconButton onClick={increase}>
-          <FaPlus color="#FFF7FF" size={20} />
+          <IoCaretForward color="#FFF7FF" size={20} />
         </IconButton>
       </Box>
     </Box>

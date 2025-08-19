@@ -106,12 +106,18 @@ const WinScreen = () => {
           <strong>{losers[currentLoserIndex]?.name}</strong>
         </Typography>
       )}
-      <RouletteWhell
-        mustSpin={mustSpin}
-        prizeNumber={prizeNumber}
-        rouletteData={initialData}
-        setMustSpin={setMustSpin}
-      />
+      <Box
+        sx={{
+          overflow: "hidden",
+        }}
+      >
+        <RouletteWhell
+          mustSpin={mustSpin}
+          prizeNumber={prizeNumber}
+          rouletteData={initialData}
+          setMustSpin={setMustSpin}
+        />
+      </Box>
       <WinScreenButton
         handleRestart={isComplete ? handleRestart : handleSpinClick}
         label={

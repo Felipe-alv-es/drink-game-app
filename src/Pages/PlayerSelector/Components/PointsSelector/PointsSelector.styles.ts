@@ -17,12 +17,13 @@ export const getTitleStyle = () => ({
 
 export const getTextFieldStyle = () => ({
   "& .MuiInputBase-root": {
-    borderRadius: "8px",
+    borderRadius: "16px",
     color: "#FFF7FF",
     textAlign: "center",
   },
   "& .MuiOutlinedInput-notchedOutline": {
     borderColor: "#FFF7FF",
+    borderWidth: "2px",
   },
   input: {
     textAlign: "center",

@@ -15,6 +15,7 @@ export const getTitleStyle = () => ({
   fontSize: "18px",
   textAlign: "center",
   paddingBottom: "16px",
+  fontWeight: "500",
 });
 
 export const getButtonStyle = () => ({

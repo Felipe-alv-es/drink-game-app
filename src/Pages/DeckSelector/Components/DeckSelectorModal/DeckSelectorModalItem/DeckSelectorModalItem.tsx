@@ -33,7 +33,9 @@ const DeckSelectorModalItem = ({ text, icon }: DeckSelectorModalItemProps) => {
         justifyContent: "space-between",
       }}
     >
-      <Typography sx={{ fontFamily: "kanit" }}>{icon + text}</Typography>
+      <Typography sx={{ fontFamily: "kanit", fontWeight: "500" }}>
+        {icon + text}
+      </Typography>
       <Checkbox checked={checked} onChange={handleToggle} />
     </Box>
   );
