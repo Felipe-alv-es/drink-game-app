@@ -1,3 +1,6 @@
+//@ts-ignore
+import End from "../../Assets/Images/CardBack/EndChallenge.png";
+
 export const getContainerStyle = (background: string) => ({
   flexDirection: "column",
   alignItems: "center",
@@ -5,7 +8,10 @@ export const getContainerStyle = (background: string) => ({
   minHeight: "100vh",
   width: "100vw",
   display: "flex",
-  background: background,
+  backgroundImage: `url(${End})`,
+  backgroundSize: "100% 100%",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center",
   color: "#fff7ff",
 });
 

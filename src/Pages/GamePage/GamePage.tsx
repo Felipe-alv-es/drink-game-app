@@ -25,6 +25,7 @@ import { useNavigate } from "react-router-dom";
 import SortingModal from "./Components/SortingModal/SortingModal";
 import ExitGameModal from "./Components/ExitGamemodal/ExitGamemodal";
 import NavigateBackButton from "../../Components/NavigateBackButton/NavigateBackButton";
+import TutorialStepper from "./Components/TutorialStepper/TutorialStepper";
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const copy = [...array];
@@ -61,6 +62,7 @@ const GamePage = () => {
   const handleClose = () => setModalOpen(false);
   const [isExitModalOpen, setExitModalOpen] = useState(false);
   const handleExitClose = () => setExitModalOpen(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
   const nextPlayer = () => {
     if (playerQueue.length <= 1) {
@@ -146,8 +148,20 @@ const GamePage = () => {
     navigate("/");
   };
 
+  useEffect(() => {
+    // const tutorialSeen = localStorage.getItem("tutorialShown");
+    // if (!tutorialSeen) {
+    setShowTutorial(true);
+    localStorage.setItem("tutorialShown", "true");
+    // }
+  }, []);
+
   return (
     <Box sx={getContainerStyle}>
+      <TutorialStepper
+        open={showTutorial}
+        onClose={() => setShowTutorial(false)}
+      />
       <NavigateBackButton
         color="#383838"
         onBackPress={() => setExitModalOpen(true)}
