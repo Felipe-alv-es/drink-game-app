@@ -14,7 +14,7 @@ const gradientShift = keyframes`
 
 export const getContainerStyle = () => ({
   paddingX: "16px",
-  paddingTop: "60px",
+  paddingTop: "72px",
   paddingBottom: "128px",
   minHeight: "100vh",
   animation: `${gradientShift} 15s ease infinite`,

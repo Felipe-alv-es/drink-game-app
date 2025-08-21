@@ -52,7 +52,7 @@ const TutorialStepper = ({
           <img
             src={steps[activeStep].img}
             alt={`tutorial-step-${activeStep}`}
-            style={{ width: "100%", maxHeight: 450, objectFit: "contain" }}
+            style={{ width: "100%", height: "70%", objectFit: "contain" }}
           />
         </Box>
       </DialogContent>
