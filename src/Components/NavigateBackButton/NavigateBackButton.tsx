@@ -31,7 +31,7 @@ const NavigateBackButton = ({
     <IconButton
       sx={{
         position: "absolute",
-        top: 30,
+        top: 40,
         left: 10,
         zIndex: 2,
         transition: "1s",

@@ -47,6 +47,7 @@ const PlayerSelector = () => {
         onClose={handleSnackbarClose}
         message="Deve haver pelo menos um jogador para iniciar"
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        sx={{ top: "48px !important" }}
       />
     </Box>
   );

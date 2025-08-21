@@ -109,6 +109,7 @@ const DeckSelector = () => {
         onClose={handleSnackbarClose}
         message="Selecione pelo menos um baralho para continuar"
         anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        sx={{ top: "48px !important" }}
       />
     </Box>
   );

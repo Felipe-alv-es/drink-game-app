@@ -6,7 +6,7 @@ export const getContainerStyle = () => ({
   flexDirection: "column",
   justifyContent: "space-between",
   placeItems: "center",
-  padding: "32px 16px 48px 16px",
+  padding: "48px 16px 48px 16px",
 });
 
 export const getContentContainerStyle = () => ({
