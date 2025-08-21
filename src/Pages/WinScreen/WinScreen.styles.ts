@@ -13,6 +13,7 @@ export const getContainerStyle = (background: string) => ({
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
   color: "#fff7ff",
+  paddingBottom: "48px",
 });
 
 export const getTitleStyle = () => ({

@@ -55,6 +55,7 @@ export const getFixedFooterStyle = () => ({
   width: "100%",
   left: 0,
   bottom: -1,
+  paddingBottom: "48px",
   "> div": {
     display: "flex",
     flexDirection: "column",

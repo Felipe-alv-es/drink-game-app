@@ -42,7 +42,7 @@ const TutorialStepper = ({
   };
 
   return (
-    <Dialog open={open}>
+    <Dialog open={open} sx={{ paddingBottom: "48px" }}>
       <DialogContent
         sx={{
           p: 0,

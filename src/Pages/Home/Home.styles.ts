@@ -21,6 +21,7 @@ export const getContainerStyle = () => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
+  paddingBottom: "48px",
 });
 
 export const getButtonContainerStyle = () => ({
