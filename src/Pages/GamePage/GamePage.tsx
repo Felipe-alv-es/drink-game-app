@@ -149,11 +149,11 @@ const GamePage = () => {
   };
 
   useEffect(() => {
-    // const tutorialSeen = localStorage.getItem("tutorialShown");
-    // if (!tutorialSeen) {
-    setShowTutorial(true);
-    localStorage.setItem("tutorialShown", "true");
-    // }
+    const tutorialSeen = localStorage.getItem("tutorialShown");
+    if (!tutorialSeen) {
+      setShowTutorial(true);
+      localStorage.setItem("tutorialShown", "true");
+    }
   }, []);
 
   return (
