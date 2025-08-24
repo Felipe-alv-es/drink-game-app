@@ -17,7 +17,7 @@ export const getTitleStyle = (highlighted: boolean) => ({
     ? "0 1px 2px rgba(0, 0, 0, 0.3)"
     : "0 0 4px rgba(255, 255, 255, 0.5)",
   transform: highlighted ? "scale(1)" : "scale(1.1)",
-  fontSize: "28px",
+  fontSize: "24px",
   fontFamily: "kanit",
   paddingBottom: "8px",
   transition: "all 0.3s ease-in-out",
@@ -25,7 +25,7 @@ export const getTitleStyle = (highlighted: boolean) => ({
 
 export const getDescriptionStyle = (highlighted: boolean) => ({
   color: "#fff7ff",
-  fontSize: "18px",
+  fontSize: "14px",
   transform: highlighted ? "scale(1)" : "scale(1.1)",
   textShadow: highlighted
     ? "0 1px 2px rgba(0, 0, 0, 0.2)"

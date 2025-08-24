@@ -11,7 +11,7 @@ export const TopWaves = ({ isVisible }: WaveProps) => {
         width: "100%",
         position: "fixed",
         transition: "2s",
-        top: isVisible ? -20 : -90,
+        top: isVisible ? 0 : -90,
         overflow: "hidden",
       }}
     >
@@ -59,7 +59,7 @@ export const BottomWaves = ({ isVisible }: WaveProps) => {
         width: "100%",
         position: "fixed",
         transition: "2s",
-        bottom: isVisible ? -10 : -200,
+        bottom: isVisible ? -7 : -200,
         overflow: "hidden",
       }}
     >

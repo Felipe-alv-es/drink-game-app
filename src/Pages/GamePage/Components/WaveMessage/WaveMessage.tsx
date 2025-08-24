@@ -11,14 +11,14 @@ const WaveMessage = ({ isVisible, name }: WaveMessageProps) => {
       sx={{
         position: "fixed",
         transition: "2s",
-        bottom: isVisible ? 20 : -200,
+        bottom: isVisible ? 60 : -200,
         textAlign: "center",
       }}
     >
       <Typography
         sx={{
           color: "#fff7ff",
-          fontSize: "24px",
+          fontSize: "20px",
           fontWeight: "500",
           fontFamily: "kanit",
         }}
@@ -28,7 +28,7 @@ const WaveMessage = ({ isVisible, name }: WaveMessageProps) => {
       <Typography
         sx={{
           color: "#fff7ff",
-          fontSize: "16px",
+          fontSize: "14px",
           fontStyle: "italic",
           fontFamily: "kanit",
         }}
