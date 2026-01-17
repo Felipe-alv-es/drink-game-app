@@ -11,7 +11,7 @@ const WaveMessage = ({ isVisible, name }: WaveMessageProps) => {
       sx={{
         position: "fixed",
         transition: "2s",
-        bottom: isVisible ? 60 : -200,
+        bottom: isVisible ? 80 : -200,
         textAlign: "center",
       }}
     >
