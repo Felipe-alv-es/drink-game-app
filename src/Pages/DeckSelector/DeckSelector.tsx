@@ -6,23 +6,13 @@ import {
   getTitleStyle,
 } from "./DeckSelector.styles";
 import DeckItem from "./Components/DeckItem/DeckItem";
-import {
-  DesafioPadrão,
-  ObedeçaOLider,
-  FimDaCarreiraSocial,
-  ConstrangimentoAdulto,
-  DesgraçaColetiva,
-} from "../../Assets/Arrays/DefaultList";
+import { decks } from "../../Assets/Arrays/DefaultList";
 import DeckSelectorButton from "./Components/DeckSelectorButton/DeckSelectorButton";
 import { useDeck } from "../../Context/DeckContext";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import DeckSelectorModal from "./Components/DeckSelectorModal/DeckSelectorModal";
 import DeckSelectorMenuButton from "./Components/DeckSelectorMenuButton/DeckSelectorMenuButton";
-import { FaUserTie, FaRegGrimace } from "react-icons/fa";
-import { RiUserUnfollowFill } from "react-icons/ri";
-import { FaFire } from "react-icons/fa";
-import { BsTornado } from "react-icons/bs";
 import NavigateBackButton from "../../Components/NavigateBackButton/NavigateBackButton";
 
 const DeckSelector = () => {
@@ -51,49 +41,18 @@ const DeckSelector = () => {
       <Box>
         <Typography sx={getTitleStyle}>{"Selecione o baralho"}</Typography>
         <Box sx={getCardContainerStyle}>
-          <DeckItem
-            title="DesafioPadrão"
-            questions={DesafioPadrão}
-            onClick={() => toggleDeck("DesafioPadrão")}
-            isSelected={selectedDecks.includes("DesafioPadrão")}
-            icon={<FaRegGrimace size={32} color="#4c4c4c" />}
-          />
-          <DeckItem
-            title="ObedeçaOLider"
-            questions={ObedeçaOLider}
-            background="#556B2F"
-            color="#556B2F"
-            onClick={() => toggleDeck("ObedeçaOLider")}
-            isSelected={selectedDecks.includes("ObedeçaOLider")}
-            icon={<FaUserTie size={32} color="#556B2F" />}
-          />
-          <DeckItem
-            title="FimDaCarreiraSocial"
-            questions={FimDaCarreiraSocial}
-            background="#89CFF0"
-            color="#89CFF0"
-            onClick={() => toggleDeck("FimDaCarreiraSocial")}
-            isSelected={selectedDecks.includes("FimDaCarreiraSocial")}
-            icon={<RiUserUnfollowFill size={32} color="#89CFF0" />}
-          />
-          <DeckItem
-            title="DesgraçaColetiva"
-            questions={DesgraçaColetiva}
-            background="#C5A84D"
-            color="#C5A84D"
-            onClick={() => toggleDeck("DesgraçaColetiva")}
-            isSelected={selectedDecks.includes("DesgraçaColetiva")}
-            icon={<BsTornado size={32} color="#C5A84D" />}
-          />
-          <DeckItem
-            title="ConstrangimentoAdulto"
-            questions={ConstrangimentoAdulto}
-            background="#BC8F8F"
-            color="#BC8F8F"
-            onClick={() => toggleDeck("ConstrangimentoAdulto")}
-            isSelected={selectedDecks.includes("ConstrangimentoAdulto")}
-            icon={<FaFire size={32} color="#BC8F8F" />}
-          />
+          {decks.map(({ key, title, questions, background, color, icon }) => (
+            <DeckItem
+              key={key}
+              title={title}
+              questions={questions}
+              background={background}
+              color={color}
+              onClick={() => toggleDeck(key)}
+              isSelected={selectedDecks.includes(key)}
+              icon={icon}
+            />
+          ))}
         </Box>
       </Box>
       <Box sx={getFixedFooterStyle}>

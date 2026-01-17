@@ -1,3 +1,7 @@
+import { BsTornado } from "react-icons/bs";
+import { FaRegGrimace, FaUserTie, FaFire } from "react-icons/fa";
+import { RiUserUnfollowFill } from "react-icons/ri";
+
 export interface ListTypes {
   title: string;
   description: string;
@@ -504,5 +508,48 @@ export const DesgraçaColetiva: ListTypes[] = [
     title: "Quem estiver com meias, bebe",
     description: "O conforto tem seu preço.",
     quantity: 2,
+  },
+];
+
+export const decks = [
+  {
+    key: "DesafioPadrão",
+    title: "DesafioPadrão",
+    questions: DesafioPadrão,
+    background: undefined,
+    color: "#4c4c4c",
+    icon: <FaRegGrimace size={32} color="#4c4c4c" />,
+  },
+  {
+    key: "ObedeçaOLider",
+    title: "ObedeçaOLider",
+    questions: ObedeçaOLider,
+    background: "#556B2F",
+    color: "#556B2F",
+    icon: <FaUserTie size={32} color="#556B2F" />,
+  },
+  {
+    key: "FimDaCarreiraSocial",
+    title: "FimDaCarreiraSocial",
+    questions: FimDaCarreiraSocial,
+    background: "#89CFF0",
+    color: "#89CFF0",
+    icon: <RiUserUnfollowFill size={32} color="#89CFF0" />,
+  },
+  {
+    key: "DesgraçaColetiva",
+    title: "DesgraçaColetiva",
+    questions: DesgraçaColetiva,
+    background: "#C5A84D",
+    color: "#C5A84D",
+    icon: <BsTornado size={32} color="#C5A84D" />,
+  },
+  {
+    key: "ConstrangimentoAdulto",
+    title: "ConstrangimentoAdulto",
+    questions: ConstrangimentoAdulto,
+    background: "#BC8F8F",
+    color: "#BC8F8F",
+    icon: <FaFire size={32} color="#BC8F8F" />,
   },
 ];
