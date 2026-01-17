@@ -13,7 +13,7 @@ import {
 import RouletteWhell from "../GamePage/Components/SortingModal/RouletteWhell/RouletteWhell";
 import ChallengeCard from "../GamePage/Components/SortingModal/ChallengeCard/ChallengeCard";
 
-const SPIN_DURATION = 3000;
+const SPIN_DURATION = 8000;
 
 const WinScreen = () => {
   const location = useLocation();
