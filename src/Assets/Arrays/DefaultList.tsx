@@ -336,7 +336,7 @@ export const ConstrangimentoAdulto: ListTypes[] = [
   {
     title: "Cite 8 apelidos para vagina",
     description: "Se passar de 1 minuto, você bebe.",
-    quantity: 1,
+    quantity: 2,
   },
   {
     title: "Tire uma peça de roupa",
