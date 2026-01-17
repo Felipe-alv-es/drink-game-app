@@ -14,29 +14,21 @@ export const getTextFieldStyle = () => ({
     fontSize: "20px",
     fontWeight: "500",
   },
-  "& .MuiFormLabel-root.Mui-focused": {
-    color: "#FFF7FF",
-  },
+
   "& .MuiInputBase-root": {
     borderRadius: "16px",
+    borderStyle: "solid",
+    borderWidth: "2px",
+    borderColor: "#FFF7FF",
     color: "#FFF7FF",
-  },
-  "& .MuiOutlinedInput-root": {
-    "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#FFF7FF",
-      borderWidth: "2px",
-    },
-    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#FFF7FF",
-    },
   },
 });
 
 export const getAddButtonStyle = () => ({
-  borderColor: "#FFF7FF",
-  color: "#2580b3",
-  fontWeight: "bold",
-  height: "64px",
-  borderRadius: "50%",
-  borderWidth: "2px",
+  padding: "12px",
+  bgcolor: "#FFF7FF",
+  color: "#FFF7FF",
+  "&:hover": {
+    bgcolor: "#FFF7FF",
+  },
 });

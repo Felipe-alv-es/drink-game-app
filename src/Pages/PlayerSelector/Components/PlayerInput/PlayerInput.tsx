@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Button, IconButton, TextField } from "@mui/material";
 import { MdOutlinePersonAddAlt } from "react-icons/md";
 import {
   getAddItemStyle,
@@ -23,20 +23,20 @@ const PlayerInput = ({
         label="Nome do Jogador"
         value={newPlayerName}
         onChange={(e) => setNewPlayerName(e.target.value)}
-        variant="outlined"
+        variant="filled"
         fullWidth
         sx={getTextFieldStyle}
+        InputProps={{ disableUnderline: true }}
       />
-      <Button
+      <IconButton
+        sx={getAddButtonStyle}
         onClick={() => {
           addPlayer(newPlayerName);
           setNewPlayerName("");
         }}
-        sx={getAddButtonStyle}
-        variant="outlined"
       >
-        <MdOutlinePersonAddAlt size={32} color="#fff7ff" />
-      </Button>
+        <MdOutlinePersonAddAlt size={32} color="#4c4c4c" />
+      </IconButton>
     </Box>
   );
 };
