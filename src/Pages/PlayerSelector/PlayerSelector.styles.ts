@@ -22,6 +22,9 @@ export const getContainerStyle = () => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
+  "> div": {
+    paddingBottom: "48px",
+  },
 });
 
 export const getTitleStyle = () => ({
