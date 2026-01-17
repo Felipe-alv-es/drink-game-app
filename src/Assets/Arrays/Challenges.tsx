@@ -302,6 +302,13 @@ export const QuestionChallenges = [
     joke: "Se alguém anotar mentalmente, problema deles.",
     category: "Adulto",
   },
+  {
+    title: "O grupo pergunta o que quiser",
+    description:
+      "O grupo pode fazer qualquer pergunta pra você. Você é obrigado a responder com sinceridade.",
+    joke: "Se tentar fugir ou enrolar, o grupo tem direito a uma pergunta bônus.",
+    category: "Adulto",
+  },
 ];
 
 export const IntensityFlavorsChallenges = [

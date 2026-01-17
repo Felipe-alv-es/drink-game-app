@@ -415,6 +415,18 @@ export const ConstrangimentoAdulto: ListTypes[] = [
     description: "Todo mundo adora uma boa história quente.",
     quantity: 8,
   },
+  {
+    title: "O grupo pergunta o que quiser",
+    description:
+      "O grupo pode fazer qualquer pergunta íntima. Você é obrigado a responder com sinceridade.",
+    quantity: 6,
+  },
+  {
+    title: "Preferências sem filtro",
+    description:
+      "Liste coisas que você gosta muito e coisas que você não gosta de jeito nenhum na hora H.",
+    quantity: 6,
+  },
 ];
 
 export const DesgraçaColetiva: ListTypes[] = [

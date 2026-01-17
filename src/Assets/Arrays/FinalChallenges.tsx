@@ -33,6 +33,18 @@ export const EasyChallenges = [
     joke: "Deixe 24h no ar e não explique nada.",
     category: "Caos",
   },
+  {
+    title: "Status filosófico errado",
+    description: "Poste no status uma frase profunda… mas sem sentido nenhum.",
+    joke: "Se alguém responder 'concordo', você venceu.",
+    category: "Caos",
+  },
+  {
+    title: "Emoji suspeito",
+    description: "Poste apenas um emoji estranho no status (🍤, 🧃, 🧠…).",
+    joke: "Não vale explicar o significado.",
+    category: "Caos",
+  },
 ];
 
 export const MediumChallenges = [
@@ -60,6 +72,19 @@ export const MediumChallenges = [
     title: "Amor do passado",
     description: "Poste uma música triste no status e marque um @ aleatório.",
     joke: "Se perguntarem o motivo, diga: 'Certas feridas não cicatrizam'.",
+    category: "Caos",
+  },
+  {
+    title: "Mensagem fora de contexto",
+    description:
+      "Mande 'precisamos conversar…' pra alguém escolhido pelo grupo.",
+    joke: "Só pode explicar depois de 5 minutos.",
+    category: "Caos",
+  },
+  {
+    title: "Status emocional instável",
+    description: "Poste: 'Talvez eu tenha tomado uma decisão errada…'.",
+    joke: "Não vale responder ninguém por 1 hora.",
     category: "Caos",
   },
 ];
@@ -91,6 +116,38 @@ export const SufferingChallenges = [
     joke: "Se alguém responder curioso, você tem que inventar quem é.",
     category: "Caos",
   },
+  {
+    title: "Status controlado pelo grupo",
+    description: "O grupo escolhe exatamente o texto do seu status.",
+    joke: "Fica no ar por pelo menos 1 hora.",
+    category: "Caos",
+  },
+  {
+    title: "Mensagem ambígua",
+    description:
+      "Envie 'acho que ainda penso em você às vezes' pra alguém do passado.",
+    joke: "Se responder, tem que mostrar.",
+    category: "Caos",
+  },
+  {
+    title: "Status de indireta",
+    description: "Poste uma indireta claramente direcionada a alguém real.",
+    joke: "Não vale usar Close Friends.",
+    category: "Caos",
+  },
+  {
+    title: "Declaração pública sem contexto",
+    description: "Poste no status: 'Eu devia ter contado isso antes…'.",
+    joke: "Não vale responder ninguém por 2 horas.",
+    category: "Caos",
+  },
+  {
+    title: "Status destruidor de reputação",
+    description:
+      "Poste: 'Fui hipócrita, errei feio e agora tenho que lidar com isso'.",
+    joke: "Se alguém perguntar, responda apenas: 'faz parte'.",
+    category: "Caos",
+  },
 ];
 
 export const BastardChallenges = [
@@ -120,5 +177,24 @@ export const BastardChallenges = [
       "Deixe o grupo montar sua bio do Tinder e uma foto de perfil por 24h.",
     joke: "Se der match, tem que conversar.",
     category: "18+",
+  },
+  {
+    title: "Bio comprometida",
+    description: "Deixe o grupo alterar sua bio de rede social por 24h.",
+    joke: "Se alguém perguntar, finge que é ironia.",
+    category: "Caos",
+  },
+  {
+    title: "Mensagem que não se apaga",
+    description:
+      "Envie 'acho que ainda sinto algo por você' pra alguém escolhido pelo grupo.",
+    joke: "Se responder, você é obrigado a continuar a conversa.",
+    category: "Caos",
+  },
+  {
+    title: "Bio criminosa",
+    description: "Deixe o grupo alterar sua bio com algo que gere julgamentos.",
+    joke: "Fica 24h. Sem editar.",
+    category: "Caos",
   },
 ];
