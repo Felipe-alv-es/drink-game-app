@@ -22,6 +22,9 @@ export const getTextFieldStyle = () => ({
     borderColor: "#FFF7FF",
     color: "#FFF7FF",
   },
+  "& .Mui-focused": {
+    color: "#FFF7FF",
+  },
 });
 
 export const getAddButtonStyle = () => ({

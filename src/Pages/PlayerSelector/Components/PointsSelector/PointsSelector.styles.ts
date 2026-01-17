@@ -16,14 +16,23 @@ export const getTitleStyle = () => ({
 });
 
 export const getTextFieldStyle = () => ({
-  "& .MuiInputBase-root": {
+  "& .MuiOutlinedInput-root": {
     borderRadius: "16px",
     color: "#FFF7FF",
     textAlign: "center",
-  },
-  "& .MuiOutlinedInput-notchedOutline": {
-    borderColor: "#FFF7FF",
-    borderWidth: "2px",
+
+    "& fieldset": {
+      borderColor: "#FFF7FF",
+      borderWidth: "2px",
+    },
+
+    "&:hover fieldset": {
+      borderColor: "#FFF7FF",
+    },
+
+    "&.Mui-focused fieldset": {
+      borderColor: "#FFF7FF",
+    },
   },
   input: {
     textAlign: "center",
