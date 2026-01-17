@@ -18,7 +18,7 @@ interface SortingModalProps {
 const initialData = [
   { option: "😱 Surpresa", completeOption: "😱 Surpresa" },
   { option: "😳 Perguntas", completeOption: "😳 Perguntas" },
-  { option: "😖 Pimenta", completeOption: "😖 Pimenta" },
+  { option: "😖 Sabores", completeOption: "😖 Sabores" },
   { option: "🎨 Artes", completeOption: "🎨 Artes" },
 ];
 

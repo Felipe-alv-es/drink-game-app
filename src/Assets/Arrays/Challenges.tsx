@@ -6,43 +6,10 @@ export const SurpriseChallenges = [
     category: "Caos",
   },
   {
-    title: "Não é veneno… eu acho",
-    description: "Sem cheirar, sem perguntar, só aceite a prenda surpresa.",
-    joke: "Se fizer careta, já sabe: tem repeteco.",
-    category: "Sabor",
-  },
-  {
-    title: "Eu juro que não é veneno 2x",
-    description:
-      "Sem cheirar, sem perguntar, só aceita a prenda surpresa duas vezes.",
-    joke: "Se fizer careta, já sabe: tem repeteco.",
-    category: "Sabor",
-  },
-  {
-    title: "Coma coisas misteriosas x3",
-    description:
-      "Você não sabe o que vai comer. O grupo escolhe, você só engole.",
-    joke: "Se conseguir, ganha pontos. Se não conseguir, o grupo escolhe mais uma coisa.",
-    category: "Sabor",
-  },
-  {
-    title: "Coma algo muito azedo",
-    description: "O desafio vai ficar doce depois de passar por isso.",
-    joke: "Se sua cara ficar mais azeda que o limão, a bebida é por sua conta.",
-    category: "Sabor",
-  },
-  {
     title: "Vista seu calçado nas mãos",
     description:
       "Coloque os sapatos nas mãos e continue o jogo assim até cumprir sua próxima prenda.",
     joke: "Se alguém perguntar se você perdeu a cabeça, diga que foi só os pés.",
-    category: "Zoeira",
-  },
-  {
-    title: "Coma limão com sal sem fazer careta",
-    description:
-      "Desafie suas papilas gustativas e mantenha a pose. Nada de caretas!",
-    joke: "Se fizer careta, tem que repetir a dose… ou a vergonha.",
     category: "Zoeira",
   },
   {
@@ -67,12 +34,6 @@ export const SurpriseChallenges = [
     category: "Zoeira",
   },
   {
-    title: "Coma uma mistura de ketchup e chocolate",
-    description: "Sim, você leu certo. Agora aguente o gosto!",
-    joke: "Se você não conseguir, tem que repetir com mais ketchup.",
-    category: "Sabor",
-  },
-  {
     title: "Seja o garçom do grupo por 3 rodadas",
     description:
       "Agora é sua vez de servir! Sirva bebidas, petiscos e ajude o grupo com tudo que for preciso.",
@@ -92,6 +53,112 @@ export const SurpriseChallenges = [
       "Escolha sua pose favorita ou a mais desafiadora, e mantenha a calma por 1 minuto.",
     joke: "Se você cair, tem que repetir, mas com estilo zen!",
     category: "Zoeira",
+  },
+  {
+    title: "Desafio dentro do desafio",
+    description:
+      "Você escolhe a sua prenda, e o grupo adiciona uma condição extra",
+    joke: "Tipo DLC paga: não pediu, mas veio. Sejam cruéis.",
+    category: "Zoeira",
+  },
+
+  {
+    title: "Tudo pela moda",
+    description:
+      "O grupo escolherá um acessório ou peça de roupa para que você use.",
+    joke: "Moda é atitude. Bom gosto é opcional.",
+    category: "Caos",
+  },
+  {
+    title: "Verdade ou castigo surpresa",
+    description:
+      "O grupo decide se você responde uma verdade ou cumpre um castigo — sem escolha.",
+    joke: "Spoiler: quase nunca é verdade.",
+    category: "Caos",
+  },
+  {
+    title: "Regra secreta",
+    description:
+      "O grupo cria uma regra secreta só pra você — descubra errando.",
+    joke: "Cada erro é uma nova oportunidade de passar vergonha.",
+    category: "Zoeira",
+  },
+  {
+    title: "Influencer por 24h",
+    description:
+      "Grave um vídeo como está agora promovendo qualquer coisa que o grupo escolher e poste.",
+    joke: "Se rir no meio do vídeo, tem que refazer.",
+    category: "Zoeira",
+  },
+
+  {
+    title: "Pose coletiva",
+    description: "Todos fazem a mesma pose escolhida por quem tirou a carta.",
+    joke: "Quem quebrar a pose primeiro paga a prenda.",
+    category: "Social",
+  },
+  {
+    title: "Silêncio absoluto",
+    description: "Ninguém pode falar por 30 segundos.",
+    joke: "Risada também conta como som.",
+    category: "Social",
+  },
+  {
+    title: "Votação rápida",
+    description: "Todos apontam ao mesmo tempo para alguém da roda.",
+    joke: "A pessoa mais votada explica o motivo.",
+    category: "Social",
+  },
+  {
+    title: "Olhar fixo",
+    description: "Todos encaram a pessoa à direita por 20 segundos.",
+    joke: "Quem rir primeiro perde.",
+    category: "Social",
+  },
+  {
+    title: "Palavra proibida",
+    description:
+      "O grupo escolhe uma palavra que ninguém pode falar até a próxima rodada.",
+    joke: "Quem falar, bebe ou paga uma prenda.",
+    category: "Social",
+  },
+  {
+    title: "História coletiva",
+    description: "Cada pessoa fala uma palavra para criar uma história.",
+    joke: "Se a história fizer sentido, o jogo perdeu.",
+    category: "Social",
+  },
+  {
+    title: "Desafio espelho",
+    description:
+      "Todos copiam exatamente os movimentos de uma pessoa escolhida.",
+    joke: "Se alguém errar, começa de novo.",
+    category: "Social",
+  },
+  {
+    title: "Regra temporária",
+    description: "Crie uma regra que todos devem seguir por 1 rodada.",
+    joke: "Regras maldosas são lembradas.",
+    category: "Social",
+  },
+  {
+    title: "Riso proibido",
+    description: "Ninguém pode rir por 3 rodadas.",
+    joke: "Quem rir primeiro, paga prenda.",
+    category: "Social",
+  },
+  {
+    title: "Congelou geral",
+    description: "Todos ficam completamente parados por 20 segundos.",
+    joke: "O primeiro que se mexer, paga prenda.",
+    category: "Social",
+  },
+  {
+    title: "Verdade coletiva",
+    description:
+      "Todos levantam a mão se já fizeram algo escolhido pelo grupo.",
+    joke: "Explicações serão necessárias 👀.",
+    category: "Social",
   },
 ];
 
@@ -156,9 +223,107 @@ export const QuestionChallenges = [
     joke: "Se responder 'depende', o grupo tem direito a uma pergunta bônus.",
     category: "Reflexivo",
   },
+  {
+    title: "Qual foi o lugar mais inusitado onde você já ficou com alguém?",
+    description: "Vale tudo… desde que dê pra contar.",
+    joke: "Se alguém já passou por ali, ponto extra.",
+    category: "Adulto",
+  },
+  {
+    title: "Qual foi sua pior experiência em um encontro?",
+    description: "Aquela que dava pra ter ido embora em 5 minutos.",
+    joke: "Se envolver comida estranha ou silêncio constrangedor, bônus.",
+    category: "Adulto",
+  },
+  {
+    title: "Você prefere dominar ou ser dominado?",
+    description: "Resposta rápida, sem pensar demais.",
+    joke: "Se gaguejar, a resposta já foi dada.",
+    category: "Adulto",
+  },
+  {
+    title: "Qual foi a maior vergonha que você já passou bêbado?",
+    description: "O álcool não é desculpa… mas explica.",
+    joke: "Se alguém confirmar a história, bebe em dobro.",
+    category: "Zoeira",
+  },
+  {
+    title: "Qual hábito estranho você tem escondido?",
+    description: "Todo mundo tem um… chegou sua vez.",
+    joke: "Se for muito estranho, o grupo pode perguntar mais.",
+    category: "Zoeira",
+  },
+  {
+    title: "Qual foi a coisa mais extrema que você já fez por tesão?",
+    description: "Não vale mentir pra parecer santo.",
+    joke: "Se alguém disser 'caralho', você acertou o tom.",
+    category: "Adulto",
+  },
+  {
+    title:
+      "Conte algo que você fez escondido e não queria que ninguem soubesse.",
+    description: "Não tente disfarçar, seja claro e direto ao ponto.",
+    joke: "Se for algo que ninguem imaginava sobre você, ganha um ponto extra!",
+    category: "Zoeira",
+  },
+  {
+    title: "Qual fetiche você tem, mas quase ninguém sabe?",
+    description: "Sem julgamento… talvez.",
+    joke: "Se alguém pedir explicação, você decide se entra em detalhes.",
+    category: "Adulto",
+  },
+  {
+    title: "Você já fingiu orgasmo?",
+    description: "Aqui a sinceridade vale mais que o orgulho.",
+    joke: "Se responder rápido demais, a resposta é óbvia.",
+    category: "Adulto",
+  },
+  {
+    title: "Qual foi a maior mentira que você já contou em um relacionamento?",
+    description: "Vale omissão também.",
+    joke: "Se a história for longa, alguém paga bebida.",
+    category: "Adulto",
+  },
+  {
+    title: "Você já ficou com alguém da roda ou quase ficou?",
+    description: "Sim ou não… mas o olhar entrega.",
+    joke: "Se todo mundo olhar pra mesma pessoa, já sabemos.",
+    category: "Adulto",
+  },
+  {
+    title: "Você já teve vontade de pegar alguém comprometido?",
+    description: "Vontade conta, não precisa ter feito.",
+    joke: "Se responder 'nunca', a roda duvida.",
+    category: "Adulto",
+  },
+  {
+    title: "O que mais te excita sem envolver toque?",
+    description: "Pode ser atitude, situação ou contexto.",
+    joke: "Se alguém anotar mentalmente, problema deles.",
+    category: "Adulto",
+  },
 ];
 
-export const PepperChallenges = [
+export const IntensityFlavorsChallenges = [
+  {
+    title: "Mistura misteriosa líquida",
+    description: "O grupo mistura duas bebidas aleatórias. Você só bebe.",
+    joke: "Se pedir os ingredientes, perde o direito de saber.",
+    category: "Sabor",
+  },
+  {
+    title: "Coma uma mistura de ketchup e chocolate",
+    description: "Sim, você leu certo. Agora aguente o gosto!",
+    joke: "Se você não conseguir, tem que repetir com mais ketchup.",
+    category: "Sabor",
+  },
+  {
+    title: "Coma limão com sal sem fazer careta",
+    description:
+      "Desafie suas papilas gustativas e mantenha a pose. Nada de caretas!",
+    joke: "Se fizer careta, tem que repetir a dose… ou a vergonha.",
+    category: "Zoeira",
+  },
   {
     title: "Coma uma gota de pimenta",
     description: "Só uma gota? Já tô suando por você.",
@@ -190,6 +355,38 @@ export const PepperChallenges = [
     description: "Uma combinação explosiva que vai deixar sua boca em chamas.",
     joke: "Sem frescura, se cuspir vai ter que tomar denovo",
     category: "Pimenta",
+  },
+  {
+    title: "Não é veneno… eu acho",
+    description: "Sem cheirar, sem perguntar, só aceite a prenda surpresa.",
+    joke: "Se fizer careta, já sabe: tem repeteco.",
+    category: "Sabor",
+  },
+  {
+    title: "Eu juro que não é veneno... em dobro...",
+    description:
+      "Sem cheirar, sem perguntar, só aceita a prenda surpresa duas vezes.",
+    joke: "Se fizer careta, já sabe: tem repeteco.",
+    category: "Sabor",
+  },
+  {
+    title: "Coma coisas misteriosas",
+    description:
+      "Você não sabe o que vai comer. O grupo escolhe, você só engole.",
+    joke: "Se conseguir, ganha pontos. Se não conseguir, o grupo escolhe mais uma coisa.",
+    category: "Sabor",
+  },
+  {
+    title: "Coma algo muito azedo",
+    description: "O desafio vai ficar doce depois de passar por isso.",
+    joke: "Se sua cara ficar mais azeda que o limão, a bebida é por sua conta.",
+    category: "Sabor",
+  },
+  {
+    title: "Coma algo azedo sem fazer careta",
+    description: "Limão, vinagre ou o que o grupo decidir.",
+    joke: "Se fechar o olho, perdeu.",
+    category: "Intensidade",
   },
 ];
 
@@ -240,5 +437,18 @@ export const ArtisticChallenges = [
     description: "Agora é a sua vez de brilhar! Escolha um oculos de respeito",
     joke: "Se o oculos não causar inveja, bora desenhar de novo até virar ícone de moda facial.",
     category: "Zoeira",
+  },
+  {
+    title: "Desenho proibido na testa",
+    description: "O grupo escolhe o desenho. Você carrega a arte pela noite.",
+    joke: "Se tentar esconder, vira galeria ao ar livre.",
+    category: "Visual",
+  },
+  {
+    title: "Sobrancelha artística",
+    description:
+      "O grupo redesenha uma ou as duas sobrancelhas do jeito que quiser.",
+    joke: "Se ficar estiloso demais, a outra tem que combinar.",
+    category: "Visual",
   },
 ];

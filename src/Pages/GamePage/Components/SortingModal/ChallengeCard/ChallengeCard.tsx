@@ -3,7 +3,7 @@ import { Typography, Paper, Box } from "@mui/material";
 import {
   SurpriseChallenges,
   QuestionChallenges,
-  PepperChallenges,
+  IntensityFlavorsChallenges,
   ArtisticChallenges,
 } from "../../../../../Assets/Arrays/Challenges";
 import {
@@ -43,7 +43,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
     const challengeList = [
       isFinalRoulette ? EasyChallenges : SurpriseChallenges,
       isFinalRoulette ? MediumChallenges : QuestionChallenges,
-      isFinalRoulette ? SufferingChallenges : PepperChallenges,
+      isFinalRoulette ? SufferingChallenges : IntensityFlavorsChallenges,
       isFinalRoulette ? BastardChallenges : ArtisticChallenges,
     ];
 
